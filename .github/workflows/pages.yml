@@ -37,7 +37,7 @@ jobs:
       - run: npm test
       - run: npm run build
         env:
-          VITE_BASE_PATH: /personal-website/
+          VITE_BASE_PATH: /
           VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
       - name: Support direct room and terminal links
         run: cp dist/index.html dist/404.html
