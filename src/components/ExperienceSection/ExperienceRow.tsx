@@ -5,6 +5,7 @@ import { Work } from "@/types/resume";
 
 interface Props {
   work: Work;
+  logoAlt?: string;
   direction: "left" | "right";
   symbolImageSvg: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   imgProps?: CSSProperties;
@@ -12,6 +13,7 @@ interface Props {
 
 export default function ExperienceRow({
   work,
+  logoAlt,
   direction,
   symbolImageSvg: SymbolImageSvg,
   imgProps = {},
@@ -22,7 +24,7 @@ export default function ExperienceRow({
     <>
       <Grid container direction={left ? "row" : "row-reverse"} rowGap={10}>
         <Grid xs={12} md={7} zIndex={1}>
-          <ExperienceCard work={work} />
+          <ExperienceCard work={work} logoAlt={logoAlt} />
         </Grid>
         <Grid
           xs={12}

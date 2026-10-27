@@ -19,6 +19,7 @@ import { Work } from "@/types/resume";
 
 interface Props {
   work: Work;
+  logoAlt?: string;
 }
 
 function convertDateStrToFriendly(dateStr: string | null) {
@@ -31,7 +32,7 @@ function convertDateStrToFriendly(dateStr: string | null) {
       });
 }
 
-export default function ExperienceCard({ work }: Props) {
+export default function ExperienceCard({ work, logoAlt }: Props) {
   const [expandable, setExpandable] = useState(false);
   const [expanded, setExanded] = useState(false);
 
@@ -47,7 +48,17 @@ export default function ExperienceCard({ work }: Props) {
   return (
     <Card>
       <Stack direction="row" spacing={2}>
-        <Avatar src={work.companyLogoUrl} size="lg">
+        <Avatar
+          src={work.companyLogoUrl}
+          alt={logoAlt || `${work.name} emblem`}
+          size="lg"
+          sx={{
+            backgroundColor: "#fff",
+            padding: "3px",
+            boxSizing: "border-box",
+            "& img": { objectFit: "contain" },
+          }}
+        >
           <SchoolOutlinedIcon />
         </Avatar>
         <Stack

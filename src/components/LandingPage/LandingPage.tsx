@@ -1,9 +1,10 @@
-import { Box, Button, Chip, Divider, Grid, Stack, Typography } from "@mui/joy";
+import { Box, Button, Divider, Grid, Link, Stack, Typography } from "@mui/joy";
 import RoomPreview from "../RoomPreview/RoomPreview";
 import LinesBackgroundSvg from "@/assets/linesBackground.svg?react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import IntroSection from "../IntroSection/IntroSection";
+import ResearchTags from "../IntroSection/ResearchTags";
 import ProjectsSection from "../ProjectsSection/ProjectsSection";
 import SkillsSection from "../SkillsSection/SkillsSection";
 import ExperienceSection from "../ExperienceSection/ExperienceSection";
@@ -29,9 +30,9 @@ export default function LandingPage({
       overflow="hidden"
       sx={{ backgroundColor: "background.body" }}
     >
-      <Box width="92%" maxWidth={1200} marginTop={{ xs: 4, md: "6vw" }}>
+      <Box width="92%" maxWidth={1280} marginTop={{ xs: 4, md: "5vw" }}>
         <Grid container spacing={4}>
-          <Grid xs={12} md={7} position="relative">
+          <Grid xs={12} md={7} position="relative" sx={{ minWidth: 0 }}>
             <LinesBackgroundSvg
               style={{
                 position: "absolute",
@@ -42,22 +43,12 @@ export default function LandingPage({
               }}
             />
             <IntroSection />
-            <Stack
-              direction="row"
-              spacing={2}
-              flexWrap="wrap"
-              useFlexGap
-              marginTop={2}
-            >
-              {["Computational Immunology", "TCR/BCR Repertoires", "Single-cell Analysis", "Clonal Dynamics", "Longitudinal Modelling"].map((tag) => (
-                <Chip key={tag} color="primary" variant="outlined" size="lg">{tag}</Chip>
-              ))}
-            </Stack>
+            <ResearchTags />
             <Divider sx={{ marginTop: 5 }} />
             <Typography level="h4" marginTop={5}>
               Quick connect:
             </Typography>
-            <Stack direction="row" spacing={2} marginTop={2}>
+            <Stack direction="row" spacing={2} marginTop={2} flexWrap="wrap" useFlexGap>
               <Button
                 component="a"
                 href="https://github.com/HEIMA-programmer"
@@ -65,7 +56,7 @@ export default function LandingPage({
                 rel="noopener noreferrer"
                 startDecorator={<GitHubIcon />}
                 variant="soft"
-                sx={{ maxWidth: "50%" }}
+                sx={{ flexShrink: 0 }}
               >
                 GitHub
               </Button>
@@ -74,13 +65,13 @@ export default function LandingPage({
                 href="mailto:yann3434274@gmail.com"
                 startDecorator={<EmailRoundedIcon />}
                 variant="soft"
-                sx={{ maxWidth: "50%", overflowWrap: "anywhere" }}
+                sx={{ maxWidth: "100%", overflowWrap: "anywhere" }}
               >
                 yann3434274@gmail.com
               </Button>
             </Stack>
           </Grid>
-          <Grid xs={12} md={5} justifyContent="right">
+          <Grid xs={12} md={5} display="flex" sx={{ minWidth: 0 }}>
             <RoomPreview
               roomReady={roomReady}
               roomEnabled={roomEnabled}
@@ -118,7 +109,12 @@ export default function LandingPage({
         <NewsSection />
         <Box margin={10} />
         <ExperienceSection />
-        <Box margin={40} />
+        <Box component="footer" sx={{ mt: 12, mb: 4 }}>
+          <Typography level="body-xs" textColor="text.tertiary">
+            Cat model: <Link href="https://sketchfab.com/3d-models/tuxedo-cat-animated-20-783fcb78b55b4394a212c2b6392e1113" target="_blank" rel="noopener noreferrer" color="neutral">DreamNoms</Link>
+            {" · "}<Link href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" color="neutral">CC BY 4.0</Link>
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

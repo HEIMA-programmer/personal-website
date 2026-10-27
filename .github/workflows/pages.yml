@@ -34,10 +34,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --legacy-peer-deps
-      - run: node --test scripts/update-news.test.mjs
+      - run: npm test
       - run: npm run build
         env:
           VITE_BASE_PATH: /personal-website/
+          VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
       - name: Support direct room and terminal links
         run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5

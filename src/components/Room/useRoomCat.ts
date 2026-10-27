@@ -1,131 +1,196 @@
-import { useEffect } from 'react';
-import type { Application, SPEObject, SplineEvent } from '@splinetool/runtime';
+import { useEffect, useRef } from 'react';
+import type { Application } from '@splinetool/runtime';
+import {
+  AnimationMixer, Group, LoopOnce, LoopRepeat, Raycaster, ShaderChunk, ShaderLib,
+  Vector2, type AnimationAction, type Camera, type Material, type Mesh, type Object3D,
+  type Texture,
+} from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { FLOOR, sampleCatStep } from './catMotion';
+import { createPawSupport, poseCat } from './catRig';
 
-/** Cat poses use the original room's world units, camera, shadows and depth buffer. */
+// The pinned Spline 1.10.13 embeds Three r149. This narrow compatibility bridge
+// adds the artist's skinned mesh to the original room, renderer and depth buffer.
+type SplineBridge = { _scene?: Object3D; _camera?: Camera; canvas?: HTMLCanvasElement };
+const resolveShader = (source: string): string => source.replace(
+  /#include <([\w]+)>/g, (_match, name: keyof typeof ShaderChunk) => resolveShader(ShaderChunk[name]),
+);
+const vertexShader = resolveShader(ShaderLib.standard.vertexShader);
+const fragmentShader = 'layout(location = 1) out vec4 gVelocity;\n' + resolveShader(ShaderLib.standard.fragmentShader)
+  .replace('void main() {','void main() {\n gVelocity = vec4(0.0, 0.0, 0.0, 1.0);');
+
+function disposeModel(model: Object3D) {
+  const materials = new Set<Material>();
+  const textures = new Set<Texture>();
+  model.traverse(object => {
+    const mesh = object as Mesh;
+    if (!mesh.isMesh) return;
+    mesh.geometry.dispose();
+    (Array.isArray(mesh.material) ? mesh.material : [mesh.material]).forEach(material => materials.add(material));
+  });
+  materials.forEach(material => {
+    Object.values(material).forEach(value => { if (value?.isTexture) textures.add(value as Texture); });
+    material.dispose();
+  });
+  textures.forEach(texture => texture.dispose());
+}
+
 export default function useRoomCat(app: Application | undefined, active: boolean) {
+  const activeRef = useRef(active);
+  const resumeRef = useRef(true);
+  useEffect(() => { activeRef.current = active; resumeRef.current = true; },[active]);
   useEffect(() => {
     if (!app) return;
-    const get = (name: string) => app.findObjectByName(name);
-    const cat = get('Room Cat');
-    const body = get('Cat Body');
-    const chest = get('Cat Chest');
-    const head = get('Cat Head');
-    const left = get('Cat Front Left');
-    const right = get('Cat Front Right');
-    const tail = get('Cat Tail');
-    const tongue = get('Cat Tongue');
-    const eyes = [get('Cat Eye Left'), get('Cat Eye Right')];
-    if (!cat || !body || !chest || !head || !left || !right || !tail) return;
-
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const floor = { x:125, y:-178, z:100 };
-    // Walk around the right of the chair/table, then clear the tabletop edge.
-    const launch = { x:168, y:-178, z:-100 };
-    // Rear-right free corner; keeps clear of the laptop, notebook and coffee.
-    const desk = { x:108, y:-39.69, z:-190 };
-    let elapsed = 0;
-    let previous = performance.now();
+    const bridge = app as unknown as SplineBridge;
+    const anchor = bridge._scene?.getObjectByName('Room Cat');
+    const canvas = bridge.canvas;
+    if (!anchor?.isObject3D || !bridge._camera || !canvas) {
+      console.error('The pinned Spline scene bridge is unavailable.');
+      return;
+    }
+    let cancelled = false;
     let frame = 0;
-    let petStart = -100;
+    let model: Object3D | undefined;
+    let mixer: AnimationMixer | undefined;
+    let elapsed = 0;
+    let petAge = Infinity;
+    let currentAction: AnimationAction | undefined;
+    let currentClip = '';
+    let last = performance.now();
+    let lastRaycast = 0;
+    const cat = new Group();
+    cat.name = 'Yanbin skeletal cat';
+    cat.rotation.y = .5;
+    anchor.add(cat);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const raycaster = new Raycaster();
+    const pointer = new Vector2();
 
-    const pet = (event: SplineEvent) => {
-      if (event.target.name === 'Room Cat' || event.target.name.startsWith('Cat ')) {
-        const phase = elapsed % 72;
-        const travelling = (phase >= 30 && phase < 37) || (phase >= 61 && phase < 68);
-        if (!travelling && elapsed - petStart > 3.5) petStart = elapsed;
-      }
+    const pet = (event: PointerEvent) => {
+      if (!activeRef.current || !model || reducedMotion.matches || petAge<6 || performance.now()-lastRaycast<120) return;
+      lastRaycast = performance.now();
+      const {step} = sampleCatStep(elapsed);
+      if (step.activity!=='rest' && step.activity!=='sit') return;
+      const rect = canvas.getBoundingClientRect();
+      pointer.set((event.clientX-rect.left)/rect.width*2-1, -(event.clientY-rect.top)/rect.height*2+1);
+      raycaster.setFromCamera(pointer,bridge._camera!);
+      const hits = raycaster.intersectObject(cat,true);
+      if (!hits.length) return;
+      // Furniture closer to the camera also blocks petting through the desk.
+      const otherMeshes: Object3D[] = [];
+      bridge._scene?.traverseVisible(object => {
+        if (!(object as Mesh).isMesh) return;
+        let parent: Object3D | null = object;
+        while (parent && parent!==cat) parent=parent.parent;
+        if (parent!==cat) otherMeshes.push(object);
+      });
+      raycaster.far = hits[0].distance;
+      const blocked = raycaster.intersectObjects(otherMeshes,false).some(hit => hit.distance<hits[0].distance-.2);
+      raycaster.far = Infinity;
+      if (!blocked) petAge=0;
     };
-    app.addEventListener('mouseHover', pet);
-    app.addEventListener('mouseDown', pet); // Touch visitors can pet the cat too.
+    const resetClock = () => { resumeRef.current = true; };
+    document.addEventListener('visibilitychange',resetClock);
+    canvas.addEventListener('pointermove',pet,{passive:true});
+    canvas.addEventListener('pointerdown',pet,{passive:true});
 
-    const smooth = (value: number) => value * value * (3 - 2 * value);
-    const place = (from: typeof floor, to: typeof floor, progress: number, arc = 0) => {
-      const p = Math.max(0, Math.min(1, progress));
-      cat.position.x = from.x + (to.x - from.x) * p;
-      cat.position.y = from.y + (to.y - from.y) * p + Math.sin(p * Math.PI) * arc;
-      cat.position.z = from.z + (to.z - from.z) * p;
-    };
-    const jump = (progress: number) => {
-      const p = Math.max(0, Math.min(1, progress));
-      // Rise outside the desk first. Moving horizontally from the very start
-      // would send the head through its right edge before the paws clear it.
-      const horizontal = smooth(Math.max(0, (p - 0.3) / 0.7));
-      cat.position.x = launch.x + (desk.x - launch.x) * horizontal;
-      cat.position.z = launch.z + (desk.z - launch.z) * horizontal;
-      cat.position.y = launch.y + (desk.y - launch.y) * p + Math.sin(p * Math.PI) * 130;
-    };
-    const rotate = (object: SPEObject, x = 0, y = 0, z = 0) => {
-      object.rotation.x = x; object.rotation.y = y; object.rotation.z = z;
-    };
+    void new GLTFLoader().loadAsync(`${import.meta.env.BASE_URL}cat/tuxedo/scene.gltf`).then(gltf => {
+      if (cancelled) { disposeModel(gltf.scene); return; }
+      model = gltf.scene;
+      model.scale.setScalar(3.9);
+      model.traverse(object => {
+        const mesh = object as Mesh;
+        if (mesh.isMesh) {
+          mesh.castShadow = true;
+          mesh.receiveShadow = true;
+          mesh.frustumCulled = false;
+          const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+          materials.forEach(material => {
+            // Spline's own node shaders use a modified shadow sampler. Resolve
+            // the matching stock PBR shaders before its include expansion, and
+            // fill the MRT velocity attachment used by Spline's postprocessing.
+            material.onBeforeCompile = shader => {
+              shader.vertexShader = vertexShader;
+              shader.fragmentShader = fragmentShader;
+            };
+            material.customProgramCacheKey = () => 'yanbin-cat-r149-pbr-mrt';
+          });
+        }
+        if (object.type.includes('Light')) object.visible=false;
+      });
+      cat.add(model);
+      mixer = new AnimationMixer(model);
+      const actions = new Map(gltf.animations.map(clip => [clip.name,mixer!.clipAction(clip)]));
+      const rest = new Map<Object3D,{position: Object3D['position']; quaternion: Object3D['quaternion']; scale:Object3D['scale']}>();
+      model.traverse(object => { if (object.type==='Bone') rest.set(object,{position:object.position.clone(),quaternion:object.quaternion.clone(),scale:object.scale.clone()}); });
+      const supportPaws = createPawSupport(model,cat);
 
-    const tick = (now: number) => {
-      frame = requestAnimationFrame(tick);
-      const delta = Math.min((now - previous) / 1000, 0.05);
-      previous = now;
-      if (!active || document.hidden) return;
-      elapsed += delta;
-      const phase = reducedMotion.matches ? 0 : elapsed % 72;
-      let walking = false;
-      let jumping = false;
-      let grooming = (phase >= 12 && phase < 19) || (phase >= 48 && phase < 54);
-      const sleeping = phase >= 21 && phase < 29;
-
-      place(floor, floor, 0);
-      cat.rotation.y = 28 * Math.PI / 180;
-      if (phase >= 30 && phase < 35) {
-        place(floor, launch, smooth((phase - 30) / 5));
-        cat.rotation.y = Math.atan2(launch.x-floor.x, launch.z-floor.z);
-        walking = true;
-      } else if (phase >= 35 && phase < 37) {
-        jump((phase - 35) / 2);
-        cat.rotation.y = Math.atan2(desk.x-launch.x, desk.z-launch.z);
-        jumping = true;
-      } else if (phase >= 37 && phase < 61) {
-        place(desk, desk, 0);
-        cat.rotation.y = 20 * Math.PI / 180;
-      } else if (phase >= 61 && phase < 63) {
-        jump(1 - (phase - 61) / 2);
-        cat.rotation.y = Math.atan2(launch.x-desk.x, launch.z-desk.z);
-        jumping = true;
-      } else if (phase >= 63 && phase < 68) {
-        place(launch, floor, smooth((phase - 63) / 5));
-        cat.rotation.y = Math.atan2(floor.x-launch.x, floor.z-launch.z);
-        walking = true;
-      }
-
-      const petAge = elapsed - petStart;
-      const stretch = !walking && !jumping && petAge < 3.5
-        ? Math.sin(Math.PI * Math.max(0,petAge) / 3.5) : 0;
-      grooming = grooming && stretch === 0;
-      if (tongue) tongue.visible = grooming && Math.sin(elapsed * 6) > 0;
-      const breath = reducedMotion.matches ? 0 : Math.sin(elapsed * 2.2) * 0.007;
-      body.scale.y = 1 + breath - stretch * 0.25;
-      body.scale.z = 1 + stretch * 0.55;
-      body.position.y = 25 - stretch * 5;
-      chest.position.y = 29 - stretch * 6;
-      chest.position.z = 11 + stretch * 9;
-      head.position.y = 51 - stretch * 14 - (sleeping ? 5 : 0);
-      head.position.z = 4 + stretch * 23;
-      rotate(head, sleeping ? 0.18 : stretch * 0.22, 0,
-        grooming ? -0.25 + Math.sin(elapsed * 6) * 0.12 : Math.sin(elapsed * 0.6) * 0.025);
-      left.position.y = grooming ? 36 : 20 - stretch * 8;
-      left.position.z = grooming ? 17 : 13 + stretch * 19;
-      right.position.y = 20 - stretch * 8;
-      right.position.z = 13 + stretch * 19;
-      rotate(left, grooming ? -1.6 + Math.sin(elapsed * 6) * 0.12 : walking ? Math.sin(elapsed*13)*0.45 : -stretch*0.35, 0, grooming ? -0.4 : 0);
-      rotate(right, walking ? -Math.sin(elapsed*13)*0.45 : -stretch*0.35);
-      tail.rotation.y = -0.44 + (reducedMotion.matches ? 0 : Math.sin(elapsed*1.5)*0.3);
-      if (walking) cat.position.y += Math.abs(Math.sin(elapsed*13))*1.5;
-      if (jumping) { head.rotation.x = -0.12; left.rotation.x = -0.8; right.rotation.x = -0.8; }
-      const blink = sleeping || (elapsed % 5.3 > 5.12);
-      eyes.forEach(eye => { if (eye) eye.scale.y = blink ? 0.15 : 1; });
+      const play = (name: string, once = false) => {
+        if (currentClip===name) return;
+        const next = actions.get(name);
+        if (!next) return;
+        next.reset().setEffectiveWeight(1).setLoop(once?LoopOnce:LoopRepeat,once?1:Infinity).play();
+        next.clampWhenFinished=once;
+        if (currentAction) { next.crossFadeFrom(currentAction,.18,false); }
+        currentAction=next;
+        currentClip=name;
+      };
+      const tick = (now: number) => {
+        frame=requestAnimationFrame(tick);
+        const delta=resumeRef.current ? 0 : (now-last)/1000;
+        last=now;
+        resumeRef.current=false;
+        if (!activeRef.current || document.hidden || !model || !mixer) return;
+        if (!reducedMotion.matches) {
+          if (petAge>=4) elapsed+=delta;
+          petAge+=delta;
+        }
+        const state=sampleCatStep(reducedMotion.matches?0:elapsed);
+        const {step,p,time,position}=state;
+        const petting=petAge<4;
+        const seated=step.activity==='sit';
+        const petStanding=petting && seated && petAge<1.05;
+        const clip=petStanding?'StandUp':petting?'IdleNorm':step.activity==='crouch'||step.activity==='land'?'SitDown':step.clip;
+        play(clip,clip==='SitDown'||clip==='StandUp');
+        for (const [bone,base] of rest) { bone.position.copy(base.position); bone.quaternion.copy(base.quaternion); bone.scale.copy(base.scale); }
+        if (currentAction) {
+          currentAction.paused=false;
+          currentAction.timeScale=clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
+          if (!petting && (step.activity==='crouch'||step.activity==='land')) {
+            currentAction.time=(step.activity==='crouch'?p:1-p)*.2;
+            currentAction.paused=true;
+          }
+        }
+        mixer.update(reducedMotion.matches?0:delta);
+        // Preserve the mixer result before adding a temporary pet/groom pose.
+        // Constant animation tracks may skip writes on subsequent frames.
+        for (const [bone,base] of rest) { base.position.copy(bone.position); base.quaternion.copy(bone.quaternion); base.scale.copy(bone.scale); }
+        let pose: Parameters<typeof poseCat>[1]='none';
+        let amount=0;
+        if (petting && !petStanding) { pose='stretch'; amount=Math.sin(Math.PI*Math.min(1,(petAge-(seated?1.05:0))/(seated?2.95:4))); }
+        else if (step.activity==='sit' && time>3 && time<7) { pose='groom'; amount=Math.sin(Math.PI*(time-3)/4); }
+        else if (step.activity==='jump') { pose='air'; amount=Math.sin(Math.PI*p); }
+        poseCat(model,pose,amount,elapsed);
+        // Native Spline entities disable automatic matrix updates. Keep the native
+        // anchor fixed and move our own Three Group, whose matrices update normally.
+        cat.position.set(position.x-FLOOR.x,position.y-FLOOR.y,position.z-FLOOR.z);
+        const angle=Math.atan2(Math.sin(step.heading-cat.rotation.y),Math.cos(step.heading-cat.rotation.y));
+        cat.rotation.y+=angle*Math.min(1,delta*7);
+        supportPaws();
+        app.requestRender();
+      };
+      frame=requestAnimationFrame(tick);
       app.requestRender();
-    };
-    frame = requestAnimationFrame(tick);
+    }).catch(error => { console.error('Unable to load the room cat.',error); });
     return () => {
+      cancelled=true;
       cancelAnimationFrame(frame);
-      app.removeEventListener('mouseHover', pet);
-      app.removeEventListener('mouseDown', pet);
+      document.removeEventListener('visibilitychange',resetClock);
+      canvas.removeEventListener('pointermove',pet);
+      canvas.removeEventListener('pointerdown',pet);
+      mixer?.stopAllAction();
+      if (model) { mixer?.uncacheRoot(model); disposeModel(model); }
+      cat.removeFromParent();
     };
-  }, [app, active]);
+  },[app]);
 }

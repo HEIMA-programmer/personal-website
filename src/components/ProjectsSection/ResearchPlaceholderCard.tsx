@@ -24,7 +24,7 @@ export default function ResearchPlaceholderCard({ kind }: Props) {
       orientation="vertical"
       size="sm"
       variant="soft"
-      sx={{ width: "85vw", maxWidth: 400 }}
+      sx={{ width: "min(360px, calc(100vw - 60px))", boxSizing: "border-box" }}
     >
       <Stack direction="row" justifyContent="space-between" spacing={1}>
         <Typography level="h4">

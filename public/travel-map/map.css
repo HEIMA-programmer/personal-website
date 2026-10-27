@@ -1,71 +1,40 @@
-html, body, #map {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+/* Adapted from the original flightmap's full-screen GL map and controls. */
+html, body, #map-container { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { background: #e0e6e9; font-family: Inter, Arial, sans-serif; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+.satellite-toggle, .legend-toggle, .loading-indicator, .map-error, .cities-panel {
+  position: absolute; z-index: 3; background: rgb(35 55 75 / 94%); color: #fff;
+  border: 1px solid rgb(255 255 255 / 12%); border-radius: 8px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 12%);
 }
-
-body {
-  background: #dce5ea;
-  font-family: Inter, Arial, sans-serif;
-}
-
-.map-button, .map-status, .map-error {
-  position: absolute;
-  z-index: 800;
-  padding: 10px 18px;
-  border-radius: 8px;
-  border: none;
-  background: rgb(35 55 75 / 92%);
-  color: #fff;
-  font-size: 14px;
-}
-
-.map-button {
-  top: 16px;
-  left: 16px;
-  cursor: pointer;
-  font-family: monospace;
-  font-size: 15px;
-}
-
-.map-button:hover {
-  background: rgb(35 55 75);
-}
-
-.map-button:focus-visible {
-  outline: 3px solid #92c9ff;
-  outline-offset: 3px;
-}
-
-.map-status {
-  top: 16px;
-  right: 16px;
-  max-width: calc(100vw - 180px);
-  pointer-events: none;
-}
-
-.map-status strong, .map-status span {
-  display: block;
-}
-
-.map-status span {
-  margin-top: 5px;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-.map-error {
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: min(500px, 70vw);
-}
-
-.leaflet-control-zoom {
-  margin-bottom: 32px !important;
-}
-
+.satellite-toggle, .legend-toggle { top: 16px; padding: 10px 22px; font-family: monospace; font-size: 15px; cursor: pointer; }
+.satellite-toggle { left: 16px; }
+.legend-toggle { right: 16px; }
+.satellite-toggle:hover, .legend-toggle:hover { background: rgb(35 55 75); }
+button:focus-visible { outline: 3px solid #a0d6ff; outline-offset: 3px; }
+button:disabled { cursor: wait; opacity: .65; }
+.cities-panel { top: 64px; right: 16px; width: min(260px, calc(100vw - 64px)); padding: 16px; max-height: calc(100vh - 170px); overflow-y: auto; }
+.cities-panel h1 { font-size: 16px; margin: 0 0 6px; }
+.cities-panel p { margin: 0 0 12px; color: #bdcedb; font-size: 12px; }
+.city-item { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px 8px; background: transparent; color: #fff; border: 0; border-radius: 6px; text-align: left; cursor: pointer; }
+.city-item:hover { background: rgb(255 255 255 / 12%); }
+.city-item span { color: #c6dfef; font-size: 12px; }
+.show-all { width: 100%; margin-top: 12px; padding: 9px; border-radius: 6px; color: #fff; background: #1674b0; border: none; cursor: pointer; }
+.loading-indicator { bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; padding: 10px 22px; font-family: monospace; font-size: 14px; pointer-events: none; }
+.loading-spinner { width: 18px; height: 18px; border: 2.5px solid rgb(255 255 255 / 30%); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.map-error { bottom: 45px; left: 50%; transform: translateX(-50%); width: min(420px, calc(100vw - 48px)); padding: 12px 16px; display: flex; align-items: center; gap: 12px; font-size: 13px; }
+.map-error button { padding: 6px 10px; border: 1px solid #9fc6df; border-radius: 5px; background: transparent; color: #fff; cursor: pointer; }
+.mapboxgl-ctrl-bottom-right, .maplibregl-ctrl-bottom-right { z-index: 2; }
+.mapboxgl-ctrl-group, .maplibregl-ctrl-group { margin-bottom: 16px !important; }
+.mapboxgl-popup-content, .maplibregl-popup-content { padding: 15px 20px 13px; border-radius: 10px; color: #24394a; font-family: Inter, Arial, sans-serif; }
+.city-popup-title { font-weight: 700; font-size: 15px; margin: 0 0 5px; }
+.city-popup-caption { margin: 0; color: #586b78; font-size: 12px; }
 @media (max-width: 480px) {
-  .map-status { max-width: calc(100vw - 175px); padding: 10px 12px; }
-  .leaflet-control-attribution { max-width: 70vw; font-size: 9px; }
+  .satellite-toggle, .legend-toggle { top: 12px; padding: 9px 16px; }
+  .satellite-toggle { left: 12px; } .legend-toggle { right: 12px; }
+  .cities-panel { top: 58px; right: 12px; }
+  .loading-indicator { max-width: 60vw; bottom: 45px; padding: 10px 14px; }
 }
+@media (prefers-reduced-motion: reduce) { .loading-spinner { animation: none; } }

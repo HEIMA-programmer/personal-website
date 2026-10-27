@@ -1,40 +1,64 @@
-# Daily computational immunology news
+# Computational immunology reading index
 
-News uses the existing site's React and Joy UI presentation. It fetches public metadata in a scheduled GitHub Action, then serves static JSON; visitors never call academic APIs directly. No paid service or API key is required.
+News is a local, static publication index maintained by a scheduled GitHub Action. It keeps the original site's Joy UI visual language and shares `ResearchCarousel` with Publications and Tools. No API key, paid model, live database, or browser-side call to academic APIs is required.
 
-## Sources and research
+## Dates, history and article counts
 
-- [bioRxiv API](https://api.biorxiv.org/): preprints in the immunology and bioinformatics subject categories, including revision dates and DOI links. These records are explicitly labelled **Preprint**.
-- [Europe PMC REST API](https://dev.europepmc.org/RestfulWebService): biomedical journal metadata indexed by PubMed and PMC, including journal names, authors, abstracts and publication dates. PubMed/PMC membership is an indexing signal, not a guarantee of a paper's quality. [Search field documentation](https://europepmc.org/Help) explains publication and first-index dates.
-- [arXiv API](https://info.arxiv.org/help/api/user-manual.html) was considered for quantitative biology and machine-learning methods. It is useful as a future supplement, but the initial feed prioritizes the two sources above for biomedical coverage. It is not currently polled.
+The main view now indexes **publication dates from 2026-10-01 onward**. Both endpoints of a selected date range are included. Selecting the same date in From and Through gives a single day. BioRxiv dates are its posting/revision dates; journal dates come from Europe PMC's first-publication field. Dates are UTC calendar dates.
 
-Two existing projects were reviewed: [paperscraper](https://github.com/jannisborn/paperscraper) (MIT; multiple scientific sources) and [daily-arXiv-ai-enhanced](https://github.com/dw-dengwei/daily-arXiv-ai-enhanced) (daily scheduled retrieval and browsable archives). This small implementation follows the API → classification → dated archive pattern without importing either project's code, separate website, Python environment, or LLM API dependency.
+The October index was retrieved retrospectively on 2026-10-27. It is **not** a reconstruction of what the website displayed each day. The separate **Daily collections** view preserves the actual immutable files under `public/news/YYYY-MM-DD.json`, beginning on 2026-10-27. The original 12-paper first collection is retained unchanged. This distinguishes publication time from website discovery time.
 
-## Selection and history
+The first backfill, after the focus review, contains **770 matching papers**, including **50 verified article figures**. The default view shows the most relevant records within the latest seven days; visitors can switch to newest-first ordering or select the full month. The initial twelve cards include two actual article figures; the latest seven days contain 106 matches.
 
-Each edition searches the preceding 14 UTC calendar days. Europe PMC queries both first-publication and first-index dates to catch delayed indexing. bioRxiv supplies posting/revision dates. A paper must match **both** an immune topic and a computational method. Repertoire/clonal dynamics, single-cell analysis and longitudinal research receive extra relevance weight, reflecting Yanbin's stated interests. The top 12 previously unfeatured records are selected, using publication date to break score ties. Full rules and thresholds are in `scripts/update-news.mjs`.
+The old fixed top-12 collection has been replaced by **all retrieved records passing the immunology plus computational-method filters**. Twelve cards are rendered at a time for a manageable carousel, with an explicit total and a Show next button. This is pagination, not data exclusion. Visitors can combine date, topic, article type and source filters, then sort by publication date or research relevance. Neither sorting nor collection membership is presented as a scientific-quality judgement.
 
-The categories are Repertoire & clonal dynamics, Single-cell immunology, Antigen & receptor prediction, Immunotherapy and Systems immunology. Classification is multi-label and rule based. It ranks topical relevance, **not** scientific quality. The website makes this distinction visible and does not generate claims about what a paper proves.
+`public/news/catalog.json` stores the cumulative index, metadata, figure attribution, first-discovery date and source status. On each daily update, a rolling 14-day publication/indexing window catches new papers and delayed indexing; previously collected records stay available. After a longer scheduling gap the search resumes from the last successful update, so the missed days are included. A partial-source failure retries the affected search window on the next run, including a manual retry on the same day. All-source failure leaves the catalog and daily collections intact. DOI normalization deduplicates records and preprint versions. A preprint and later journal article may have different DOIs and remain separate, with a published-version link when supplied.
 
-DOIs are normalized for deduplication; source IDs are used when no DOI is available. Versions with the same DOI are combined. Once a DOI has been featured in an earlier edition, it is not selected again. A preprint and its later journal version may have different DOIs and can appear separately; the bioRxiv card links the published DOI when supplied by the source.
+## Sources and selection
 
-`public/news/YYYY-MM-DD.json` preserves the exact published selection for a day. Rerunning that date leaves it unchanged. `public/news/index.json` lists every available edition; it is rebuilt from the archive if necessary. No older days are invented or deleted. Empty editions are valid when there are no newly matching papers.
+- [bioRxiv's official API](https://api.biorxiv.org/) supplies preprints in immunology and bioinformatics, posting/revision dates, authors, abstracts, versions, licences and published DOI links.
+- [Europe PMC's official API](https://dev.europepmc.org/RestfulWebService) supplies journal metadata from PubMed/PMC plus open-access full-text identifiers. [Europe PMC developer resources](https://dev.europepmc.org/developers) describe the supported metadata and full-text services.
+- [arXiv's official API](https://info.arxiv.org/help/api/user-manual.html) was reconsidered for quantitative biology and machine-learning methods. It is useful for a future methods-specific feed; the current implementation keeps bioRxiv plus PubMed/PMC as its focused biomedical sources. Adding more platforms would not by itself improve article relevance or quality.
 
-Sources are fetched independently with timeouts, retries and pagination. A partial outage creates a visibly marked partial edition; if every source fails, the update exits unsuccessfully and keeps the previous latest edition. The UI displays the actual latest available date. It never substitutes a stale edition under today's date. A partial edition remains immutable on reruns; the next day's 14-day window can recover missed, previously unfeatured papers.
+The maintained rule-based classifier requires both computational-method evidence and an immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. A single background mention of immunity is insufficient. It excludes retraction titles and avoids counting the BCR::ABL fusion gene as a B-cell receptor or a routine immune-inflammation index as a research topic. Repertoire/clonal, single-cell and longitudinal methods receive higher relevance weights. General multiomics alone does not receive a single-cell label. Multi-label categories are repertoire/clonal dynamics, single-cell immunology, antigen/receptor prediction, immunotherapy and systems immunology. Topic labels and the relevance order remain automatic and auditable in `scripts/update-news.mjs`.
 
-## Run and schedule
+Indexing in a biomedical database is not a quality guarantee; journal articles and preprints are clearly distinguished. Citation counts were not used to rank newly posted papers because they are time dependent and favor older work. The UI exposes source, venue, date, authors, DOI, original abstract and the paper link so visitors can assess a paper themselves.
+
+## Open-source comparison
+
+- [paperscraper](https://github.com/jannisborn/paperscraper) separates metadata retrieval across PubMed/preprint sources from filtering and post-processing. This implementation retains that separation and official-source metadata, without importing its Python environment or broad historical dumps.
+- [Paperlib](https://github.com/Future-Scholars/paperlib) uses metadata enrichment, source adapters, tags and smart filtering. These informed the combined filters and distinct metadata/detail view; no Paperlib code is copied.
+- [daily-arXiv-ai-enhanced](https://github.com/dw-dengwei/daily-arXiv-ai-enhanced) illustrates daily collection and browsing. The website retains real daily snapshots, but adds a cumulative date index so an arbitrary daily quota does not hide otherwise matching papers. There is no dependency on its site framework or paid LLM summaries.
+
+## Real article figures
+
+Where an indexed article has a PMC identifier and open-access full text, the updater requests its **Europe PMC JATS XML**. A figure is used only if the article XML supplies an explicit **CC BY, CC BY-SA or CC0** licence and an exact supported image path. Figure-specific permission overrides and third-party reproduction notices are excluded conservatively. The first eligible figure is a preview, not a claim that the author designated it as a cover or graphical abstract.
+
+The pipeline reads the actual `cloudpmc-path` from the XML and keeps its original NCBI CDN image URL. It does not guess publisher image filenames, download paywalled articles, or manufacture scientific illustrations. Each figure retains its label, caption, source link, licence URL and copyright/author credit; the details dialog shows those fields. The page loads figures lazily with contain scaling, so scientific axes and labels are not cropped. A broken or unavailable image falls back to a clearly labelled topic panel. The website does not claim that every paper provides reusable figures; bioRxiv records without a verified reusable figure keep the fallback.
+
+Figure retrieval is limited to 60 eligible requests per normal daily run, in batches of three. This bounds runtime and load on the full-text service without limiting the paper index. Successful figure metadata is cached in the catalog. Unchecked papers take priority; a checked article without an eligible figure is retried after a week. Temporary figure failures never block the metadata update.
+
+The legacy [PMC OA Web Service](https://pmc.ncbi.nlm.nih.gov/tools/oa-service/) was retired in August 2026, so that outdated image-fetching route is deliberately not used.
+
+## Running and scheduling
 
 ```sh
-node scripts/update-news.mjs
-node --test scripts/update-news.test.mjs
+npm run news:update
+npm test
 ```
 
-The optional `--date YYYY-MM-DD` argument chooses an edition date, and `--output DIRECTORY` is intended for isolated testing. It does not reconstruct what sources returned historically, so do not use it to manufacture a historical daily archive.
+The existing schedule remains **01:23 UTC daily (09:23 China Standard Time)**, with manual workflow dispatch available. GitHub schedules can be delayed or suspended on inactive repositories. The workflow needs Actions enabled and contents-write permission. It commits only `public/news/`.
 
-`.github/workflows/update-news.yml` runs each day at **01:23 UTC (09:23 China Standard Time)** and can also be started manually from GitHub Actions. GitHub schedules can be delayed and may be disabled after 60 days of repository inactivity. The workflow needs Actions enabled and permission to write repository contents. It commits only `public/news/` to `main`; it does not change the site's other content.
+For a deliberate retrospective index refresh:
 
-If hosting rebuilds on commits, ensure it also handles the scheduled archive update. GitHub does **not** start a separate push-triggered workflow for commits made using the default `GITHUB_TOKEN`; a GitHub Pages deployment workflow should also run on `workflow_run` completion of **Update research news**, or this workflow should call a reusable deployment job. The archive and UI work on any static host.
+```sh
+node scripts/update-news.mjs --backfill-from 2026-10-01 --image-limit 150
+```
 
-## Frontend integration
+`--date YYYY-MM-DD` sets the collection date and `--output DIRECTORY` supports isolated tests. Do not use backdated runs to manufacture a history of website editions. An existing edition is never overwritten; a backfill refreshes the catalog while preserving those original snapshots.
 
-Import `NewsSection` from `src/components/NewsSection/NewsSection.tsx` and render it after Tools and before Experience. It reuses Joy UI soft cards, typography, chips and modal interactions. Dates, topic filters, abstracts, paper links and all prior editions are available in the section. Its JSON URLs honor Vite's `BASE_URL`, including a repository subdirectory deployment.
+The optional Pages workflow also listens for the completion of **Update research news**, because a commit made by GitHub's default token does not trigger an independent push workflow. All URLs honor Vite's `BASE_URL` for the `/personal-website/` deployment path.
+
+## Verification
+
+Eleven tests cover domain focus, incidental immune mentions and clinical-marker false positives, general multiomics versus single-cell labels, false BCR gene matches, inclusive date ranges, invalid dates, no fixed 12-paper cap, DOI/version deduplication, source labels, licence/path/credit checks for figures, metadata refresh preserving figure credit, retrospective indexing without fabricated editions, immutable daily collections, source outage recovery and catch-up after a long scheduling gap. Browser checks should cover one day, a range, combined topic/type filters, Show next, image fallback, full details, and the shared carousel at phone and desktop widths.

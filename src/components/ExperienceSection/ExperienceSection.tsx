@@ -23,8 +23,10 @@ export default function ExperienceSection() {
               endDate: entry.endDate,
               location: entry.location,
               highlights: entry.highlights,
+              companyLogoUrl: `${import.meta.env.BASE_URL}institutions/${index === 0 ? "csu-emblem.png" : "zju-emblem.png"}`,
             }}
             symbolImageSvg={index === 0 ? PWASvg : ChartSvg}
+            logoAlt={index === 0 ? "Central South University emblem" : "Zhejiang University emblem"}
             direction={index === 0 ? "left" : "right"}
             imgProps={{
               width: index === 0 ? 550 : 400,

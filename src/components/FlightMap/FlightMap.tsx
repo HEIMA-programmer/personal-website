@@ -13,9 +13,16 @@ const ExitSign = styled(SignSvg)`
 
 export default function FlightMap() {
   const navigate = useNavigate();
+  // Mapbox public tokens are intentionally client-visible. Never accept sk.* keys.
+  const token = import.meta.env.VITE_MAPBOX_TOKEN || "";
+  const mapConfig = new URLSearchParams();
+  if (token.startsWith("pk.")) {
+    mapConfig.set("token", token);
+    mapConfig.set("style", import.meta.env.VITE_MAPBOX_STYLE || "mapbox://styles/mapbox/light-v11");
+  }
 
   return (
-    <Box width="100%" height="100%">
+    <Box sx={{ position: "fixed", inset: 0, overflow: "hidden" }}>
       <ExitSign
         sx={{
           position: "absolute",
@@ -37,8 +44,8 @@ export default function FlightMap() {
         }}
       />
       <iframe
-        src={`${import.meta.env.BASE_URL}travel-map/index.html`}
-        style={{ width: "100%", height: "100%", border: "none" }}
+        src={`${import.meta.env.BASE_URL}travel-map/index.html#${mapConfig}`}
+        style={{ display: "block", width: "100%", height: "100%", border: "none" }}
         title="Yanbin's travel map"
       />
     </Box>

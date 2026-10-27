@@ -2,6 +2,9 @@
   display: none;
 }
 
+.terminal-output { line-height: 1.6; max-width: 85ch; }
+.terminal-output strong { color: #8cc8fa; }
+
 /* Colors for joystick */
 .nipple {
   /* One over NavMenu */

@@ -19,8 +19,10 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci --legacy-peer-deps
-      - run: node --test scripts/update-news.test.mjs
+      - run: npm test
       - run: npm run build
+        env:
+          VITE_MAPBOX_TOKEN: ${{ vars.VITE_MAPBOX_TOKEN }}
       - uses: actions/upload-artifact@v4
         with:
           name: website

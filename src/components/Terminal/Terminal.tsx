@@ -27,7 +27,7 @@ export default function Terminal() {
           showControlBar={false}
           welcomeMessage={
             <span>
-              Yanbin's terminal. Personal content will be added here.
+              Welcome to Yanbin's research terminal. Type a command to explore.
               <br />
               {commands.help}
             </span>

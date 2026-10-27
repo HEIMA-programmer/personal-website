@@ -1,4 +1,124 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "id": "beijing",
+      "properties": {
+        "featureType": "city",
+        "name": "Beijing",
+        "localName": "北京",
+        "country": "China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          116.391297,
+          39.905714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "shanghai",
+      "properties": {
+        "featureType": "city",
+        "name": "Shanghai",
+        "localName": "上海",
+        "country": "China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.469102,
+          31.232344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "changsha",
+      "properties": {
+        "featureType": "city",
+        "name": "Changsha",
+        "localName": "长沙",
+        "country": "China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          112.971718,
+          28.200149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "osaka",
+      "properties": {
+        "featureType": "city",
+        "name": "Osaka",
+        "localName": "大阪",
+        "country": "Japan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.501454,
+          34.693757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "nara",
+      "properties": {
+        "featureType": "city",
+        "name": "Nara",
+        "localName": "奈良",
+        "country": "Japan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135.804836,
+          34.684545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "dali",
+      "properties": {
+        "featureType": "city",
+        "name": "Dali",
+        "localName": "大理",
+        "country": "China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          100.246884,
+          25.596968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wuhan",
+      "properties": {
+        "featureType": "city",
+        "name": "Wuhan",
+        "localName": "武汉",
+        "country": "China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          114.29212,
+          30.578891
+        ]
+      }
+    }
+  ]
 }

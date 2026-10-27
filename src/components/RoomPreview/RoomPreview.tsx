@@ -37,13 +37,15 @@ export default function RoomPreview({
   }, [navigate, clicked, roomReady, roomEnabled, setRoomEnabled]);
 
   return (
-    <Card sx={{ height: 350 }}>
+    <Card sx={{ width: "100%", minHeight: { xs: 350, md: 460 }, height: { xs: "auto", md: "100%" }, boxSizing: "border-box" }}>
       <CardCover>
         <img
           src={roomPng}
           alt="My room preview"
           style={{
             backgroundColor: theme.palette.success.softHoverBg.slice(-8, -1),
+            objectFit: "cover",
+            objectPosition: "center",
           }}
         />
       </CardCover>

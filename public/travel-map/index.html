@@ -4,21 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Yanbin's travel map</title>
-    <link rel="stylesheet" href="./leaflet.css" />
     <link rel="stylesheet" href="./map.css" />
-    <script src="./leaflet.js" defer></script>
-    <script src="./map.js" defer></script>
+    <script src="./map.js" type="module"></script>
   </head>
   <body>
-    <div id="map" aria-label="Interactive world map"></div>
-    <button id="satellite-toggle" class="map-button" type="button" aria-pressed="false">Satellite</button>
-    <div class="map-status" role="status">
-      <strong>Travel map</strong>
-      <span id="travel-status">Loading travel locations…</span>
-    </div>
-    <div id="map-error" class="map-error" role="status" hidden>
-      Map tiles are unavailable. Check your connection or try the other map view.
-    </div>
+    <div id="map-container" aria-label="Interactive map of places I have visited"></div>
+    <button id="satellite-toggle" class="satellite-toggle" type="button" aria-pressed="false" disabled>Satellite</button>
+    <button id="cities-toggle" class="legend-toggle" type="button" aria-controls="cities-panel" aria-expanded="false">7 cities</button>
+    <section id="cities-panel" class="cities-panel" hidden aria-label="Visited cities">
+      <h1>Places I've visited</h1>
+      <p>China &amp; Japan</p>
+      <div id="cities-list"></div>
+      <button id="show-all" class="show-all" type="button">Show all cities</button>
+    </section>
+    <div id="loading" class="loading-indicator" role="status"><span class="loading-spinner" aria-hidden="true"></span><span>Loading map…</span></div>
+    <div id="map-error" class="map-error" role="status" hidden><span id="map-error-text">The map could not be loaded.</span><button id="retry" type="button">Retry</button></div>
     <noscript>This interactive map requires JavaScript.</noscript>
   </body>
 </html>
