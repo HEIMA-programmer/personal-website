@@ -37,8 +37,8 @@ function click(ctx: AudioContext, time: number, duration: number, frequency: num
 
 export function playSwitchSound() {
   const ctx = audioContext(); if (!ctx) return;
-  click(ctx, ctx.currentTime, .045, 1250, .25);
-  click(ctx, ctx.currentTime + .024, .03, 2400, .1);
+  click(ctx, ctx.currentTime, .045, 1250, .65);
+  click(ctx, ctx.currentTime + .024, .03, 2400, .26);
 }
 
 let lastKey = 0;
@@ -47,14 +47,14 @@ export function playTypingSound(key: string) {
   lastKey = now;
   const ctx = audioContext(); if (!ctx) return;
   const enter = key === "Enter";
-  click(ctx, ctx.currentTime, enter ? .055 : .024, enter ? 650 : 1400 + Math.random() * 550, enter ? .12 : .065);
+  click(ctx, ctx.currentTime, enter ? .055 : .024, enter ? 650 : 1400 + Math.random() * 550, enter ? .32 : .18);
 }
 
 export function playTerminalOpenSound() {
   const ctx = audioContext(); if (!ctx) return;
   const volume = ctx.createGain(); volume.connect(ctx.destination);
   volume.gain.setValueAtTime(0, ctx.currentTime);
-  volume.gain.linearRampToValueAtTime(.025, ctx.currentTime + .012);
+  volume.gain.linearRampToValueAtTime(.075, ctx.currentTime + .012);
   volume.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + .17);
   const oscillator = ctx.createOscillator(); oscillator.type = "sine";
   oscillator.frequency.setValueAtTime(440, ctx.currentTime);

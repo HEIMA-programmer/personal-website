@@ -3,32 +3,17 @@ html, body, #map-container { width: 100%; height: 100%; margin: 0; overflow: hid
 body { background: #071f46; font-family: Inter, Arial, sans-serif; }
 button { font: inherit; }
 [hidden] { display: none !important; }
-.view-button, .legend-toggle, .loading-indicator, .map-error, .cities-panel, .route-legend {
+.view-button, .loading-indicator, .map-error {
   position: absolute; z-index: 3; background: rgb(35 55 75 / 94%); color: #fff;
   border: 1px solid rgb(255 255 255 / 12%); border-radius: 8px;
   box-shadow: 0 4px 18px rgb(0 0 0 / 12%);
 }
 .map-view-controls { position: absolute; top: 16px; left: 16px; display: flex; gap: 8px; z-index: 3; }
-.view-button, .legend-toggle { padding: 10px 22px; font-family: monospace; font-size: 15px; cursor: pointer; }
+.view-button { padding: 10px 22px; font-family: monospace; font-size: 15px; cursor: pointer; }
 .view-button { position: static; }
-.legend-toggle { top: 16px; }
-.legend-toggle { right: 16px; }
-.view-button:hover, .legend-toggle:hover { background: rgb(35 55 75); }
-.route-legend { display: flex; align-items: center; gap: 8px; top: 65px; left: 16px; padding: 7px 10px; font-size: 12px; color: #ebd5df; pointer-events: none; }
-.route-swatch { display: inline-block; flex-shrink: 0; width: 22px; height: 3px; border-radius: 3px; background: #f28da3; box-shadow: 0 0 7px #f28da355; }
-.routes-heading { display: flex; align-items: center; gap: 8px; margin: 20px 0 8px; }
-.routes-heading h2 { margin: 0; font-size: 14px; }
-.route-item { width: 100%; padding: 8px; border: 0; border-radius: 5px; background: transparent; color: #efb8c4; text-align: left; cursor: pointer; font-size: 12px; }
-.route-item:hover { background: rgb(255 255 255 / 10%); }
+.view-button:hover { background: rgb(35 55 75); }
 button:focus-visible { outline: 3px solid #a0d6ff; outline-offset: 3px; }
 button:disabled { cursor: wait; opacity: .65; }
-.cities-panel { top: 64px; right: 16px; width: min(260px, calc(100vw - 64px)); padding: 16px; max-height: calc(100vh - 170px); overflow-y: auto; }
-.cities-panel h1 { font-size: 16px; margin: 0 0 6px; }
-.cities-panel p { margin: 0 0 12px; color: #bdcedb; font-size: 12px; }
-.city-item { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 10px 8px; background: transparent; color: #fff; border: 0; border-radius: 6px; text-align: left; cursor: pointer; }
-.city-item:hover { background: rgb(255 255 255 / 12%); }
-.city-item span { color: #c6dfef; font-size: 12px; }
-.show-all { width: 100%; margin-top: 12px; padding: 9px; border-radius: 6px; color: #fff; background: #1674b0; border: none; cursor: pointer; }
 .loading-indicator { bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; padding: 10px 22px; font-family: monospace; font-size: 14px; pointer-events: none; }
 .loading-spinner { width: 18px; height: 18px; border: 2.5px solid rgb(255 255 255 / 30%); border-top-color: #fff; border-radius: 50%; animation: spin .8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -41,11 +26,8 @@ button:disabled { cursor: wait; opacity: .65; }
 .city-popup-caption { margin: 0; color: #586b78; font-size: 12px; }
 .route-popup-label { margin: 0 0 6px; color: #a13857; font-weight: 600; font-size: 12px; }
 @media (max-width: 480px) {
-  .view-button, .legend-toggle { padding: 9px 13px; font-size: 14px; }
+  .view-button { padding: 9px 13px; font-size: 14px; }
   .map-view-controls { top: 12px; left: 12px; gap: 6px; }
-  .legend-toggle { top: 12px; right: 12px; }
-  .route-legend { top: 57px; left: 12px; }
-  .cities-panel { top: 58px; right: 12px; }
   .loading-indicator { max-width: 60vw; bottom: 45px; padding: 10px 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .loading-spinner { animation: none; } }

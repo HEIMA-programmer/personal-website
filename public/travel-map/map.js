@@ -7,14 +7,10 @@ const params = new URLSearchParams(location.hash.slice(1));
 const token = params.get('token') || '';
 const configuredStyle = params.get('style') || 'mapbox://styles/mapbox/light-v11';
 const usingMapbox = token.startsWith('pk.');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loading = document.getElementById('loading');
 const errorBox = document.getElementById('map-error');
 const errorText = document.getElementById('map-error-text');
 const satelliteButton = document.getElementById('satellite-toggle');
-const globeButton = document.getElementById('globe-reset');
-const citiesToggle = document.getElementById('cities-toggle');
-const citiesPanel = document.getElementById('cities-panel');
 let map;
 let popup;
 let satellite = false;
@@ -105,84 +101,15 @@ function showRoute(feature, position) {
   popup = new GL.Popup({ maxWidth: '280px' }).setLngLat(position).setDOMContent(content).addTo(map);
 }
 
-function showGlobe() {
-  popup?.remove();
-  map.flyTo({ ...globeCamera(), duration: reducedMotion ? 0 : 1400 });
-}
-
-function showAll(features) {
-  popup?.remove();
-  const bounds = new GL.LngLatBounds();
-  features.forEach((feature) => bounds.extend(feature.geometry.coordinates));
-  map.fitBounds(bounds, { padding: { top: 90, bottom: 110, left: 65, right: 65 }, bearing: 0, pitch: 0, maxZoom: 4.2, duration: reducedMotion ? 0 : 850 });
-}
-
-function populateCities(features) {
-  citiesToggle.textContent = `${features.length} cities`;
-  const list = document.getElementById('cities-list');
-  for (const feature of features) {
-    const button = document.createElement('button');
-    button.type = 'button'; button.className = 'city-item';
-    const name = document.createElement('strong');
-    name.textContent = feature.properties.name;
-    const local = document.createElement('span');
-    local.textContent = feature.properties.localName;
-    button.append(name, local);
-    button.addEventListener('click', () => {
-      map.flyTo({ center: feature.geometry.coordinates, zoom: 8.5, padding: 0, duration: reducedMotion ? 0 : 1300 });
-      showCity(feature);
-      if (innerWidth < 640) {
-        citiesPanel.hidden = true;
-        citiesToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-    list.append(button);
-  }
-  document.getElementById('show-all').addEventListener('click', () => showAll(features));
-}
-
-function populateRoutes(features) {
-  const list = document.getElementById('routes-list');
-  for (const feature of features) {
-    const button = document.createElement('button');
-    button.type = 'button'; button.className = 'route-item';
-    button.textContent = `${feature.properties.from} → ${feature.properties.to}`;
-    button.setAttribute('aria-label', `Illustrative route: ${feature.properties.from} to ${feature.properties.to}`);
-    button.addEventListener('click', () => {
-      const points = feature.geometry.coordinates;
-      const bounds = new GL.LngLatBounds();
-      points.forEach(point => bounds.extend(point));
-      map.fitBounds(bounds, { padding: 100, maxZoom: 8.5, bearing: 0, pitch: 0, duration: reducedMotion ? 0 : 1000 });
-      showRoute(feature, points[Math.floor(points.length / 2)]);
-      if (innerWidth < 640) {
-        citiesPanel.hidden = true;
-        citiesToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-    list.append(button);
-  }
-}
-
-function createPin() {
-  const canvas = document.createElement('canvas');
-  canvas.width = 96; canvas.height = 112;
-  const ctx = canvas.getContext('2d');
-  // Retain the original map's blue pin / pale center treatment for cities.
-  ctx.fillStyle = '#0488db'; ctx.strokeStyle = '#fff'; ctx.lineWidth = 3;
-  ctx.beginPath();
-  ctx.moveTo(48, 109); ctx.bezierCurveTo(38, 85, 13, 62, 13, 39);
-  ctx.arc(48, 39, 35, Math.PI, 0); ctx.bezierCurveTo(83, 62, 58, 85, 48, 109);
-  ctx.fill(); ctx.stroke();
-  ctx.beginPath(); ctx.arc(48, 39, 23, 0, Math.PI * 2); ctx.fillStyle = '#e3f6ff'; ctx.fill();
-  // An airplane silhouette recalls the template's marker without inventing airports.
-  ctx.save(); ctx.translate(48, 39); ctx.rotate(Math.PI / 6); ctx.fillStyle = '#0488db';
-  ctx.beginPath(); ctx.moveTo(0, -19); ctx.bezierCurveTo(3, -19, 3, -16, 3, -13);
-  ctx.lineTo(3, -4); ctx.lineTo(17, 4); ctx.lineTo(17, 8); ctx.lineTo(3, 4);
-  ctx.lineTo(3, 12); ctx.lineTo(8, 16); ctx.lineTo(8, 19); ctx.lineTo(0, 15);
-  ctx.lineTo(-8, 19); ctx.lineTo(-8, 16); ctx.lineTo(-3, 12); ctx.lineTo(-3, 4);
-  ctx.lineTo(-17, 8); ctx.lineTo(-17, 4); ctx.lineTo(-3, -4); ctx.lineTo(-3, -13);
-  ctx.bezierCurveTo(-3, -16, -3, -19, 0, -19); ctx.fill(); ctx.restore();
-  return ctx.getImageData(0, 0, canvas.width, canvas.height);
+async function loadPin() {
+  // Use the same airplane pin and display size as the upstream flightmap.
+  const marker = new Image(150, 150);
+  await new Promise((resolve, reject) => {
+    marker.onload = resolve;
+    marker.onerror = () => reject(new Error('The city marker could not be loaded.'));
+    marker.src = './airport-marker.svg';
+  });
+  return marker;
 }
 
 async function start() {
@@ -195,6 +122,7 @@ async function start() {
   }
   const routes = buildIllustrativeRoutes(data, routeConfiguration);
   GL = await loadRenderer();
+  const marker = await loadPin();
   map = new GL.Map({
     container: 'map-container', style: usingMapbox ? configuredStyle : openStyle,
     ...globeCamera(),
@@ -209,9 +137,6 @@ async function start() {
     });
   });
   map.addControl(new GL.AttributionControl({ compact: true }), 'bottom-right');
-  map.addControl(new GL.NavigationControl({ showCompass: true }), 'bottom-right');
-  populateCities(data.features);
-  populateRoutes(routes.features);
   const loadTimeout = setTimeout(() => showError('The map is taking longer than expected. Check your connection and try again.'), 20000);
   map.on('error', (event) => {
     if (event.error?.status === 401 || event.error?.status === 403) {
@@ -238,7 +163,7 @@ async function start() {
     baseLayerVisibility = map.getStyle().layers
       .filter((layer) => layer.type !== 'symbol' && layer.type !== 'slot')
       .map((layer) => [layer.id, layer.layout?.visibility || 'visible']);
-    map.addImage('city-marker', createPin(), { pixelRatio: 2 });
+    map.addImage('city-marker', marker);
     // Mapbox remains the main renderer/base map. The imagery provider is Esri:
     // Mapbox's satellite tile endpoint returned HTTP 429 during deployment QA.
     map.addSource('satellite-imagery', {
@@ -249,14 +174,9 @@ async function start() {
     map.addLayer({ id: 'satellite', type: 'raster', source: 'satellite-imagery', layout: { visibility: 'none' } });
     map.addSource('illustrative-routes', { type: 'geojson', data: routes });
     map.addLayer({
-      id: 'illustrative-route-glow', type: 'line', source: 'illustrative-routes',
-      layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': '#ff8fa6', 'line-width': 6, 'line-opacity': 0.2, 'line-blur': 2 },
-    });
-    map.addLayer({
       id: 'illustrative-routes', type: 'line', source: 'illustrative-routes',
       layout: { 'line-cap': 'round', 'line-join': 'round' },
-      paint: { 'line-color': '#f28da3', 'line-width': ['interpolate', ['linear'], ['zoom'], 0, 1.8, 5, 2.5, 9, 3], 'line-opacity': 0.95 },
+      paint: { 'line-color': '#ff6b6b', 'line-width': 1.5, 'line-opacity': 1 },
     });
     map.addLayer({
       id: 'illustrative-route-hit', type: 'line', source: 'illustrative-routes',
@@ -271,7 +191,7 @@ async function start() {
       id: 'visited-cities', type: 'symbol', source: 'flightmap',
       filter: ['==', ['get', 'featureType'], 'city'],
       layout: {
-        'icon-image': 'city-marker', 'icon-size': .68, 'icon-anchor': 'bottom',
+        'icon-image': 'city-marker', 'icon-size': .25, 'icon-anchor': 'bottom',
         'icon-allow-overlap': true, 'text-field': ['get', 'name'],
         'text-font': usingMapbox ? ['Open Sans Semibold', 'Arial Unicode MS Regular'] : ['Noto Sans Regular'],
         'text-size': 13, 'text-anchor': 'top', 'text-offset': [0, .3],
@@ -294,7 +214,6 @@ async function start() {
     map.on('mouseenter', 'illustrative-route-hit', () => { map.getCanvas().style.cursor = 'pointer'; });
     map.on('mouseleave', 'illustrative-route-hit', () => { map.getCanvas().style.cursor = ''; });
     satelliteButton.disabled = false;
-    globeButton.disabled = false;
   });
   window.addEventListener('resize', () => map.resize());
   window.addEventListener('pagehide', () => {
@@ -309,7 +228,7 @@ satelliteButton.addEventListener('click', () => {
   for (const [id, visibility] of baseLayerVisibility) {
     map.setLayoutProperty(id, 'visibility', satellite ? 'none' : visibility);
   }
-  const firstOverlay = map.getStyle().layers.find((layer) => layer.type === 'symbol' || layer.id === 'illustrative-route-glow')?.id;
+  const firstOverlay = map.getStyle().layers.find((layer) => layer.type === 'symbol' || layer.id === 'illustrative-routes')?.id;
   map.moveLayer('satellite', firstOverlay || 'visited-cities');
   map.setLayoutProperty('satellite', 'visibility', satellite ? 'visible' : 'none');
   satelliteButton.textContent = satellite ? 'Map' : 'Satellite';
@@ -321,11 +240,6 @@ satelliteButton.addEventListener('click', () => {
     loading.querySelector('span:last-child').textContent = 'Loading satellite imagery…';
     satelliteTimeout = setTimeout(() => showError('Satellite imagery is taking longer than expected. You can switch back to Map or retry.'), 20000);
   }
-});
-globeButton.addEventListener('click', showGlobe);
-citiesToggle.addEventListener('click', () => {
-  citiesPanel.hidden = !citiesPanel.hidden;
-  citiesToggle.setAttribute('aria-expanded', String(!citiesPanel.hidden));
 });
 document.getElementById('retry').addEventListener('click', () => location.reload());
 start().catch((error) => showError(error.message || 'The map could not be loaded.'));

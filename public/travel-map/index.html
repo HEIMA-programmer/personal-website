@@ -11,19 +11,7 @@
     <div id="map-container" aria-label="Interactive map of places I have visited"></div>
     <div class="map-view-controls" aria-label="Map views">
       <button id="satellite-toggle" class="view-button" type="button" aria-pressed="false" disabled>Satellite</button>
-      <button id="globe-reset" class="view-button" type="button" aria-label="Return to the full globe" disabled>Globe</button>
     </div>
-    <div class="route-legend" role="note"><span class="route-swatch" aria-hidden="true"></span>Illustrative routes</div>
-    <button id="cities-toggle" class="legend-toggle" type="button" aria-controls="cities-panel" aria-expanded="false">7 cities</button>
-    <section id="cities-panel" class="cities-panel" hidden aria-label="Visited cities">
-      <h1>Places I've visited</h1>
-      <p>China &amp; Japan</p>
-      <div id="cities-list"></div>
-      <button id="show-all" class="show-all" type="button">Show all cities</button>
-      <div class="routes-heading"><span class="route-swatch" aria-hidden="true"></span><h2>Illustrative routes</h2></div>
-      <p>Visual connections, not actual flight records.</p>
-      <div id="routes-list"></div>
-    </section>
     <div id="loading" class="loading-indicator" role="status"><span class="loading-spinner" aria-hidden="true"></span><span>Loading map…</span></div>
     <div id="map-error" class="map-error" role="status" hidden><span id="map-error-text">The map could not be loaded.</span><button id="retry" type="button">Retry</button></div>
     <noscript>This interactive map requires JavaScript.</noscript>

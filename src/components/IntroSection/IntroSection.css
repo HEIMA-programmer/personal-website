@@ -44,28 +44,32 @@ h1 {
 }
 
 [data-accent="blue"] { --research-accent: #8cc8fa; }
-[data-accent="green"], [data-accent="teal"] { --research-accent: #99c8bf; }
-[data-accent="violet"], [data-accent="amber"] { --research-accent: #8cc8fa; }
+[data-accent="green"] { --research-accent: #93d6a0; }
+[data-accent="violet"] { --research-accent: #c1a2f5; }
+[data-accent="amber"] { --research-accent: #edc27a; }
+[data-accent="teal"] { --research-accent: #78d7cc; }
 [data-joy-color-scheme="light"] [data-accent="blue"] { --research-accent: #1462a0; }
-[data-joy-color-scheme="light"] [data-accent="green"], [data-joy-color-scheme="light"] [data-accent="teal"] { --research-accent: #376f65; }
-[data-joy-color-scheme="light"] [data-accent="violet"], [data-joy-color-scheme="light"] [data-accent="amber"] { --research-accent: #1462a0; }
+[data-joy-color-scheme="light"] [data-accent="green"] { --research-accent: #287643; }
+[data-joy-color-scheme="light"] [data-accent="violet"] { --research-accent: #7550a5; }
+[data-joy-color-scheme="light"] [data-accent="amber"] { --research-accent: #8b5d17; }
+[data-joy-color-scheme="light"] [data-accent="teal"] { --research-accent: #176f69; }
 .profile-highlight {
-  color: #a9c9e4 !important;
+  color: #7cddb2 !important;
   display: inline !important;
   font: inherit !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   text-decoration: none !important;
   border: none !important;
   background: none !important;
   transition: color 160ms ease, text-shadow 160ms ease;
 }
 .profile-highlight:hover, .profile-highlight:focus-visible {
-  color: #e6f3ff !important;
-  text-shadow: 0 0 12px #a9c9e440;
+  color: #b0f3cf !important;
+  text-shadow: 0 0 12px #7cddb230;
 }
-[data-joy-color-scheme="light"] .profile-highlight { color: #315d80 !important; }
+[data-joy-color-scheme="light"] .profile-highlight { color: #1b6d51 !important; }
 [data-joy-color-scheme="light"] .profile-highlight:hover,
-[data-joy-color-scheme="light"] .profile-highlight:focus-visible { color: #102f48 !important; text-shadow: none; }
+[data-joy-color-scheme="light"] .profile-highlight:focus-visible { color: #104b36 !important; text-shadow: none; }
 .research-tag {
   color: var(--research-accent) !important;
   border-color: color-mix(in srgb, var(--research-accent) 40%, transparent) !important;

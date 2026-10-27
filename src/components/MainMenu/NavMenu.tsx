@@ -38,7 +38,11 @@ export default function NavMenu({
   }
 
   return (
-    <Menu placement="top-start">
+    <Menu placement="top-start" sx={{
+      minWidth: 280, maxWidth: "calc(100vw - 32px)", py: 1,
+      "& .MuiMenuItem-root": { minHeight: 42, px: 2, fontSize: "1rem" },
+      "& .MuiListSubheader-root": { px: 2 },
+    }}>
       <ListSubheader>Navigate around my Room</ListSubheader>
       <MenuItem onClick={() => emitSplineMouseDownEvent("Notebook")}>
         <ListItemDecorator><ArticleRoundedIcon /></ListItemDecorator>

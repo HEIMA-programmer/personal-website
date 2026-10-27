@@ -4,7 +4,7 @@
   align-items: center;
   gap: 8px;
 }
-.news-browse-mode { flex: 0 0 134px; }
+.news-browse-mode { flex: 0 0 158px; }
 .news-period-preset { flex: 0 0 130px; }
 .news-topic { flex: 1 1 220px; min-width: 0; }
 .news-collection-date { flex: 0 1 260px; min-width: 0; }

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Alert, AspectRatio, Box, Button, Card, CardContent, Chip, CircularProgress, DialogContent, DialogTitle, FormControl, FormLabel, IconButton, Input, Link, Modal, ModalClose, ModalDialog, Option, Select, Stack, Typography } from "@mui/joy";
+import { Alert, AspectRatio, Box, Button, Card, CardContent, Chip, CircularProgress, DialogContent, DialogTitle, FormControl, FormLabel, IconButton, Input, Link, Modal, ModalClose, ModalDialog, Option, Select, Stack, Tooltip, Typography } from "@mui/joy";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
@@ -8,10 +8,12 @@ import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
 import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
 import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import ZoomInRoundedIcon from "@mui/icons-material/ZoomInRounded";
 import ResearchCarousel from "../ResearchCarousel/ResearchCarousel";
+import FigureLightbox, { type Figure } from "./FigureLightbox";
 import "./NewsSection.css";
 
-interface Figure { url: string; label: string; caption: string; sourceUrl: string; license: string; licenseUrl: string; credit: string }
 interface Paper {
   id: string; title: string; authors: string; abstract: string; date: string; dateLabel: string; doi: string; url: string;
   source: string; venue: string; publicationType: string; version: string; publishedDoi: string; categories: string[];
@@ -32,11 +34,12 @@ async function fetchNews<T>(filename: string, signal: AbortSignal): Promise<T> {
 function displayDate(date: string) { return new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }); }
 function daysBefore(date: string, days: number) { const parsed = new Date(`${date}T12:00:00Z`); parsed.setUTCDate(parsed.getUTCDate() - days); return parsed.toISOString().slice(0, 10); }
 
-function PaperVisual({ paper, expanded = false }: { paper: Paper; expanded?: boolean }) {
+function PaperVisual({ paper, expanded = false, onEnlarge }: { paper: Paper; expanded?: boolean; onEnlarge?: () => void }) {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [paper.figure?.url]);
   const figure = paper.figure && !failed ? paper.figure : null;
   return <Box>
+    <Box component={figure && onEnlarge ? "button" : "div"} onClick={figure ? onEnlarge : undefined} aria-label={figure && onEnlarge ? `Enlarge ${figure.label}` : undefined} sx={{ display: "block", width: "100%", p: 0, border: 0, bgcolor: "transparent", position: "relative", cursor: figure && onEnlarge ? "zoom-in" : "default", borderRadius: "sm", "&:focus-visible": { outline: "2px solid", outlineColor: "primary.500", outlineOffset: 2 } }}>
     <AspectRatio ratio={expanded ? "16 / 9" : "16 / 7"} sx={{ borderRadius: "sm", overflow: "hidden", bgcolor: "background.level1" }}>
       {figure ? <img src={figure.url} alt={`${figure.label}: ${figure.caption || paper.title}`} loading="lazy" decoding="async" onError={() => setFailed(true)} style={{ objectFit: "contain", background: "#fff", padding: expanded ? 12 : 8, boxSizing: "border-box" }} /> :
         <Stack alignItems="center" justifyContent="center" spacing={1} sx={{ background: "linear-gradient(135deg, var(--joy-palette-primary-softBg), var(--joy-palette-success-softBg))" }}>
@@ -45,6 +48,8 @@ function PaperVisual({ paper, expanded = false }: { paper: Paper; expanded?: boo
           <Typography level="body-xs" textColor="text.secondary">Article figure not available</Typography>
         </Stack>}
     </AspectRatio>
+    {figure && onEnlarge && <Box aria-hidden="true" sx={{ position: "absolute", right: 6, bottom: 6, display: "grid", placeItems: "center", borderRadius: "sm", bgcolor: "rgba(15,30,45,.78)", color: "#fff", p: 0.5 }}><ZoomInRoundedIcon sx={{ fontSize: 18 }} /></Box>}
+    </Box>
     {figure && <Typography level="body-xs" mt={0.7} sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: expanded ? "normal" : "nowrap" }}>
       <Link href={figure.sourceUrl} target="_blank" rel="noopener noreferrer" color="neutral">{figure.label} · {figure.license}</Link>
       {expanded && <> · {figure.credit}</>}
@@ -72,6 +77,7 @@ export default function NewsSection() {
   const [error, setError] = useState("");
   const [collectionError, setCollectionError] = useState("");
   const [selectedPaper, setSelectedPaper] = useState<Paper | null>(null);
+  const [selectedFigure, setSelectedFigure] = useState<Figure | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -115,6 +121,10 @@ export default function NewsSection() {
   const pagePapers = results.slice(pageStart, pageStart + PAGE_SIZE);
   const changePage = (next: number) => setPagination({ query: queryKey, page: Math.max(0, Math.min(next, pageCount - 1)) });
   const extraFilterCount = Number(source !== "all") + Number(publicationType !== "all") + Number(sort !== "relevance");
+  const editionDates = collection?.papers.map(paper => paper.date).sort() || [];
+  const dateMeaning = mode === "dates"
+    ? "By each paper's publication or bioRxiv posting/revision date (UTC), as currently indexed. Saved editions use the date this site collected the papers instead."
+    : `Saved on this site on ${displayDate(collectionDate || catalog?.updatedThrough || "2026-10-27")}. The papers may be older${editionDates.length ? `: this edition's publication dates run from ${displayDate(editionDates[0])} to ${displayDate(editionDates[editionDates.length - 1])}` : ""}. Original editions are preserved.`;
   const singleDay = periodPreset === "day" || periodPreset === "latest";
   const choosePeriod = (value: string) => {
     if (!catalog) return;
@@ -137,9 +147,9 @@ export default function NewsSection() {
       <Box className="news-primary-controls">
         <Select size="sm" className="news-browse-mode" aria-label="Browse by publication date or daily collection" value={mode}
           startDecorator={mode === "dates" ? <CalendarMonthRoundedIcon /> : <ArticleOutlinedIcon />}
-          renderValue={option => option?.value === "collections" ? "Collections" : "Published"}
+          renderValue={option => option?.value === "collections" ? "Saved editions" : "Published"}
           onChange={(_, value) => { if (value) setMode(value); }}>
-          <Option value="dates">Publication dates</Option><Option value="collections">Daily collections</Option>
+          <Option value="dates">Published / posted date</Option><Option value="collections">Saved editions · collection date</Option>
         </Select>
         {mode === "dates" ? <>
           <Select size="sm" className="news-period-preset" aria-label="Publication date period" value={periodPreset} onChange={(_, value) => { if (value) choosePeriod(value); }}>
@@ -149,7 +159,7 @@ export default function NewsSection() {
             <Input size="sm" type="date" value={start} slotProps={{ input: { id: "news-date-start", "aria-label": singleDay ? "Publication date" : "Published from", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => { setStart(event.target.value); if (singleDay) { setEnd(event.target.value); setPeriodPreset("day"); } else setPeriodPreset("range"); }} />
             {!singleDay && <><Typography level="body-sm" aria-hidden="true">–</Typography><Input size="sm" type="date" value={end} slotProps={{ input: { id: "news-date-end", "aria-label": "Published through", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => { setEnd(event.target.value); setPeriodPreset("range"); }} /></>}
           </Box>
-        </> : <Select size="sm" className="news-collection-date" aria-label="Daily collection date, UTC" title="Actual saved daily collections; earlier papers are in Published." value={collectionDate || null} onChange={(_, value) => { if (value) setCollectionDate(value); }}>
+        </> : <Select size="sm" className="news-collection-date" aria-label="Edition saved on, UTC" title="The date this site saved the edition, not the papers' publication date." value={collectionDate || null} onChange={(_, value) => { if (value) setCollectionDate(value); }}>
           {index?.editions.map(item => <Option key={item.date} value={item.date}>{displayDate(item.date)} · {item.count} papers</Option>)}
         </Select>}
         <Select size="sm" className="news-topic" aria-label="Research topic" value={topic} onChange={(_, value) => setTopic(value || "all")}>
@@ -173,7 +183,10 @@ export default function NewsSection() {
       {!busy && !currentError && !invalidRange && <>
         {selectedSourceStatus?.some(item => item.status !== "ok") && <Alert color="warning" sx={{ mb: 2 }}>Some sources were unavailable during the latest collection. Existing records remain available.</Alert>}
         <Box className="news-results-toolbar">
-          <Typography level="body-sm" aria-live="polite" aria-atomic="true"><Typography component="span" fontWeight="lg" textColor="primary.softColor">{results.length}</Typography> papers{results.length > 0 ? ` · ${pageStart + 1}–${pageStart + pagePapers.length}` : ""}</Typography>
+          <Stack direction="row" spacing={0.25} alignItems="center">
+            <Typography level="body-sm" aria-live="polite" aria-atomic="true"><Typography component="span" fontWeight="lg" textColor="primary.softColor">{results.length}</Typography> {mode === "dates" ? "published" : "saved"}{results.length > 0 ? ` · ${pageStart + 1}–${pageStart + pagePapers.length}` : ""}</Typography>
+            <Tooltip title={dateMeaning} placement="top-start" sx={{ maxWidth: 360 }}><IconButton size="sm" variant="plain" color="neutral" aria-label={dateMeaning} sx={{ minWidth: 24, minHeight: 24 }}><InfoOutlinedIcon sx={{ fontSize: 15 }} /></IconButton></Tooltip>
+          </Stack>
           <Stack component="nav" aria-label="Research paper pages" direction="row" spacing={0.5} alignItems="center">
             <IconButton size="sm" variant="plain" color="neutral" aria-label="Previous page of papers" disabled={page === 0 || !results.length} onClick={() => changePage(page - 1)}><ChevronLeftRoundedIcon /></IconButton>
             <Select size="sm" variant="plain" aria-label="Research papers page" value={page} disabled={!results.length} onChange={(_, value) => { if (value !== null) changePage(value); }} renderValue={() => `${page + 1} / ${pageCount}`} sx={{ minWidth: 82 }} slotProps={{ listbox: { sx: { maxHeight: 240 } } }}>
@@ -184,7 +197,7 @@ export default function NewsSection() {
         </Box>
         {results.length ? <ResearchCarousel key={`${queryKey}:${page}`} ariaLabel={`Research papers, page ${page + 1} of ${pageCount}`}>
           {pagePapers.map(paper => <Card key={paper.id} component="article" variant="soft" size="sm" sx={{ width: "min(320px, calc(100vw - 60px))", flexShrink: 0 }}>
-            <PaperVisual paper={paper} />
+            <PaperVisual paper={paper} onEnlarge={() => setSelectedFigure(paper.figure || null)} />
             <Stack direction="row" flexWrap="wrap" useFlexGap spacing={0.5} mt={0.5}>
               <Chip size="sm" variant="outlined" color={paper.publicationType === "Preprint" ? "warning" : "success"} title={paper.publicationType === "Preprint" ? "Preprints have not been peer reviewed." : undefined}>{paper.publicationType}</Chip>
               <Chip size="sm" variant="plain" color="primary">{paper.source}</Chip>
@@ -203,20 +216,21 @@ export default function NewsSection() {
         </ResearchCarousel> : <Card variant="soft"><Typography>No matching papers in this date range. Try another date or broaden the filters.</Typography></Card>}
       </>}
     </Box>
-    <Modal open={!!selectedPaper} onClose={() => setSelectedPaper(null)}>
+    {selectedPaper && <Modal open onClose={() => setSelectedPaper(null)}>
       <ModalDialog sx={{ width: "90vw", maxWidth: 800, maxHeight: "88vh" }} aria-labelledby="paper-title">
         <ModalClose aria-label="Close paper details" />
-        {selectedPaper && <><DialogTitle id="paper-title" sx={{ pr: 4 }}>{selectedPaper.title}</DialogTitle><DialogContent>
+        <DialogTitle id="paper-title" sx={{ pr: 4 }}>{selectedPaper.title}</DialogTitle><DialogContent>
           <Typography level="body-sm">{selectedPaper.authors}</Typography>
           <Typography level="body-sm" textColor="primary.softColor" my={1}>{selectedPaper.publicationType} · {selectedPaper.venue} · {selectedPaper.dateLabel} {displayDate(selectedPaper.date)}{selectedPaper.version ? ` · v${selectedPaper.version}` : ""}</Typography>
           <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap my={1}>{selectedPaper.categories.map(category => <Chip key={category} size="sm" color={topicColor(category)}>{category}</Chip>)}</Stack>
-          {selectedPaper.figure && <Box my={2}><PaperVisual paper={selectedPaper} expanded /><Typography level="body-sm" mt={1}>{selectedPaper.figure.caption}</Typography><Link href={selectedPaper.figure.licenseUrl} target="_blank" rel="noopener noreferrer" level="body-xs">Figure licence: {selectedPaper.figure.license}</Link></Box>}
+          {selectedPaper.figure && <Box my={2}><PaperVisual paper={selectedPaper} expanded onEnlarge={() => setSelectedFigure(selectedPaper.figure || null)} /><Typography level="body-sm" mt={1}>{selectedPaper.figure.caption}</Typography><Link href={selectedPaper.figure.licenseUrl} target="_blank" rel="noopener noreferrer" level="body-xs">Figure licence: {selectedPaper.figure.license}</Link></Box>}
           <Typography level="title-md" mt={2} mb={1}>Abstract</Typography><Typography sx={{ whiteSpace: "pre-line" }}>{selectedPaper.abstract || "The source did not provide an abstract. Open the article to learn more."}</Typography>
           {selectedPaper.doi && <Typography level="body-sm" mt={2} sx={{ overflowWrap: "anywhere" }}>DOI: {selectedPaper.doi}</Typography>}
           <Typography level="body-xs" mt={2}>Metadata supplied by {selectedPaper.source}. Topic labels and relevance order are automatic. Article figures, where available, retain their original attribution.</Typography>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap mt={3}><Button component="a" href={selectedPaper.url} target="_blank" rel="noopener noreferrer" startDecorator={<OpenInNewRoundedIcon />}>Read at source</Button>{selectedPaper.publishedDoi && <Button variant="soft" component="a" href={`https://doi.org/${selectedPaper.publishedDoi}`} target="_blank" rel="noopener noreferrer">Published version</Button>}</Stack>
-        </DialogContent></>}
+        </DialogContent>
       </ModalDialog>
-    </Modal>
+    </Modal>}
+    <FigureLightbox figure={selectedFigure} onClose={() => setSelectedFigure(null)} />
   </Box>;
 }

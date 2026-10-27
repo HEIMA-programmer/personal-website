@@ -2,11 +2,11 @@
   "kind": "illustrative",
   "description": "Illustrative connections between visited cities, not records of actual flights or transport.",
   "routes": [
-    { "id": "changsha-beijing", "from": "changsha", "to": "beijing", "curvature": 0.18 },
-    { "id": "changsha-shanghai", "from": "changsha", "to": "shanghai", "curvature": -0.2 },
-    { "id": "changsha-dali", "from": "changsha", "to": "dali", "curvature": 0.18 },
-    { "id": "changsha-wuhan", "from": "changsha", "to": "wuhan", "curvature": -0.22 },
-    { "id": "shanghai-osaka", "from": "shanghai", "to": "osaka", "curvature": 0.18 },
-    { "id": "osaka-nara", "from": "osaka", "to": "nara", "curvature": -0.2 }
+    { "id": "changsha-beijing", "from": "changsha", "to": "beijing", "curvature": 0.34 },
+    { "id": "changsha-shanghai", "from": "changsha", "to": "shanghai", "curvature": -0.34 },
+    { "id": "changsha-dali", "from": "changsha", "to": "dali", "curvature": 0.34 },
+    { "id": "changsha-wuhan", "from": "changsha", "to": "wuhan", "curvature": -0.38 },
+    { "id": "shanghai-osaka", "from": "shanghai", "to": "osaka", "curvature": 0.36 },
+    { "id": "osaka-nara", "from": "osaka", "to": "nara", "curvature": -0.36 }
   ]
 }

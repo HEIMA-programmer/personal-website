@@ -6,7 +6,7 @@ import {
   type Texture,
 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { CAT_WALK_SPEED, FLOOR, sampleCatStep } from './catMotion';
+import { FLOOR, sampleCatStep, samplePet, smooth } from './catMotion';
 import { createCatAnimator, createPawSupport, poseCat, prepareCatAnimations } from './catRig';
 
 // The pinned Spline 1.10.13 embeds Three r149. This narrow compatibility bridge
@@ -54,6 +54,8 @@ export default function useRoomCat(app: Application | undefined, active: boolean
     let animator: ReturnType<typeof createCatAnimator> | undefined;
     let elapsed = 0;
     let petAge = Infinity;
+    let interruptedGroom={amount:0,time:0};
+    let interruptedGroomStep=-1;
     let last = performance.now();
     let lastRaycast = 0;
     const cat = new Group();
@@ -65,9 +67,9 @@ export default function useRoomCat(app: Application | undefined, active: boolean
     const pointer = new Vector2();
 
     const pet = (event: PointerEvent) => {
-      if (!activeRef.current || !model || reducedMotion.matches || petAge<6 || performance.now()-lastRaycast<120) return;
+      if (!activeRef.current || !model || reducedMotion.matches || petAge<10 || performance.now()-lastRaycast<120) return;
       lastRaycast = performance.now();
-      const {step} = sampleCatStep(elapsed);
+      const {step,time,index} = sampleCatStep(elapsed);
       if (step.activity!=='rest' && step.activity!=='sit') return;
       const rect = canvas.getBoundingClientRect();
       pointer.set((event.clientX-rect.left)/rect.width*2-1, -(event.clientY-rect.top)/rect.height*2+1);
@@ -85,7 +87,11 @@ export default function useRoomCat(app: Application | undefined, active: boolean
       raycaster.far = hits[0].distance;
       const blocked = raycaster.intersectObjects(otherMeshes,false).some(hit => hit.distance<hits[0].distance-.2);
       raycaster.far = Infinity;
-      if (!blocked) petAge=0;
+      if (!blocked) {
+        interruptedGroom={amount:step.groom&&index!==interruptedGroomStep&&time>4&&time<9?smooth(Math.min(time-4,9-time)/.8):0,time};
+        if(step.groom)interruptedGroomStep=index;
+        petAge=0;
+      }
     };
     const resetClock = () => { resumeRef.current = true; };
     document.addEventListener('visibilitychange',resetClock);
@@ -128,31 +134,32 @@ export default function useRoomCat(app: Application | undefined, active: boolean
         resumeRef.current=false;
         if (!activeRef.current || document.hidden || !model || !animator) return;
         if (!reducedMotion.matches) {
-          if (petAge>=4) elapsed+=delta;
+          const response=samplePet(petAge,sampleCatStep(elapsed).step.activity==='sit');
+          if (!response.active) elapsed+=delta;
           petAge+=delta;
         }
         const state=sampleCatStep(reducedMotion.matches?0:elapsed);
-        const {step,p,time,position}=state;
-        const petting=petAge<4;
-        const seated=step.activity==='sit';
-        const petStanding=petting && seated && petAge<1.05;
-        const clip=petStanding?'StandUp':petting?'IdleNorm':step.activity==='crouch'||step.activity==='land'?'SitDown':step.clip;
-        const rate=clip==='WalkCycle'?CAT_WALK_SPEED/prepared.walkSpeed:clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
-        const sampleTime=!petting&&(step.activity==='crouch'||step.activity==='land')
-          ? (step.activity==='crouch'?p:1-p)*.2 : undefined;
+        const {step,index,p,time,position,facing,distance,compression}=state;
+        if(index!==interruptedGroomStep)interruptedGroomStep=-1;
+        const response=samplePet(petAge,step.activity==='sit');
+        const petting=response.active;
+        const clip=petting?response.clip:step.clip;
+        const rate=clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
+        const sampleTime=petting?undefined:step.activity==='walk'?distance/prepared.walkSpeed
+          :step.activity==='crouch'||step.activity==='land'?compression*.2:undefined;
         animator.update(clip,reducedMotion.matches?0:delta,rate,sampleTime);
         let pose: Parameters<typeof poseCat>[1]='none';
         let amount=0;
-        if (petting && !petStanding) { pose='stretch'; amount=Math.sin(Math.PI*Math.min(1,(petAge-(seated?1.05:0))/(seated?2.95:4))); }
-        else if (step.activity==='sit' && time>3 && time<7) { pose='groom'; amount=Math.sin(Math.PI*(time-3)/4); }
-        else if (step.activity==='jump') { pose='air'; amount=Math.sin(Math.PI*p); }
-        poseCat(model,pose,amount,elapsed);
+        if (petting && petAge<.25 && interruptedGroom.amount>0) {pose='groom';amount=interruptedGroom.amount*(1-smooth(petAge/.25));}
+        else if (petting) { pose='stretch'; amount=response.amount; }
+        else if (step.groom && index!==interruptedGroomStep && time>4 && time<9) {pose='groom';amount=smooth(Math.min(time-4,9-time)/.8);}
+        else if (step.activity==='jump') {pose='air';amount=Math.sin(Math.PI*p)**2;}
         // Native Spline entities disable automatic matrix updates. Keep the native
         // anchor fixed and move our own Three Group, whose matrices update normally.
         cat.position.set(position.x-FLOOR.x,position.y-FLOOR.y,position.z-FLOOR.z);
-        const angle=Math.atan2(Math.sin(step.heading-cat.rotation.y),Math.cos(step.heading-cat.rotation.y));
-        cat.rotation.y+=angle*Math.min(1,delta*7);
-        supportPaws();
+        cat.rotation.y=facing;
+        poseCat(model,pose,amount,petting&&pose==='groom'?interruptedGroom.time:petting?petAge:time);
+        supportPaws(step.activity!=='jump');
         app.requestRender();
       };
       frame=requestAnimationFrame(tick);

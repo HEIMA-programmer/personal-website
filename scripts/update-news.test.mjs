@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
-import { classifyPaper, cleanText, extractFigure, filterByDate, fromBioRxiv, fromEuropePmc, mergePapers, normalizeDoi, selectPapers, updateNews, validDate } from "./update-news.mjs";
+import { classifyPaper, cleanText, extractFigure, extractFigures, figureLicense, filterByDate, fromBioRxiv, fromEuropePmc, mergePapers, normalizeDoi, refreshNewsFigures, selectPapers, updateNews, validDate } from "./update-news.mjs";
 
 const fixture = (overrides = {}) => ({ id: "doi:10.1234/example", title: "Single-cell analysis of TCR clonal dynamics", abstract: "Longitudinal immune repertoire modelling", date: "2026-10-26", version: "1", ...overrides });
 
@@ -46,10 +46,26 @@ test("figure thumbnails require an explicit reusable licence and exact source im
   assert.equal(figure.caption, "T cells & B cells");
   assert.equal(figure.sourceUrl, "https://europepmc.org/articles/PMC12345#fig1");
   assert.equal(figure.license, "CC BY");
-  assert.equal(extractFigure(xml.replace("/licenses/by/", "/licenses/by-nc-nd/"), paper), null);
+  const nonCommercial = xml.replace("/licenses/by/", "/licenses/by-nc-nd/");
+  assert.equal(extractFigure(nonCommercial, paper).license, "CC BY-NC-ND");
+  assert.equal(extractFigure(nonCommercial, paper).noDerivatives, true);
+  assert.equal(extractFigure(nonCommercial, paper, { allowNonCommercial: false }), null);
   assert.equal(extractFigure(xml.replace("blobs/abcd", "blobs/../abcd"), paper), null);
   assert.equal(extractFigure(xml.replace('<fig id="fig1">', '<fig id="fig1"><permissions>Third-party content</permissions>'), paper), null);
   assert.equal(extractFigure("<article>No figures</article>", paper), null);
+});
+
+test("figure extraction recognizes alternate official paths, textual licences, identity and third-party exceptions", () => {
+  const paper = fixture({ pmcid: "PMC12345", doi: "10.1234/example" });
+  const permissions = '<permissions><copyright-statement content-type="article-copyright">The Authors</copyright-statement><license-p>This work is licensed under the Creative Commons Attribution 4.0 International License.</license-p></permissions>';
+  const figure = '<fig id="f1"><label>Figure 1</label><caption><p>Original immune repertoire results.</p></caption><graphic><?image-cloudpmc-urn urn:cdn:blobs/abcd/12345/efgh/figure1.webp?></graphic></fig>';
+  const xml = `<article><fig-count count="1"/>${permissions}${figure}</article>`;
+  assert.equal(extractFigure(xml, paper).url, "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/abcd/12345/efgh/figure1.webp");
+  assert.equal(extractFigure(xml, paper).credit, "The Authors");
+  assert.equal(extractFigures(xml.replace("Original immune repertoire results.", "Reproduced from another author with permission."), paper).length, 0);
+  assert.equal(extractFigures(xml.replace("Original immune repertoire results.", "Created with BioRender.com."), paper).length, 0);
+  assert.equal(extractFigure(xml.replace('<article>', '<article><article-id pub-id-type="doi">10.1234/different</article-id>'), paper), null);
+  assert.equal(figureLicense('<permissions>All rights reserved</permissions>'), null);
 });
 
 test("catalog metadata updates keep existing figure attribution and first discovery date", () => {
@@ -73,6 +89,24 @@ test("retrospective backfill creates a publication catalog without fabricating e
     const index = JSON.parse(await readFile(path.join(outputDirectory, "index.json"), "utf8"));
     assert.deepEqual(index.editions.map(item => item.date), ["2026-10-27"]);
     await assert.rejects(readFile(path.join(outputDirectory, "2026-10-01.json")), /ENOENT/);
+  } finally { await cleanup(outputDirectory); }
+});
+
+test("figure refresh preserves saved editions and does not conflate saving with publication dates", async () => {
+  const outputDirectory = await mkdtemp(path.join(process.cwd(), ".news-test-"));
+  try {
+    const records = [fixture({ id: "older-paper", date: "2026-10-19", figure: { url: "https://example.com/figure.png", license: "CC BY-NC-ND", nonCommercial: true } }), fixture({ id: "today-paper", date: "2026-10-27" })];
+    const edition = await updateNews({ date: "2026-10-27", outputDirectory, fetchers: [{ name: "fixture", fetch: async () => records }] });
+    assert.equal(edition.papers.length, 2);
+    const before = await readFile(path.join(outputDirectory, "2026-10-27.json"), "utf8");
+    const catalog = await refreshNewsFigures({ outputDirectory, imageLimit: 0 });
+    assert.equal(catalog.papers.length, 2);
+    assert.equal(filterByDate(catalog.papers, "2026-10-27", "2026-10-27").length, 1);
+    assert.equal(catalog.updatedThrough, "2026-10-27");
+    assert.equal(catalog.papers.find(paper => paper.id === "older-paper").figure.license, "CC BY-NC-ND");
+    const stricter = await refreshNewsFigures({ outputDirectory, imageLimit: 0, allowNonCommercial: false });
+    assert.equal(stricter.papers.find(paper => paper.id === "older-paper").figure, null);
+    assert.equal(await readFile(path.join(outputDirectory, "2026-10-27.json"), "utf8"), before);
   } finally { await cleanup(outputDirectory); }
 });
 

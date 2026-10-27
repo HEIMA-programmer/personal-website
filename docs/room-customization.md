@@ -6,10 +6,10 @@ The room remains the Spline scene from [niehaus1301/personal-website](https://gi
 
 ## Scene changes
 
-- Four alternating photographs inside two frames become blank ivory inserts; the frames remain. The old image payloads and slideshow actions are removed.
+- The two original frames now show separate color landscape collections with 16 photographs each: Mountains, Canyons & Lakes and Waterfalls & Woodlands. Their original native slideshow mechanism remains, with independent 8- and 10-second holds and one-second crossfades. Photos preserve their complete aspect ratio against ivory mats. The previous owner's four image payloads and the later six black-and-white archive images are absent. Individual photographers, source links, licenses and checksums are recorded in `public/photos/collection.json`, with public attribution in `public/photos/credits.html`.
 - The Roomba and its keyboard/touch controller are removed. Other objects' physics are retained.
-- The previous owner's travel pins are removed. The map and navigation remain.
-- The notebook retains its hover effect, while the previous CV camera action is removed.
+- The seven visited-city darts reuse the original full-size red tail and metal needle meshes, materials, native tilts, transforms and wall-insertion depth. Their positions are decoratively spread across the Asian part of the small wall map to keep the large darts visible; the full-screen travel map contains the precise city coordinates. The previous 0.2-scale, reversed pins are replaced. The map's original hover and navigation remain.
+- The notebook retains its hover effect and original camera transition. My Resume uses that transition before showing the current empty state; the previous author's CV is absent.
 - The old procedural cat is replaced with an empty native anchor named `Room Cat`. A licensed artist-authored skeletal cat is attached there at runtime.
 - The unwanted partly obscured rectangle behind Menu was the exported Spline watermark overlay. Its `web.logo` setting and the `SplineWatermark` image payload are removed. Runtime 1.10.13 checks the image payload directly, so changing the export setting alone would not remove that overlay.
 
@@ -25,7 +25,7 @@ Imported PBR materials retain the matching r149 shader chunks. Spline's node-mat
 
 ## Motion and placement
 
-`catMotion.ts` defines the route and an approximately 51.64-second behavior cycle. `catRig.ts` layers gentle temporary poses onto the artist's clips and samples the actual skinned paw vertices to keep the lowest paw on its supporting floor or table surface. Mixer poses are saved before each supplemental pose, preventing incremental bone deformation on constant animation tracks.
+`catMotion.ts` defines the route and an approximately 86.80-second behavior cycle. `catRig.ts` layers gentle temporary poses onto the artist's clips and samples the actual skinned paw vertices for floor/table contact. Grounding stops in flight so tucked paws cannot move the airborne body. Mixer poses are saved before each supplemental pose, preventing incremental bone deformation on constant animation tracks. See [cat motion](cat-motion.md) for the diagnosis, primary research, measured corrections, tests and browser review times.
 
 The floor point is `(125, -178, 100)`. The route passes to the right of the chair and table, reaching `(198, -178, -80)`, in front of the plant. The landing/resting point is the rear-right tabletop area, `(110, -39.69, -190)`. The original tabletop extends approximately from x=-181.41 to 139.05 and z=-213.30 to -72.28; its top is y=-39.69. The paws land on the rear-right part of that surface, beside the notebook.
 
@@ -35,16 +35,14 @@ Active animation follows real elapsed time, including on slower rendering device
 
 ## Walking refinement
 
-The original artist's WalkCycle is an exaggerated cartoon gait: its local head track spans about 59.9 degrees and the accumulated head orientation in world space spans 71.6 degrees. Two front spine tracks each span about 20 degrees, the neck about 40.7 degrees, and the rear spine also contains large rotations. A 130-second comparison of the previous controller with direct playback of the source clip showed under 0.064 degrees of difference. Faded actions had zero weight and were disabled; persistent action accumulation was not the cause of the visible swaying.
+The source walk has exaggerated head/torso movement and an extra frame beyond its matching loop endpoint. The derived animation ends at 1.000 seconds and reduces torso movement. Rotation-only two-bone IK keeps limb lengths and attachment positions fixed while following the artist's foot paths, replacing the earlier leg-root translation correction. Measured head and waist ranges are 6.904° and 5.006°, with maximum toe-path deviation 0.0392 room units. Original downloaded assets remain unchanged.
 
-`prepareCatAnimations` in `catRig.ts` reduces the walk's root, torso, shoulder/hip, head and eye rotations around their cycle-average orientations. Simply damping the spine would disrupt the shoulder counter-rotations and make the legs swing incorrectly. The implementation therefore samples both rigs and re-expresses each authored leg-root world transform relative to the calmer parent. This keeps the original four-paw trajectories and joint articulation while reducing the observed world-space head sweep to about 10.8 degrees and lumbar sweep to about 6.3 degrees. Interpolation-frame foot-path error is under 0.12 room units; measured maximum is about 0.073. Original downloaded files and non-walk animation clips remain unchanged.
-
-The routine measures the source's planted-paw backward speed at the actual room scale (about 31.8 units/s) and matches animation playback to the route speed of 29 units/s, for a rate near 0.91. The route, support surfaces, jumps, camera and depth rendering are unchanged. `createCatAnimator` now owns the mixer and its supplemental-pose restoration in one testable function. Regression checks play multiple complete behavior cycles, including grooming, stretch and jump poses, then compare walking to the corrected clip to detect pose drift or unwanted blending.
+Walking phase follows integrated travel distance through smooth acceleration/deceleration. Turns use a short-step animation, seated petting includes standing and sitting back down, and grooming lifts the paw to the muzzle. Research supports the qualitative constraints; timing and style choices are documented separately rather than presented as a full biological simulation.
 
 ## Verification and rebuilding
 
 - `node scripts/prepare-room.mjs` downloads the pinned original export and regenerates the local room. An optional local original-file argument avoids a second download. An upstream hash mismatch stops the script for review.
-- `node --experimental-strip-types --test scripts/room-cat.test.mjs` (Node 22+) checks exact jump endpoints and constant gravity, the licensed model's required skeletal clips, and every skinned vertex at 81 points on each trajectory against the original tabletop's solid bounds. It catches a cat passing through the desk, rather than only checking a prescribed root path. The same suite checks reduced head/waist sway, preserved foot trajectories between sampling keys, calibrated gait speed and 130 seconds of repeated animation transitions.
+- `node --experimental-strip-types --test scripts/room-cat.test.mjs` (Node 22+) runs seven checks for ballistic endpoints/gravity, actual skinned-vertex tabletop collisions, fixed limb attachments and foot trajectories, two full cycles without pose drift, seamless loop endpoints, continuous speed/heading and touch transitions, and planted-foot stretching/paw-to-muzzle grooming.
 - The normal TypeScript/build checks verify the integration. Browser verification is also necessary for shader compatibility, visual foot placement, hover response, and the original room interactions.
 
 Useful primary references: [Three.js GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader), [AnimationMixer](https://threejs.org/docs/#api/en/animation/AnimationMixer), and [SkinnedMesh](https://threejs.org/docs/#api/en/objects/SkinnedMesh). [threejs-cat](https://github.com/DevTakao/threejs-cat) and [steam-frame-nix](https://github.com/lhns/steam-frame-nix) were examined as open-source examples of imported and retargeted cat animation. No implementation code from either project is included. Toon Cat and static Bengal alternatives were researched but are not shipped.
