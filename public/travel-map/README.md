@@ -1,6 +1,8 @@
 # Travel map
 
-The room uses the original project's **Mapbox GL JS** approach: a full-screen GL map, GeoJSON source, blue symbol pins, clickable popups, and a map/satellite switch. The room's exit sign is preserved. The map fits Yanbin's seven visited cities and provides a city selector for the nearby Osaka and Nara points.
+The room uses the original project's **Mapbox GL JS** approach: a full-screen globe, GeoJSON sources, blue symbol pins with airplane centers, clickable popups, and a map/satellite switch. The room's exit sign is preserved. The initial camera shows the complete globe centered on East Asia, with a blue atmosphere and star field. Desktop zoom is 1.75; small viewports use a lower zoom so the globe fits.
+
+**Globe** returns to the initial camera. **Show all cities** fits the seven supplied places, while the city selector zooms into an individual place, including nearby Osaka and Nara. These controls retain satellite mode when selected. Camera movement respects the system's reduced-motion preference.
 
 Original reference: [niehaus1301/flightmap at 6157941](https://github.com/niehaus1301/flightmap/tree/61579414acbdfd3f18a540944ebfd8a027a3dd15). Its renderer is Mapbox GL JS 3.20.0. The reference's navy controls and source/layer structure informed this adaptation. Its owner-specific flight data, aircraft legend, trip dates, photos, and credentials are not included. This document does not grant an additional license for that repository.
 
@@ -23,7 +25,7 @@ If no public token is configured, the same GL source/layer UI runs with the vend
 
 ## Locations
 
-`locations.json` contains only the cities the owner supplied. Each feature is a GeoJSON Point, with English/local names and a country. The points represent cities, not airports or exact personal locations. No flight routes, travel dates or photos are inferred.
+`locations.json` contains only the cities the owner supplied. Each feature is a GeoJSON Point, with English/local names and a country. The points represent cities, not airports or exact personal locations. No actual flight records, travel dates, aircraft or photos are inferred.
 
 Coordinates were checked against OpenStreetMap via the [Nominatim search API](https://nominatim.org/release-docs/latest/api/Search/) on 2026-10-27:
 
@@ -36,6 +38,18 @@ Coordinates were checked against OpenStreetMap via the [Nominatim search API](ht
 | Nara | 奈良 | [relation 3227707](https://www.openstreetmap.org/relation/3227707) |
 | Dali | 大理 | [relation 2727734](https://www.openstreetmap.org/relation/2727734) |
 | Wuhan | 武汉 | [relation 3076268](https://www.openstreetmap.org/relation/3076268) |
+
+## Illustrative routes
+
+At the owner's request, `routes.json` configures six **illustrative** connections: Changsha–Beijing, Changsha–Shanghai, Changsha–Dali, Changsha–Wuhan, Shanghai–Osaka and Osaka–Nara. They are design choices joining the supplied cities, not claims about flights, ground transport or travel sequence. A persistent legend, route list and each route popup label them **Illustrative routes**.
+
+`route-geometry.js` converts the endpoint coordinates into unit vectors, samples a spherical interpolation and adds a small smooth sideways bow. Each line has 97 coordinates and ends exactly at its city points. The local configuration controls the bow direction and magnitude. These are illustrative paths, not navigational or recorded trajectories. Endpoint IDs, coordinate bounds, curvature and duplicate route IDs are validated. No Mapbox Studio editing is needed.
+
+Warm pink route and glow layers sit above satellite imagery and below city pins. The base-map visibility snapshot is captured before adding routes; switching to satellite cannot hide the route overlays. The route list provides a keyboard-accessible alternative to clicking a narrow line on the globe.
+
+The atmosphere uses Mapbox's [fog properties](https://docs.mapbox.com/style-spec/reference/fog/) (`color`, `high-color`, `space-color`, `horizon-blend`, `star-intensity`) through `setFog`. The no-token MapLibre fallback uses its supported [sky and atmosphere settings](https://maplibre.org/maplibre-style-spec/sky/); its sky does not reproduce Mapbox's star field.
+
+Verification covered all six configured connections, exact endpoints, finite bounded coordinates, smooth curve segments, opposite bow directions, malformed configuration rejection, and ensuring the initial view does not automatically fit city bounds.
 
 ## Dependencies and provider terms
 

@@ -4,6 +4,9 @@
 
 .terminal-output { line-height: 1.6; max-width: 85ch; }
 .terminal-output strong { color: #8cc8fa; }
+.terminal-response { display: block; padding: .35em 0 1em; line-height: 1.6; }
+.terminal-response > :first-child { margin-top: 0; }
+.terminal-response > :last-child { margin-bottom: 0; }
 
 /* Colors for joystick */
 .nipple {

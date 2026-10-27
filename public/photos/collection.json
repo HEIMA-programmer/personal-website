@@ -1,0 +1,79 @@
+{
+  "checked": "2026-10-27",
+  "groups": [
+    {
+      "id": "adams",
+      "photographer": "Ansel Adams",
+      "title": "National parks, 1941–1942",
+      "frame": "Picture Horizontal",
+      "rights": "Public domain (NARA series 79-AA; not the restricted 79-G series).",
+      "rightsUrl": "https://www.archives.gov/research/ansel-adams",
+      "images": [
+        {
+          "file": "adams-tetons.jpg",
+          "title": "The Tetons — Snake River",
+          "year": 1942,
+          "catalogId": "519904",
+          "sourceUrl": "https://catalog.archives.gov/id/519904",
+          "downloadUrl": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2019/07/14-1374M-scaled.jpg",
+          "sha256": "47f48f2a64f5ffd84110cbc16649bb96d7003d3140ab40614be0cc2ee3139985"
+        },
+        {
+          "file": "adams-mcdonald.jpg",
+          "title": "Evening, McDonald Lake, Glacier National Park",
+          "year": 1941,
+          "catalogId": "519861",
+          "sourceUrl": "https://catalog.archives.gov/id/519861",
+          "downloadUrl": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2019/07/14-1331M-scaled.jpg",
+          "sha256": "7854a6187746245731c0724b4a36653cdcb8562a2dc5fe2dedd52fcbdf7806c8"
+        },
+        {
+          "file": "adams-canyon.jpg",
+          "title": "Canyon de Chelly",
+          "year": 1942,
+          "catalogId": "519852",
+          "sourceUrl": "https://catalog.archives.gov/id/519852",
+          "downloadUrl": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2019/07/14-1322M-scaled.jpg",
+          "sha256": "c94b780bc47516dce446085e0c69a442af37df4f6867d446f6b096482dd260ae"
+        }
+      ]
+    },
+    {
+      "id": "lange",
+      "photographer": "Dorothea Lange",
+      "title": "Migrant Mother series, 1936",
+      "frame": "Picture Vertical",
+      "rights": "Library of Congress states that there are no known restrictions on use of the Migrant Mother images.",
+      "rightsUrl": "https://guides.loc.gov/migrant-mother",
+      "images": [
+        {
+          "file": "lange-migrant-mother.jpg",
+          "title": "Migrant Mother, Nipomo, California",
+          "year": 1936,
+          "catalogId": "LC-USF34-9058-C",
+          "sourceUrl": "https://www.loc.gov/item/2017762891/",
+          "downloadUrl": "https://cdn.loc.gov/service/pnp/fsa/8b29000/8b29500/8b29516v.jpg",
+          "sha256": "f915fb81b4a33f00b04f6cf2399d19adf6dd76ca041a33b582d5f5878ca89a39"
+        },
+        {
+          "file": "lange-family-9095.jpg",
+          "title": "Migrant agricultural worker’s family, Nipomo",
+          "year": 1936,
+          "catalogId": "LC-USF34-9095",
+          "sourceUrl": "https://www.loc.gov/item/2017762905/",
+          "downloadUrl": "https://cdn.loc.gov/service/pnp/fsa/8b29000/8b29500/8b29525v.jpg",
+          "sha256": "4198d0bc9095cb73fdbd4b4133ddfd1fbd883b40bd455b7414d4ddbf8f878568"
+        },
+        {
+          "file": "lange-family-9097.jpg",
+          "title": "Migrant agricultural worker’s family, Nipomo (seated view)",
+          "year": 1936,
+          "catalogId": "LC-USF34-9097-C",
+          "sourceUrl": "https://www.loc.gov/item/2017762907/",
+          "downloadUrl": "https://cdn.loc.gov/service/pnp/fsa/8b29000/8b29500/8b29527v.jpg",
+          "sha256": "96d3027b3f6ca4d40edd81c059e7425e12502bf0b1546a8759f46a9981e72949"
+        }
+      ]
+    }
+  ]
+}

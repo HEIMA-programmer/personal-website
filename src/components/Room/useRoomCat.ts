@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import type { Application } from '@splinetool/runtime';
 import {
-  AnimationMixer, Group, LoopOnce, LoopRepeat, Raycaster, ShaderChunk, ShaderLib,
-  Vector2, type AnimationAction, type Camera, type Material, type Mesh, type Object3D,
+  Group, Raycaster, ShaderChunk, ShaderLib,
+  Vector2, type Camera, type Material, type Mesh, type Object3D,
   type Texture,
 } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { FLOOR, sampleCatStep } from './catMotion';
-import { createPawSupport, poseCat } from './catRig';
+import { CAT_WALK_SPEED, FLOOR, sampleCatStep } from './catMotion';
+import { createCatAnimator, createPawSupport, poseCat, prepareCatAnimations } from './catRig';
 
 // The pinned Spline 1.10.13 embeds Three r149. This narrow compatibility bridge
 // adds the artist's skinned mesh to the original room, renderer and depth buffer.
@@ -51,11 +51,9 @@ export default function useRoomCat(app: Application | undefined, active: boolean
     let cancelled = false;
     let frame = 0;
     let model: Object3D | undefined;
-    let mixer: AnimationMixer | undefined;
+    let animator: ReturnType<typeof createCatAnimator> | undefined;
     let elapsed = 0;
     let petAge = Infinity;
-    let currentAction: AnimationAction | undefined;
-    let currentClip = '';
     let last = performance.now();
     let lastRaycast = 0;
     const cat = new Group();
@@ -119,28 +117,16 @@ export default function useRoomCat(app: Application | undefined, active: boolean
         if (object.type.includes('Light')) object.visible=false;
       });
       cat.add(model);
-      mixer = new AnimationMixer(model);
-      const actions = new Map(gltf.animations.map(clip => [clip.name,mixer!.clipAction(clip)]));
-      const rest = new Map<Object3D,{position: Object3D['position']; quaternion: Object3D['quaternion']; scale:Object3D['scale']}>();
-      model.traverse(object => { if (object.type==='Bone') rest.set(object,{position:object.position.clone(),quaternion:object.quaternion.clone(),scale:object.scale.clone()}); });
+      const prepared = prepareCatAnimations(model,gltf.animations);
+      animator = createCatAnimator(model,prepared.clips);
       const supportPaws = createPawSupport(model,cat);
 
-      const play = (name: string, once = false) => {
-        if (currentClip===name) return;
-        const next = actions.get(name);
-        if (!next) return;
-        next.reset().setEffectiveWeight(1).setLoop(once?LoopOnce:LoopRepeat,once?1:Infinity).play();
-        next.clampWhenFinished=once;
-        if (currentAction) { next.crossFadeFrom(currentAction,.18,false); }
-        currentAction=next;
-        currentClip=name;
-      };
       const tick = (now: number) => {
         frame=requestAnimationFrame(tick);
         const delta=resumeRef.current ? 0 : (now-last)/1000;
         last=now;
         resumeRef.current=false;
-        if (!activeRef.current || document.hidden || !model || !mixer) return;
+        if (!activeRef.current || document.hidden || !model || !animator) return;
         if (!reducedMotion.matches) {
           if (petAge>=4) elapsed+=delta;
           petAge+=delta;
@@ -151,20 +137,10 @@ export default function useRoomCat(app: Application | undefined, active: boolean
         const seated=step.activity==='sit';
         const petStanding=petting && seated && petAge<1.05;
         const clip=petStanding?'StandUp':petting?'IdleNorm':step.activity==='crouch'||step.activity==='land'?'SitDown':step.clip;
-        play(clip,clip==='SitDown'||clip==='StandUp');
-        for (const [bone,base] of rest) { bone.position.copy(base.position); bone.quaternion.copy(base.quaternion); bone.scale.copy(base.scale); }
-        if (currentAction) {
-          currentAction.paused=false;
-          currentAction.timeScale=clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
-          if (!petting && (step.activity==='crouch'||step.activity==='land')) {
-            currentAction.time=(step.activity==='crouch'?p:1-p)*.2;
-            currentAction.paused=true;
-          }
-        }
-        mixer.update(reducedMotion.matches?0:delta);
-        // Preserve the mixer result before adding a temporary pet/groom pose.
-        // Constant animation tracks may skip writes on subsequent frames.
-        for (const [bone,base] of rest) { base.position.copy(bone.position); base.quaternion.copy(bone.quaternion); base.scale.copy(bone.scale); }
+        const rate=clip==='WalkCycle'?CAT_WALK_SPEED/prepared.walkSpeed:clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
+        const sampleTime=!petting&&(step.activity==='crouch'||step.activity==='land')
+          ? (step.activity==='crouch'?p:1-p)*.2 : undefined;
+        animator.update(clip,reducedMotion.matches?0:delta,rate,sampleTime);
         let pose: Parameters<typeof poseCat>[1]='none';
         let amount=0;
         if (petting && !petStanding) { pose='stretch'; amount=Math.sin(Math.PI*Math.min(1,(petAge-(seated?1.05:0))/(seated?2.95:4))); }
@@ -188,8 +164,8 @@ export default function useRoomCat(app: Application | undefined, active: boolean
       document.removeEventListener('visibilitychange',resetClock);
       canvas.removeEventListener('pointermove',pet);
       canvas.removeEventListener('pointerdown',pet);
-      mixer?.stopAllAction();
-      if (model) { mixer?.uncacheRoot(model); disposeModel(model); }
+      animator?.dispose();
+      if (model) disposeModel(model);
       cat.removeFromParent();
     };
   },[app]);

@@ -30,9 +30,9 @@ export default function LandingPage({
       overflow="hidden"
       sx={{ backgroundColor: "background.body" }}
     >
-      <Box width="92%" maxWidth={1280} marginTop={{ xs: 4, md: "5vw" }}>
+      <Box width="92%" maxWidth={1360} marginTop={{ xs: 4, md: "5vw" }}>
         <Grid container spacing={4}>
-          <Grid xs={12} md={7} position="relative" sx={{ minWidth: 0 }}>
+          <Grid xs={12} lg={6} position="relative" sx={{ minWidth: 0 }}>
             <LinesBackgroundSvg
               style={{
                 position: "absolute",
@@ -44,8 +44,8 @@ export default function LandingPage({
             />
             <IntroSection />
             <ResearchTags />
-            <Divider sx={{ marginTop: 5 }} />
-            <Typography level="h4" marginTop={5}>
+            <Divider sx={{ marginTop: 3 }} />
+            <Typography level="h4" marginTop={3}>
               Quick connect:
             </Typography>
             <Stack direction="row" spacing={2} marginTop={2} flexWrap="wrap" useFlexGap>
@@ -71,7 +71,7 @@ export default function LandingPage({
               </Button>
             </Stack>
           </Grid>
-          <Grid xs={12} md={5} display="flex" sx={{ minWidth: 0 }}>
+          <Grid xs={12} lg={6} display="flex" sx={{ minWidth: 0, alignItems: "flex-end", justifyContent: { xs: "center", lg: "flex-end" } }}>
             <RoomPreview
               roomReady={roomReady}
               roomEnabled={roomEnabled}
@@ -113,6 +113,7 @@ export default function LandingPage({
           <Typography level="body-xs" textColor="text.tertiary">
             Cat model: <Link href="https://sketchfab.com/3d-models/tuxedo-cat-animated-20-783fcb78b55b4394a212c2b6392e1113" target="_blank" rel="noopener noreferrer" color="neutral">DreamNoms</Link>
             {" · "}<Link href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" color="neutral">CC BY 4.0</Link>
+            {" · "}<Link href={`${import.meta.env.BASE_URL}photos/credits.html`} target="_blank" rel="noopener noreferrer" color="neutral">Photography credits</Link>
           </Typography>
         </Box>
       </Box>

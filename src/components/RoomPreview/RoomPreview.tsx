@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@mui/joy";
 import DirectionsRunRoundedIcon from "@mui/icons-material/DirectionsRunRounded";
-import roomPng from "@/assets/room.png";
+import roomPreview from "@/assets/room.jpg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -37,10 +37,10 @@ export default function RoomPreview({
   }, [navigate, clicked, roomReady, roomEnabled, setRoomEnabled]);
 
   return (
-    <Card sx={{ width: "100%", minHeight: { xs: 350, md: 460 }, height: { xs: "auto", md: "100%" }, boxSizing: "border-box" }}>
+    <Card sx={{ width: "100%", maxWidth: { xs: 680, lg: "none" }, aspectRatio: { xs: "auto", sm: "11 / 8" }, minHeight: { xs: 300, sm: 0 }, boxSizing: "border-box" }}>
       <CardCover>
         <img
-          src={roomPng}
+          src={roomPreview}
           alt="My room preview"
           style={{
             backgroundColor: theme.palette.success.softHoverBg.slice(-8, -1),

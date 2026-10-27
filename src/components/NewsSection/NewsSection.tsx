@@ -1,11 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
-import { Alert, AspectRatio, Box, Button, Card, CardContent, Chip, CircularProgress, DialogContent, DialogTitle, FormControl, FormLabel, Input, Link, Modal, ModalClose, ModalDialog, Option, Select, Stack, Typography } from "@mui/joy";
+import { Alert, AspectRatio, Box, Button, Card, CardContent, Chip, CircularProgress, DialogContent, DialogTitle, FormControl, FormLabel, IconButton, Input, Link, Modal, ModalClose, ModalDialog, Option, Select, Stack, Typography } from "@mui/joy";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import BiotechOutlinedIcon from "@mui/icons-material/BiotechOutlined";
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
 import VisibilityRoundedIcon from "@mui/icons-material/VisibilityRounded";
+import ChevronLeftRoundedIcon from "@mui/icons-material/ChevronLeftRounded";
+import ChevronRightRoundedIcon from "@mui/icons-material/ChevronRightRounded";
+import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
 import ResearchCarousel from "../ResearchCarousel/ResearchCarousel";
+import "./NewsSection.css";
 
 interface Figure { url: string; label: string; caption: string; sourceUrl: string; license: string; licenseUrl: string; credit: string }
 interface Paper {
@@ -33,10 +37,10 @@ function PaperVisual({ paper, expanded = false }: { paper: Paper; expanded?: boo
   useEffect(() => setFailed(false), [paper.figure?.url]);
   const figure = paper.figure && !failed ? paper.figure : null;
   return <Box>
-    <AspectRatio ratio={expanded ? "16 / 9" : "16 / 10"} sx={{ borderRadius: "sm", overflow: "hidden", bgcolor: "background.level1" }}>
+    <AspectRatio ratio={expanded ? "16 / 9" : "16 / 7"} sx={{ borderRadius: "sm", overflow: "hidden", bgcolor: "background.level1" }}>
       {figure ? <img src={figure.url} alt={`${figure.label}: ${figure.caption || paper.title}`} loading="lazy" decoding="async" onError={() => setFailed(true)} style={{ objectFit: "contain", background: "#fff", padding: expanded ? 12 : 8, boxSizing: "border-box" }} /> :
         <Stack alignItems="center" justifyContent="center" spacing={1} sx={{ background: "linear-gradient(135deg, var(--joy-palette-primary-softBg), var(--joy-palette-success-softBg))" }}>
-          <BiotechOutlinedIcon sx={{ fontSize: expanded ? 58 : 44, color: "primary.softColor" }} />
+          <BiotechOutlinedIcon sx={{ fontSize: expanded ? 58 : 30, color: "primary.softColor" }} />
           <Typography level="title-sm" textColor="primary.softColor">{paper.categories[0] || "Computational immunology"}</Typography>
           <Typography level="body-xs" textColor="text.secondary">Article figure not available</Typography>
         </Stack>}
@@ -60,7 +64,9 @@ export default function NewsSection() {
   const [publicationType, setPublicationType] = useState("all");
   const [source, setSource] = useState("all");
   const [sort, setSort] = useState("relevance");
-  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [periodPreset, setPeriodPreset] = useState("week");
+  const [moreFilters, setMoreFilters] = useState(false);
+  const [pagination, setPagination] = useState({ query: "", page: 0 });
   const [loading, setLoading] = useState(true);
   const [collectionLoading, setCollectionLoading] = useState(false);
   const [error, setError] = useState("");
@@ -87,8 +93,6 @@ export default function NewsSection() {
       .finally(() => { if (!controller.signal.aborted) setCollectionLoading(false); });
     return () => controller.abort();
   }, [mode, collectionDate]);
-  useEffect(() => setVisibleCount(PAGE_SIZE), [start, end, topic, publicationType, source, sort, mode, collectionDate]);
-
   const invalidRange = mode === "dates" && (!start || !end || start > end || !!catalog && (start < catalog.coverageStart || end > catalog.updatedThrough));
   const catalogFigures = useMemo(() => new Map(catalog?.papers.filter(paper => paper.figure).map(paper => [paper.id, paper.figure])), [catalog]);
   const results = useMemo(() => {
@@ -104,70 +108,99 @@ export default function NewsSection() {
   const busy = loading || (mode === "collections" && collectionLoading);
   const currentError = error || (mode === "collections" ? collectionError : "");
   const resetFilters = () => { setTopic("all"); setSource("all"); setPublicationType("all"); setSort("relevance"); };
+  const queryKey = JSON.stringify([mode, start, end, collectionDate, topic, publicationType, source, sort]);
+  const pageCount = Math.max(1, Math.ceil(results.length / PAGE_SIZE));
+  const page = pagination.query === queryKey ? Math.min(pagination.page, pageCount - 1) : 0;
+  const pageStart = page * PAGE_SIZE;
+  const pagePapers = results.slice(pageStart, pageStart + PAGE_SIZE);
+  const changePage = (next: number) => setPagination({ query: queryKey, page: Math.max(0, Math.min(next, pageCount - 1)) });
+  const extraFilterCount = Number(source !== "all") + Number(publicationType !== "all") + Number(sort !== "relevance");
+  const singleDay = periodPreset === "day" || periodPreset === "latest";
+  const choosePeriod = (value: string) => {
+    if (!catalog) return;
+    setPeriodPreset(value);
+    if (value === "day") { const date = end || catalog.updatedThrough; setStart(date); setEnd(date); }
+    if (value === "latest") { setStart(catalog.updatedThrough); setEnd(catalog.updatedThrough); }
+    if (value === "week") { setStart([catalog.coverageStart, daysBefore(catalog.updatedThrough, 6)].sort().pop() || catalog.coverageStart); setEnd(catalog.updatedThrough); }
+    if (value === "all") { setStart(catalog.coverageStart); setEnd(catalog.updatedThrough); }
+  };
 
-  return <Box component="section" id="news" position="relative">
-    <Stack direction="row" spacing={2} alignItems="baseline" justifyContent="space-between" flexWrap="wrap" useFlexGap mb={2}>
-      <Typography level="h2">News 🧬</Typography>
-      {catalog && <Typography level="body-sm">Updated <Typography component="span" textColor="success.softColor" fontWeight="lg">{displayDate(catalog.updatedThrough)}</Typography></Typography>}
+  return <Box component="section" id="news" position="relative" aria-labelledby="news-title">
+    <Stack direction="row" spacing={1} alignItems="baseline" justifyContent="space-between" flexWrap="wrap" useFlexGap mb={2}>
+      <Stack direction="row" alignItems="baseline" spacing={2}>
+        <Typography id="news-title" level="h2">News 🧬</Typography>
+        <Typography level="body-sm" sx={{ display: { xs: "none", sm: "block" } }}>Computational immunology</Typography>
+      </Stack>
+      {catalog && <Typography level="body-xs">Updated <Typography component="span" textColor="success.softColor">{displayDate(catalog.updatedThrough)}</Typography></Typography>}
     </Stack>
-    <Typography level="body-md" mb={1}>Explore <Typography component="span" textColor="primary.softColor" fontWeight="lg">computational immunology</Typography> from bioRxiv and Europe PMC / PubMed.</Typography>
-    <Typography level="body-sm" mb={3}>Browse publication dates from October 1, 2026, or revisit an actual daily collection. Automatic topic matching helps discovery; it does not judge scientific quality.</Typography>
-    {catalog && <Box sx={{ border: "1px solid", borderColor: "divider", borderRadius: "md", p: { xs: 1.5, sm: 2 }, mb: 3, bgcolor: "background.surface" }}>
-      <Stack direction="row" flexWrap="wrap" useFlexGap spacing={1} mb={2}>
-        <Button size="sm" variant={mode === "dates" ? "soft" : "plain"} color={mode === "dates" ? "primary" : "neutral"} startDecorator={<CalendarMonthRoundedIcon />} onClick={() => setMode("dates")}>Publication dates</Button>
-        <Button size="sm" variant={mode === "collections" ? "soft" : "plain"} color={mode === "collections" ? "primary" : "neutral"} startDecorator={<ArticleOutlinedIcon />} onClick={() => setMode("collections")}>Daily collections</Button>
-      </Stack>
-      {mode === "dates" ? <>
-        <Stack direction="row" flexWrap="wrap" useFlexGap spacing={1.5} alignItems="flex-end" mb={2}>
-          <FormControl sx={{ flex: "1 1 145px", maxWidth: { sm: 190 } }}><FormLabel htmlFor="news-date-start">From</FormLabel><Input type="date" value={start} slotProps={{ input: { id: "news-date-start", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => setStart(event.target.value)} /></FormControl>
-          <FormControl sx={{ flex: "1 1 145px", maxWidth: { sm: 190 } }}><FormLabel htmlFor="news-date-end">Through</FormLabel><Input type="date" value={end} slotProps={{ input: { id: "news-date-end", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => setEnd(event.target.value)} /></FormControl>
-          <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
-            <Button size="sm" variant="plain" onClick={() => { setStart(catalog.updatedThrough); setEnd(catalog.updatedThrough); }}>Latest day</Button>
-            <Button size="sm" variant="plain" onClick={() => { setStart([catalog.coverageStart, daysBefore(catalog.updatedThrough, 6)].sort().pop() || catalog.coverageStart); setEnd(catalog.updatedThrough); }}>7 days</Button>
-            <Button size="sm" variant="plain" onClick={() => { setStart(catalog.coverageStart); setEnd(catalog.updatedThrough); }}>All dates</Button>
-          </Stack>
-        </Stack>
-        <Typography level="body-xs" mb={2}>Choose the same start and end date for one day. Dates refer to publication or preprint posting / revision, including records collected retrospectively.</Typography>
-      </> : <FormControl sx={{ maxWidth: 320, mb: 2 }}><FormLabel id="news-collection-label">Collected on (UTC)</FormLabel><Select aria-labelledby="news-collection-label" value={collectionDate || null} onChange={(_, value) => { if (value) setCollectionDate(value); }}>{index?.editions.map(item => <Option key={item.date} value={item.date}>{displayDate(item.date)} · {item.count} papers</Option>)}</Select><Typography level="body-xs" mt={1}>Saved collections start on October 27, 2026. Earlier publication dates are available in the date browser.</Typography></FormControl>}
-      <Stack direction="row" spacing={1.5} flexWrap="wrap" useFlexGap alignItems="flex-end">
-        <FormControl sx={{ flex: "2 1 210px" }}><FormLabel id="news-topic-label">Topic</FormLabel><Select aria-labelledby="news-topic-label" value={topic} onChange={(_, value) => setTopic(value || "all")}><Option value="all">All topics</Option>{topicNames.map(name => <Option key={name} value={name}>{name}</Option>)}</Select></FormControl>
-        <FormControl sx={{ flex: "1 1 145px" }}><FormLabel id="news-type-label">Article type</FormLabel><Select aria-labelledby="news-type-label" value={publicationType} onChange={(_, value) => setPublicationType(value || "all")}><Option value="all">All types</Option><Option value="Journal article">Journal articles</Option><Option value="Preprint">Preprints</Option></Select></FormControl>
-        <FormControl sx={{ flex: "1 1 145px" }}><FormLabel id="news-source-label">Source</FormLabel><Select aria-labelledby="news-source-label" value={source} onChange={(_, value) => setSource(value || "all")}><Option value="all">All sources</Option><Option value="bioRxiv">bioRxiv</Option><Option value="Europe PMC">Europe PMC</Option></Select></FormControl>
-        <FormControl sx={{ flex: "1 1 145px" }}><FormLabel id="news-sort-label">Sort by</FormLabel><Select aria-labelledby="news-sort-label" value={sort} onChange={(_, value) => setSort(value || "newest")}><Option value="newest">Newest first</Option><Option value="relevance">Research relevance</Option></Select></FormControl>
+    {catalog && <>
+      <Box className="news-primary-controls">
+        <Select size="sm" className="news-browse-mode" aria-label="Browse by publication date or daily collection" value={mode}
+          startDecorator={mode === "dates" ? <CalendarMonthRoundedIcon /> : <ArticleOutlinedIcon />}
+          renderValue={option => option?.value === "collections" ? "Collections" : "Published"}
+          onChange={(_, value) => { if (value) setMode(value); }}>
+          <Option value="dates">Publication dates</Option><Option value="collections">Daily collections</Option>
+        </Select>
+        {mode === "dates" ? <>
+          <Select size="sm" className="news-period-preset" aria-label="Publication date period" value={periodPreset} onChange={(_, value) => { if (value) choosePeriod(value); }}>
+            <Option value="latest">Latest day</Option><Option value="week">Last 7 days</Option><Option value="day">Single day</Option><Option value="range">Date range</Option><Option value="all">All dates</Option>
+          </Select>
+          <Box className="news-date-inputs">
+            <Input size="sm" type="date" value={start} slotProps={{ input: { id: "news-date-start", "aria-label": singleDay ? "Publication date" : "Published from", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => { setStart(event.target.value); if (singleDay) { setEnd(event.target.value); setPeriodPreset("day"); } else setPeriodPreset("range"); }} />
+            {!singleDay && <><Typography level="body-sm" aria-hidden="true">–</Typography><Input size="sm" type="date" value={end} slotProps={{ input: { id: "news-date-end", "aria-label": "Published through", min: catalog.coverageStart, max: catalog.updatedThrough } }} onChange={event => { setEnd(event.target.value); setPeriodPreset("range"); }} /></>}
+          </Box>
+        </> : <Select size="sm" className="news-collection-date" aria-label="Daily collection date, UTC" title="Actual saved daily collections; earlier papers are in Published." value={collectionDate || null} onChange={(_, value) => { if (value) setCollectionDate(value); }}>
+          {index?.editions.map(item => <Option key={item.date} value={item.date}>{displayDate(item.date)} · {item.count} papers</Option>)}
+        </Select>}
+        <Select size="sm" className="news-topic" aria-label="Research topic" value={topic} onChange={(_, value) => setTopic(value || "all")}>
+          <Option value="all">All topics</Option>{topicNames.map(name => <Option key={name} value={name}>{name}</Option>)}
+        </Select>
+        <Button size="sm" variant={moreFilters || extraFilterCount ? "soft" : "plain"} color="neutral" startDecorator={<TuneRoundedIcon />} aria-expanded={moreFilters} aria-controls="news-more-filters" onClick={() => setMoreFilters(value => !value)} sx={{ flexShrink: 0 }}>
+          More filters{extraFilterCount > 0 ? ` (${extraFilterCount})` : ""}
+        </Button>
+      </Box>
+      {moreFilters && <Stack id="news-more-filters" direction="row" spacing={1.5} flexWrap="wrap" useFlexGap alignItems="flex-end" sx={{ p: 1.5, mt: 1, borderRadius: "sm", bgcolor: "background.level1" }}>
+        <FormControl sx={{ flex: "1 1 150px" }}><FormLabel id="news-type-label">Article type</FormLabel><Select size="sm" aria-labelledby="news-type-label" value={publicationType} onChange={(_, value) => setPublicationType(value || "all")}><Option value="all">All types</Option><Option value="Journal article">Journal articles</Option><Option value="Preprint">Preprints</Option></Select></FormControl>
+        <FormControl sx={{ flex: "1 1 150px" }}><FormLabel id="news-source-label">Source</FormLabel><Select size="sm" aria-labelledby="news-source-label" value={source} onChange={(_, value) => setSource(value || "all")}><Option value="all">All sources</Option><Option value="bioRxiv">bioRxiv</Option><Option value="Europe PMC">Europe PMC / PubMed</Option></Select></FormControl>
+        <FormControl sx={{ flex: "1 1 170px" }}><FormLabel id="news-sort-label">Sort by</FormLabel><Select size="sm" aria-labelledby="news-sort-label" value={sort} onChange={(_, value) => setSort(value || "relevance")}><Option value="relevance">Research relevance</Option><Option value="newest">Newest first</Option></Select></FormControl>
         <Button size="sm" variant="plain" color="neutral" onClick={resetFilters}>Reset filters</Button>
-      </Stack>
-    </Box>}
-    <Box aria-live="polite" aria-busy={busy}>
+      </Stack>}
+    </>}
+    <Box aria-busy={busy}>
       {busy && <Stack direction="row" spacing={1} alignItems="center" py={3}><CircularProgress size="sm" /><Typography>Loading research papers…</Typography></Stack>}
       {currentError && <Alert color="warning">{currentError}</Alert>}
       {invalidRange && !loading && <Alert color="warning">Choose a date range between {catalog?.coverageStart} and {catalog?.updatedThrough}, with the start on or before the end.</Alert>}
       {!busy && !currentError && !invalidRange && <>
         {selectedSourceStatus?.some(item => item.status !== "ok") && <Alert color="warning" sx={{ mb: 2 }}>Some sources were unavailable during the latest collection. Existing records remain available.</Alert>}
-        <Stack direction="row" justifyContent="space-between" alignItems="center" flexWrap="wrap" useFlexGap spacing={1} mb={2}>
-          <Typography level="body-sm"><Typography component="span" fontWeight="lg" textColor="primary.softColor">{results.length}</Typography> matching papers · showing {Math.min(results.length, visibleCount)}{catalog ? ` · ${catalog.papers.length} in the index` : ""}</Typography>
-          <Typography level="body-xs">Preprints have not been peer reviewed.</Typography>
-        </Stack>
-        {results.length ? <ResearchCarousel ariaLabel="Research paper cards">
-          {results.slice(0, visibleCount).map(paper => <Card key={paper.id} component="article" variant="soft" size="sm" sx={{ width: "min(320px, calc(100vw - 60px))", flexShrink: 0 }}>
+        <Box className="news-results-toolbar">
+          <Typography level="body-sm" aria-live="polite" aria-atomic="true"><Typography component="span" fontWeight="lg" textColor="primary.softColor">{results.length}</Typography> papers{results.length > 0 ? ` · ${pageStart + 1}–${pageStart + pagePapers.length}` : ""}</Typography>
+          <Stack component="nav" aria-label="Research paper pages" direction="row" spacing={0.5} alignItems="center">
+            <IconButton size="sm" variant="plain" color="neutral" aria-label="Previous page of papers" disabled={page === 0 || !results.length} onClick={() => changePage(page - 1)}><ChevronLeftRoundedIcon /></IconButton>
+            <Select size="sm" variant="plain" aria-label="Research papers page" value={page} disabled={!results.length} onChange={(_, value) => { if (value !== null) changePage(value); }} renderValue={() => `${page + 1} / ${pageCount}`} sx={{ minWidth: 82 }} slotProps={{ listbox: { sx: { maxHeight: 240 } } }}>
+              {Array.from({ length: pageCount }, (_, number) => <Option key={number} value={number}>Page {number + 1}</Option>)}
+            </Select>
+            <IconButton size="sm" variant="plain" color="neutral" aria-label="Next page of papers" disabled={page >= pageCount - 1 || !results.length} onClick={() => changePage(page + 1)}><ChevronRightRoundedIcon /></IconButton>
+          </Stack>
+        </Box>
+        {results.length ? <ResearchCarousel key={`${queryKey}:${page}`} ariaLabel={`Research papers, page ${page + 1} of ${pageCount}`}>
+          {pagePapers.map(paper => <Card key={paper.id} component="article" variant="soft" size="sm" sx={{ width: "min(320px, calc(100vw - 60px))", flexShrink: 0 }}>
             <PaperVisual paper={paper} />
             <Stack direction="row" flexWrap="wrap" useFlexGap spacing={0.5} mt={0.5}>
-              <Chip size="sm" variant="outlined" color={paper.publicationType === "Preprint" ? "warning" : "success"}>{paper.publicationType}</Chip>
+              <Chip size="sm" variant="outlined" color={paper.publicationType === "Preprint" ? "warning" : "success"} title={paper.publicationType === "Preprint" ? "Preprints have not been peer reviewed." : undefined}>{paper.publicationType}</Chip>
               <Chip size="sm" variant="plain" color="primary">{paper.source}</Chip>
             </Stack>
-            <Typography level="title-lg" sx={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", minHeight: "4.5em" }}>{paper.title}</Typography>
+            <Typography component="h3" level="title-lg" sx={{ fontSize: "1.05rem", lineHeight: 1.4, overflowWrap: "anywhere" }}>{paper.title}</Typography>
             <Typography level="body-xs" sx={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{paper.authors || "Authors at source"}</Typography>
-            <Typography level="body-xs" textColor="primary.softColor" sx={{ minHeight: "2.8em" }}>{paper.venue} · {displayDate(paper.date)}</Typography>
+            <Typography level="body-xs" textColor="primary.softColor">{paper.venue} · {displayDate(paper.date)}</Typography>
             <Stack direction="row" spacing={0.5} flexWrap="wrap" useFlexGap>
               {paper.categories.slice(0, 2).map(category => <Chip key={category} size="sm" color={topicColor(category)} variant="soft">{category}</Chip>)}
               {paper.categories.length > 2 && <Chip size="sm" variant="plain">+{paper.categories.length - 2}</Chip>}
             </Stack>
             <CardContent>
-              <Typography level="body-sm" sx={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", mb: 2 }}>{paper.abstract || "Read the full details at the source."}</Typography>
               <Stack direction="row" spacing={1} justifyContent="space-between" mt="auto"><Button variant="plain" size="sm" component="a" href={paper.url} target="_blank" rel="noopener noreferrer" startDecorator={<OpenInNewRoundedIcon />}>Article</Button><Button size="sm" startDecorator={<VisibilityRoundedIcon />} onClick={() => setSelectedPaper(paper)}>Details</Button></Stack>
             </CardContent>
           </Card>)}
         </ResearchCarousel> : <Card variant="soft"><Typography>No matching papers in this date range. Try another date or broaden the filters.</Typography></Card>}
-        {results.length > visibleCount && <Box textAlign="center" mt={2}><Button variant="soft" onClick={() => setVisibleCount(count => count + PAGE_SIZE)}>Show next {Math.min(PAGE_SIZE, results.length - visibleCount)} papers</Button></Box>}
       </>}
     </Box>
     <Modal open={!!selectedPaper} onClose={() => setSelectedPaper(null)}>

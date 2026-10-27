@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { test } from 'node:test';
-import { AnimationMixer, Group, Vector3 } from 'three';
+import { AnimationMixer, Group, Vector3, Quaternion } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { ballisticPosition, CAT_STEPS } from '../src/components/Room/catMotion.ts';
-import { createPawSupport, poseCat } from '../src/components/Room/catRig.ts';
+import { clone as cloneSkeleton } from 'three/examples/jsm/utils/SkeletonUtils.js';
+import { ballisticPosition, CAT_STEPS, CAT_WALK_SPEED, sampleCatStep } from '../src/components/Room/catMotion.ts';
+import { createPawSupport, poseCat, prepareCatAnimations, createCatAnimator } from '../src/components/Room/catRig.ts';
 
 // Bounds calculated from the upstream tabletop Cube and table_large transforms.
 const table={minX:-181.4135,maxX:139.0495,minZ:-213.3004,maxZ:-72.2817,top:-39.6867,bottom:-53.2405};
@@ -53,4 +54,81 @@ test('licensed skeletal asset has its six authored clips and clears the original
       }
     }
   }
+});
+
+async function loadRig() {
+  globalThis.ProgressEvent ??= class { constructor(type,values) {Object.assign(this,{type},values);} };
+  const asset=JSON.parse(await readFile('public/cat/tuxedo/scene.gltf','utf8'));
+  asset.buffers[0].uri='data:application/octet-stream;base64,'+(await readFile('public/cat/tuxedo/scene.bin')).toString('base64');
+  const gltf=await new GLTFLoader().parseAsync(JSON.stringify(asset),'');
+  gltf.scene.scale.setScalar(3.9);
+  return gltf;
+}
+const angleRange = quaternions => {
+  let max=0;
+  for(let i=0;i<quaternions.length;i++)for(let j=i+1;j<quaternions.length;j++)max=Math.max(max,quaternions[i].angleTo(quaternions[j]));
+  return max*180/Math.PI;
+};
+
+test('walk correction calms the actual head and waist while preserving all four authored foot paths',async()=>{
+  const gltf=await loadRig();
+  const original=gltf.animations.find(clip=>clip.name==='WalkCycle');
+  const originalTracks=original.tracks.map(track=>Array.from(track.values));
+  const prepared=prepareCatAnimations(gltf.scene,gltf.animations);
+  assert.deepEqual(original.tracks.map(track=>Array.from(track.values)),originalTracks,'The licensed source animation must remain unchanged.');
+  const source=cloneSkeleton(gltf.scene),corrected=cloneSkeleton(gltf.scene);
+  const sourceMixer=new AnimationMixer(source),correctedMixer=new AnimationMixer(corrected);
+  sourceMixer.clipAction(original).play();
+  correctedMixer.clipAction(prepared.clips.find(clip=>clip.name==='WalkCycle')).play();
+  const headBefore=[],headAfter=[],waistAfter=[];
+  const toes=['front_toeL','front_toeR','toeL','toeR'].map(name=>name+'_metarig004');
+  let maxFootError=0;
+  // Deliberately sample between the correction's bake frames, not only its keys.
+  for(let i=0;i<=241;i++){
+    const time=original.duration*i/241;
+    sourceMixer.setTime(time);correctedMixer.setTime(time);
+    source.updateMatrixWorld(true);corrected.updateMatrixWorld(true);
+    headBefore.push(source.getObjectByName('Head_metarig004').getWorldQuaternion(new Quaternion()));
+    headAfter.push(corrected.getObjectByName('Head_metarig004').getWorldQuaternion(new Quaternion()));
+    waistAfter.push(corrected.getObjectByName('spine004_metarig004').getWorldQuaternion(new Quaternion()));
+    for(const name of toes)maxFootError=Math.max(maxFootError,source.getObjectByName(name).getWorldPosition(new Vector3()).distanceTo(corrected.getObjectByName(name).getWorldPosition(new Vector3())));
+  }
+  assert.ok(angleRange(headBefore)>65,'Fixture should retain the exaggerated source gait that caused the regression.');
+  assert.ok(angleRange(headAfter)<15,'Walking must not swing the head dramatically.');
+  assert.ok(angleRange(waistAfter)<10,'The lumbar spine should have a small gait sway.');
+  assert.ok(maxFootError<.12,'Calming the spine must not alter the four paws’ authored trajectories.');
+  assert.ok(prepared.walkSpeed>28&&prepared.walkSpeed<35,'Footfall calibration must stay consistent with the model scale.');
+  assert.ok(CAT_WALK_SPEED/prepared.walkSpeed>.8&&CAT_WALK_SPEED/prepared.walkSpeed<1,'Playback rate should match the slower room path.');
+});
+
+test('walking stays identical to its corrected clip after repeated sitting, grooming, stretches and jumps',async()=>{
+  const gltf=await loadRig(),prepared=prepareCatAnimations(gltf.scene,gltf.animations);
+  const live=gltf.scene,reference=cloneSkeleton(live);
+  const animator=createCatAnimator(live,prepared.clips),referenceMixer=new AnimationMixer(reference);
+  referenceMixer.clipAction(prepared.clips.find(clip=>clip.name==='WalkCycle')).play();
+  const names=['Head_metarig004','spine004_metarig004','front_toeL_metarig004','front_toeR_metarig004','toeL_metarig004','toeR_metarig004'];
+  let samples=0,maxAngle=0,maxPosition=0;
+  for(let frame=0;frame<130*30;frame++){
+    const elapsed=frame/30,{step,time,p}=sampleCatStep(elapsed);
+    const clip=step.activity==='crouch'||step.activity==='land'?'SitDown':step.clip;
+    const rate=clip==='WalkCycle'?CAT_WALK_SPEED/prepared.walkSpeed:clip==='IdleNorm'?.5:clip==='IdleTailSwoosh'?.35:1;
+    const sampleTime=step.activity==='crouch'||step.activity==='land'?(step.activity==='crouch'?p:1-p)*.2:undefined;
+    const clipTime=animator.update(clip,1/30,rate,sampleTime);
+    if(step.activity==='sit'&&time>3&&time<7)poseCat(live,'groom',Math.sin(Math.PI*(time-3)/4),elapsed);
+    else if(step.activity==='jump')poseCat(live,'air',Math.sin(Math.PI*p),elapsed);
+    else if(step.activity==='rest'&&time>1&&time<3)poseCat(live,'stretch',Math.sin(Math.PI*(time-1)/2),elapsed);
+    if(step.activity==='walk'&&time>.4){
+      samples++;
+      referenceMixer.setTime(clipTime);reference.updateMatrixWorld(true);live.updateMatrixWorld(true);
+      for(const name of names){
+        const a=reference.getObjectByName(name),b=live.getObjectByName(name);
+        maxAngle=Math.max(maxAngle,a.getWorldQuaternion(new Quaternion()).angleTo(b.getWorldQuaternion(new Quaternion()))*180/Math.PI);
+        maxPosition=Math.max(maxPosition,a.getWorldPosition(new Vector3()).distanceTo(b.getWorldPosition(new Vector3())));
+      }
+    }
+  }
+  assert.ok(samples>500,'Exercise multiple full behavior cycles.');
+  assert.ok(maxAngle<.15,'Previous actions or supplemental poses must not accumulate into walking.');
+  assert.ok(maxPosition<.002,'Repeated transitions must not shift the cat skeleton.');
+  animator.dispose();
 });

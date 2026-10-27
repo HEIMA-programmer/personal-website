@@ -44,28 +44,28 @@ h1 {
 }
 
 [data-accent="blue"] { --research-accent: #8cc8fa; }
-[data-accent="green"] { --research-accent: #86d3b0; }
-[data-accent="violet"] { --research-accent: #c3b3ff; }
-[data-accent="amber"] { --research-accent: #edba80; }
-[data-accent="teal"] { --research-accent: #81d5d8; }
+[data-accent="green"], [data-accent="teal"] { --research-accent: #99c8bf; }
+[data-accent="violet"], [data-accent="amber"] { --research-accent: #8cc8fa; }
 [data-joy-color-scheme="light"] [data-accent="blue"] { --research-accent: #1462a0; }
-[data-joy-color-scheme="light"] [data-accent="green"] { --research-accent: #247448; }
-[data-joy-color-scheme="light"] [data-accent="violet"] { --research-accent: #7150ac; }
-[data-joy-color-scheme="light"] [data-accent="amber"] { --research-accent: #986012; }
-[data-joy-color-scheme="light"] [data-accent="teal"] { --research-accent: #147780; }
+[data-joy-color-scheme="light"] [data-accent="green"], [data-joy-color-scheme="light"] [data-accent="teal"] { --research-accent: #376f65; }
+[data-joy-color-scheme="light"] [data-accent="violet"], [data-joy-color-scheme="light"] [data-accent="amber"] { --research-accent: #1462a0; }
 .profile-highlight {
-  color: var(--research-accent) !important;
+  color: #a9c9e4 !important;
+  display: inline !important;
   font: inherit !important;
   font-weight: 600 !important;
   text-decoration: none !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--research-accent) 30%, transparent);
-  transition: background-color 160ms ease, border-color 160ms ease;
-  border-radius: 3px;
+  border: none !important;
+  background: none !important;
+  transition: color 160ms ease, text-shadow 160ms ease;
 }
 .profile-highlight:hover, .profile-highlight:focus-visible {
-  background: color-mix(in srgb, var(--research-accent) 12%, transparent);
-  border-bottom-color: var(--research-accent);
+  color: #e6f3ff !important;
+  text-shadow: 0 0 12px #a9c9e440;
 }
+[data-joy-color-scheme="light"] .profile-highlight { color: #315d80 !important; }
+[data-joy-color-scheme="light"] .profile-highlight:hover,
+[data-joy-color-scheme="light"] .profile-highlight:focus-visible { color: #102f48 !important; text-shadow: none; }
 .research-tag {
   color: var(--research-accent) !important;
   border-color: color-mix(in srgb, var(--research-accent) 40%, transparent) !important;

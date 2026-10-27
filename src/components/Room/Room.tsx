@@ -9,6 +9,7 @@ import MeetingRoomRoundedIcon from "@mui/icons-material/MeetingRoomRounded";
 import useTabVisibility from "@/hooks/useTabVisibility";
 import { Button } from "@mui/joy";
 import useRoomCat from "./useRoomCat";
+import { playSwitchSound, playTerminalOpenSound } from "@/audio/interfaceSound";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -17,6 +18,7 @@ const {
   VITE_ROUTE_ROOM,
   VITE_ROUTE_MAP,
   VITE_ROUTE_TERMINAL,
+  VITE_ROUTE_RESUME,
 } = import.meta.env;
 
 interface Props {
@@ -36,10 +38,17 @@ export default function Room({ dataUrl, setRoomReady }: Props) {
 
   // Handle major mouse down events of spline
   const handleMouseDown = (event: SplineEvent) => {
-    if (event.target.name === "Laptop") navigate(VITE_ROUTE_TERMINAL);
+    if (event.target.name === "Laptop") {
+      playTerminalOpenSound();
+      navigate(VITE_ROUTE_TERMINAL);
+    }
     if (event.target.name === "TravelMap") navigate(VITE_ROUTE_MAP);
+    if (event.target.name === "Notebook") navigate(VITE_ROUTE_RESUME);
     if (event.target.name === "Radio") setMusicPlaying((prev) => !prev);
-    if (event.target.name === "Switch") setLightOn((prev) => !prev);
+    if (event.target.name === "Switch") {
+      playSwitchSound();
+      setLightOn((prev) => !prev);
+    }
   };
 
   const theme = useTheme();

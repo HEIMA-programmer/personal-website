@@ -1,0 +1,42 @@
+.news-primary-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.news-browse-mode { flex: 0 0 134px; }
+.news-period-preset { flex: 0 0 130px; }
+.news-topic { flex: 1 1 220px; min-width: 0; }
+.news-collection-date { flex: 0 1 260px; min-width: 0; }
+.news-date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.news-date-inputs .MuiInput-root { width: 132px; min-width: 0; }
+.news-date-inputs input { min-width: 0; }
+.news-results-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--joy-palette-divider);
+}
+@media (max-width: 600px) {
+  .news-primary-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .news-primary-controls > * { min-width: 0; }
+  .news-date-inputs { grid-column: 1 / -1; }
+  .news-date-inputs .MuiInput-root { flex: 1; width: 0; }
+  .news-topic .MuiSelect-button, .news-collection-date .MuiSelect-button {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .news-results-toolbar { gap: 2px; }
+}

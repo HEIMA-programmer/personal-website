@@ -6,11 +6,11 @@ import TerminalRoundedIcon from "@mui/icons-material/TerminalRounded";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
-import { useNavigate } from "react-router-dom";
 import ListSubheader from "@mui/material/ListSubheader";
 import Menu from "@mui/joy/Menu";
 import { styled } from "@mui/joy";
 import MusicControl from "./MusicControl";
+import SoundEffectsControl from "./SoundEffectsControl";
 import { Application } from "@splinetool/runtime";
 
 const MenuItemDead = styled(MenuItem)`
@@ -33,7 +33,6 @@ export default function NavMenu({
   setMusicPlaying,
   splineApp,
 }: Props) {
-  const navigate = useNavigate();
   function emitSplineMouseDownEvent(nameOrUid: string) {
     splineApp.emitEvent("mouseDown", nameOrUid);
   }
@@ -41,7 +40,7 @@ export default function NavMenu({
   return (
     <Menu placement="top-start">
       <ListSubheader>Navigate around my Room</ListSubheader>
-      <MenuItem onClick={() => navigate(import.meta.env.VITE_ROUTE_RESUME)}>
+      <MenuItem onClick={() => emitSplineMouseDownEvent("Notebook")}>
         <ListItemDecorator><ArticleRoundedIcon /></ListItemDecorator>
         My Resume
       </MenuItem>
@@ -75,6 +74,10 @@ export default function NavMenu({
           musicPlaying={musicPlaying}
           setMusicPlaying={setMusicPlaying}
         />
+      </MenuItemDead>
+      <MenuItemDead>
+        Sound effects:
+        <SoundEffectsControl />
       </MenuItemDead>
       <MenuItemDead>
         Color Theme:

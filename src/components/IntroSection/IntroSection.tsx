@@ -13,11 +13,10 @@ export default function IntroSection() {
         <Link className="profile-highlight" data-accent="blue" href="https://www.csu.edu.cn/" target="_blank" rel="noopener noreferrer">Central South University</Link>.
       </Typography>
       <Typography level="body-lg">
-        I've received provisional admission through the postgraduate recommendation
-        pathway to the direct PhD programme in{" "}
+        Provisionally admitted via recommendation to the direct PhD in{" "}
         <Typography component="span" className="profile-highlight" data-accent="green">Bioinformatics</Typography> at the{" "}
-        <Link className="profile-highlight" data-accent="violet" href="https://zje.zju.edu.cn/" target="_blank" rel="noopener noreferrer">Zhejiang University–University of Edinburgh Institute (ZJE)</Link>, under the supervision of{" "}
-        <Link className="profile-highlight" data-accent="amber" href="https://labw.org/" target="_blank" rel="noopener noreferrer">Wanlu Liu</Link>. I plan to pursue research in{" "}
+        <Link className="profile-highlight" data-accent="violet" href="https://zje.zju.edu.cn/" target="_blank" rel="noopener noreferrer">Zhejiang University–University of Edinburgh Institute (ZJE)</Link>, supervised by{" "}
+        <Link className="profile-highlight" data-accent="amber" href="https://labw.org/" target="_blank" rel="noopener noreferrer">Wanlu Liu</Link>. My planned research focuses on{" "}
         <Typography component="span" className="profile-highlight" data-accent="teal">computational immunology</Typography>.
       </Typography>
     </Stack>

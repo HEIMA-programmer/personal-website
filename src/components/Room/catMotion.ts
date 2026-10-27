@@ -2,6 +2,7 @@ export type CatPoint = { x: number; y: number; z: number };
 export type CatActivity = 'rest' | 'sit' | 'transition' | 'walk' | 'crouch' | 'jump' | 'land';
 export type CatStep = { duration: number; clip: string; activity: CatActivity; from: CatPoint; to: CatPoint; heading: number; gravity?: number };
 
+export const CAT_WALK_SPEED = 29;
 export const FLOOR: CatPoint = { x: 125, y: -178, z: 100 };
 export const LAUNCH: CatPoint = { x: 198, y: -178, z: -80 };
 export const PERCH: CatPoint = { x: 110, y: -39.69, z: -190 };
@@ -10,7 +11,7 @@ const heading = (a: CatPoint, b: CatPoint) => Math.atan2(b.x-a.x,b.z-a.z);
 const stay = (duration: number, clip: string, activity: CatActivity, at: CatPoint, angle: number): CatStep => ({duration,clip,activity,from:at,to:at,heading:angle});
 const walk = (from: CatPoint, to: CatPoint): CatStep[] => [
   stay(.65,'IdleNorm','rest',from,heading(from,to)),
-  {duration:Math.hypot(to.x-from.x,to.z-from.z)/29,clip:'WalkCycle',activity:'walk',from,to,heading:heading(from,to)},
+  {duration:Math.hypot(to.x-from.x,to.z-from.z)/CAT_WALK_SPEED,clip:'WalkCycle',activity:'walk',from,to,heading:heading(from,to)},
 ];
 const jump = (from: CatPoint, to: CatPoint, duration: number): CatStep[] => [
   stay(.65,'IdleNorm','rest',from,heading(from,to)),

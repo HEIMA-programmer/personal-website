@@ -14,6 +14,6 @@ Original file SHA-256 values (base64):
 - scene.gltf: BLwRrWZL65yEKE+4pOYw3lrun8ZUrw5HqeM3ol96HoI=
 - scene.bin: iiRZRV2GxilBDUvz6tUAzT3z5+Vqr/AkzQ6wFZFfTqw=
 
-Changes made by this website at runtime: uniform scaling and placement in the room; playback and blending of the six included animations; gentle additional joint poses for petting, grooming and airborne forelegs; paw contact adjustment; room-specific PBR shader compatibility and ballistic movement. The original downloaded model files have not been edited.
+Changes made by this website at runtime: uniform scaling and placement in the room; playback and blending of the six included animations; walking-gait amplitude adjustment with preserved foot trajectories and calibrated playback speed; gentle additional joint poses for petting, grooming and airborne forelegs; paw contact adjustment; room-specific PBR shader compatibility and ballistic movement. The original downloaded model files have not been edited.
 
 The model is covered by CC BY 4.0, separately from the inherited website and room assets. No endorsement by the artist is implied.
