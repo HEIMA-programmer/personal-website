@@ -1,0 +1,48 @@
+{
+  "name": "yanbin-personal-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "news:update": "node scripts/update-news.mjs",
+    "test": "node --test scripts/update-news.test.mjs",
+    "room:prepare": "node scripts/prepare-room.mjs"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/inter": "^5.2.6",
+    "@mui/icons-material": "^7.1.2",
+    "@mui/joy": "^5.0.0-beta.52",
+    "@mui/material": "^7.1.2",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.10.13",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.18.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-multi-carousel": "^2.8.6",
+    "react-router-dom": "^7.6.2",
+    "react-snap-carousel": "^0.5.1",
+    "react-terminal": "^1.4.5",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "@vitejs/plugin-react": "^4.5.2",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "msgpackr": "^1.11.5",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

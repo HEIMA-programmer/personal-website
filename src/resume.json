@@ -1,0 +1,58 @@
+{
+  "basics": {
+    "name": "Yanbin Xu",
+    "image": "",
+    "email": "yann3434274@gmail.com",
+    "phone": "",
+    "url": "https://github.com/HEIMA-programmer",
+    "summary": "Final-year Computer Science and Technology undergraduate at the Dundee International Institute of Central South University. Provisionally admitted through the postgraduate recommendation pathway to the direct PhD programme in Bioinformatics at the Zhejiang University–University of Edinburgh Institute (ZJE), under the supervision of Wanlu Liu, with planned research in computational immunology.",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "HEIMA-programmer",
+        "url": "https://github.com/HEIMA-programmer"
+      }
+    ]
+  },
+  "work": [],
+  "education": [
+    {
+      "institution": "Central South University",
+      "url": "",
+      "area": "Computer Science and Technology",
+      "studyType": "Undergraduate",
+      "startDate": "2023",
+      "endDate": "2027",
+      "location": "Dundee International Institute",
+      "highlights": [
+        "Final-year undergraduate at the Dundee International Institute of Central South University.",
+        "Expected graduation in 2027."
+      ]
+    },
+    {
+      "institution": "Zhejiang University–University of Edinburgh Institute (ZJE)",
+      "url": "",
+      "area": "Bioinformatics",
+      "studyType": "Direct PhD (anticipated)",
+      "startDate": "2027",
+      "endDate": "2032",
+      "location": "ZJE",
+      "highlights": [
+        "Provisional admission through the postgraduate recommendation pathway; anticipated study period: 2027–2032.",
+        "Supervisor: Wanlu Liu.",
+        "Planned research direction: computational immunology."
+      ]
+    }
+  ],
+  "certificates": [],
+  "skills": [
+    { "name": "Computational Immunology" },
+    { "name": "TCR/BCR Repertoires" },
+    { "name": "Single-cell Analysis" },
+    { "name": "Clonal Dynamics" },
+    { "name": "Longitudinal Modelling" }
+  ],
+  "languages": [],
+  "projects": [],
+  "funfacts": []
+}

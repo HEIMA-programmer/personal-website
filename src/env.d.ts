@@ -1,0 +1,17 @@
+/// <reference types="vite/client" />
+
+interface ImportMetaEnv {
+  readonly VITE_SPLINE_URL: string;
+  readonly VITE_SPLINE_CONTENT_LENGTH: number;
+  readonly VITE_MY_EMAIL: string;
+  readonly VITE_ROUTE_LANDING: string;
+  readonly VITE_ROUTE_ROOM: string;
+  readonly VITE_ROUTE_MAP: string;
+  readonly VITE_ROUTE_TERMINAL: string;
+  readonly VITE_ROUTE_RESUME: string;
+  readonly VITE_CONTACT_EMAIL: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

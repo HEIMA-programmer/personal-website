@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T14:50:49.774Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-14",
+    "end": "2026-10-27"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 487
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 1139
+    }
+  ],
+  "selection": "Up to 12 previously unfeatured papers, ranked by computational-immunology relevance. Automated discovery, not a scientific-quality assessment.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.10.13.758550",
+      "title": "ClonoDeconv: reference-based α - β paired recurrent clonotype proportion estimation from bulk-TCR sequencing",
+      "authors": "Zhou, Y.; Antoun, E.; Pereira Pinho, M.; Zheng, J.; Wu, Y.; Adigbli, G.; Issa, F.; Peng, Y.; Knight, J.; Dong, T.",
+      "abstract": "T cell receptor (TCR) sequencing is crucial when studying antigen-specific T cell responses and clonal dynamics. A key objective of TCR repertoire analysis is to identify recurring clonotypes across timepoints or different disease states, providing insight into the evolution of immune response. Bulk-TCR sequencing enables high-throughput profiling of TCR and {beta} sequences but lacks pairing information, while single cell TCR sequencing (scTCR-seq) retains pairing information but is limited by sensitivity, throughput, and costs. We present ClonoDeconv, a computational framework to deconvolute paired TCR {beta} ; clonotype frequency from bulk TCR sequencing experiments using a paired scTCR-seq reference. ClonoDeconv robustly estimated shared clonotype abundances from 5' RACE bulk-TCR datasets using a scTCR-seq reference from the same donor. Applied to longitudinal samples, ClonoDeonv successfully captured the expansion and contraction of rare virus-specific clones across timepoints. Taken together, ClonoDeconv provides a cost-effective and scalable approach for studying the longitudinal T-cell clonal dynamics.",
+      "date": "2026-10-19",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.10.13.758550",
+      "url": "https://doi.org/10.64898/2026.10.13.758550",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 16
+    },
+    {
+      "id": "doi:10.1111/exd.70376",
+      "title": "Spatial and Single-Cell Multi-Omics Analyses of T-Cell Subsets and Interactions in Melanoma Lymph Node Metastasis.",
+      "authors": "Ramli RA, Tan S, Chen Y, Boyle G, Nguyen Q.",
+      "abstract": "Melanoma is a highly immunogenic malignancy, yet responses to systemic therapy remain variable. The tumour-draining lymph node (TDLN), including the sentinel lymph node (SLN) during early regional spread, is not only a site of metastatic dissemination but also an important setting for T-cell priming and immune regulation. Conventional classification of nodes as tumour-positive or tumour-negative provides essential staging information but reveals little about their immune state. Single-cell immune transcriptomics, T-cell receptor sequencing and single-cell epigenomics now allow T-cell states, clonal dynamics and regulatory programmes to be examined in greater detail. Spatial transcriptomics, multiplex imaging, spatial proteomics and emerging spatial metabolomics add the anatomical context needed to determine where these cells and molecular programmes occur within the intact tissue architecture. In this review, we examine how these approaches are being utilised to study T-cell heterogeneity, spatial organisation and immune interactions within melanoma TDLNs, together with the emerging contribution of artificial intelligence (AI)-assisted pathology. We also critically evaluate how these technologies are applied, with attention to tissue requirements, spatial resolution, molecular coverage, computational demands, scalability to archival haematoxylin and eosin (H&E) imaging cohorts and careful interpretation of predicted or inferred spatial features. By combining biological profiling with methodological appraisal, we highlight how multi-omics immune signatures may refine nodal disease assessment and guide future biomarker development, while noting that clinical translation will require standardised analytical pipelines and disease-specific validation across independent melanoma cohorts.",
+      "date": "2026-10-01",
+      "dateLabel": "Published",
+      "doi": "10.1111/exd.70376",
+      "url": "https://doi.org/10.1111/exd.70376",
+      "source": "Europe PMC",
+      "venue": "Experimental dermatology",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 16
+    },
+    {
+      "id": "doi:10.3389/fimmu.2026.1924940",
+      "title": "Integrated single-cell multi-omics analysis delineates neonatal immune dysregulation associated with gestational diabetes mellitus.",
+      "authors": "He R, Liu Z, Meng Q, Wu K, Wu J, Li Y, Luo OJ, Li Y.",
+      "abstract": "Introduction Gestational diabetes mellitus (GDM) is a common pregnancy complication which could induce immune dysfunction. Although intrauterine hyperglycemia impairs fetal immune development, its cell-type specific effects on neonatal immune cells, and cell‑cell communication remain unclear. Methods In this pilot study, we performed integrated 5' single‑cell RNA sequencing and TCR repertoire analysis of cord blood mononuclear cells from two GDM and one type 2 diabetes mellitus (T2DM) mother-neonate pairs, with public healthy cord blood data (GSE157007) as controls. After quality control, 50,656 cells were analyzed using Seurat, scRepertoire, SCENIC, Monocle 2, decoupleR, and CellChat. Results Myeloid lineage expansion and reduced naive T‑cell proportions have been found in hyperglycemia‑exposed cord blood. TCR analysis revealed mild clonal diversity compression, a shift toward shorter CDR3 lengths, and fewer ultralong CDR3 sequences in hyperglycemia‑exposed cord blood. The Tpex‑like cell population, which co‑expresses stemness markers (TCF7, BACH2), early development markers of T cells (IKZF1, IKZF2) and the pre‑exhaustion transcription factor TOX, was enriched in cord blood from GDM and T2DM neonates. This subset displayed elevated activity of TGF-β, MAPK and PI3K signaling pathways and predominantly resided within unexpanded T cell clonotypes. Pseudotime trajectory profiling indicates that Tpex-like cells reside at an intermediate differentiation state between precursor and effector T‑cell populations. Cell communication analysis indicated increased immune interaction strength in GDM cord blood, with enrichment of pro‑inflammatory pathways (SEMA4, IL‑16, SIRP), whereas homeostatic pathways (LAIR1, GALECTIN) dominated in healthy controls. Discussion We characterized multi-layered neonatal immune dysregulation observed in the setting of GDM‑associated intrauterine hyperglycemia. Tpex‑like cells represent a candidate cellular state linked to early immune changes in GDM offspring. We firstly identified candidate molecular signatures for subsequent mechanistic and translational exploration. These pilot findings require validation in larger independent cohorts.",
+      "date": "2026-09-30",
+      "dateLabel": "Published",
+      "doi": "10.3389/fimmu.2026.1924940",
+      "url": "https://doi.org/10.3389/fimmu.2026.1924940",
+      "source": "Europe PMC",
+      "venue": "Frontiers in immunology",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 16
+    },
+    {
+      "id": "doi:10.3390/cancers18193158",
+      "title": "Single-Cell and Multi-Omics Profiling of the Multiple Myeloma Immune Niche: From Bone Marrow Architecture and Metabolic Reprogramming to Immunotherapy Response.",
+      "authors": "Beider K, Ostrovsky O, Nagler A.",
+      "abstract": "Multiple myeloma (MM) is increasingly understood as a spatially organized and dynamically evolving disease, in which malignant plasma-cell behavior is shaped by local immune, stromal, vascular, and metabolic contexts. Single-cell, spatial, and multi-omic technologies have resolved tumor-cell heterogeneity, bone marrow niche remodeling, immune dysfunction, and therapy-induced selection at unprecedented resolution, yet an integrated synthesis linking marrow architecture, extramedullary dissemination, circulating tumor cells, metabolic reprogramming, chimeric antigen receptor T (CAR-T) cell and T-cell-redirecting immunotherapy, and stem-cell transplantation remains lacking. Here, we review how malignant subclones occupy distinct marrow regions, focal lesions, and extramedullary sites with different transcriptional, antigenic, immune-interactive, and metabolic states. We discuss how spatial transcriptomics and multiplexed imaging reveal immune exclusion, stromal support, oxidative and glycolytic niches, and region-specific antigen heterogeneity. We further examine how circulating tumor cells serve as liquid readouts of tumor burden, high-risk genomics, and clonal evolution. Emphasis is placed on CAR T-cell and T-cell engager therapies, where response and resistance depend on antigen retention, effector-cell fitness, clonal T-cell expansion, myeloid suppression, and spatial accessibility. Finally, we consider autologous hematopoietic stem-cell transplantation as a clinical model of cytoreduction, lymphodepletion, and incomplete immune reconstitution. We propose that MM progression and relapse should be interpreted through an integrated spatial-temporal framework, in which therapeutic outcome reflects the interaction between malignant plasma-cell plasticity, immune competence, stromal persistence, metabolic adaptation, and residual disease localization.",
+      "date": "2026-09-29",
+      "dateLabel": "Published",
+      "doi": "10.3390/cancers18193158",
+      "url": "https://doi.org/10.3390/cancers18193158",
+      "source": "Europe PMC",
+      "venue": "Cancers",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology",
+        "Antigen & receptor prediction",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 16
+    },
+    {
+      "id": "doi:10.1016/j.bneo.2026.100282",
+      "title": "Single-cell sequencing reveals transcriptional and immunogenetic diversity in stereotyped chronic lymphocytic leukemia.",
+      "authors": "Oder B, Rabbani L, Del Peso Santos T, Parikh SA, Plevova K, Mansouri L, Chatzidimitriou A, Pospisilova S, Kay NE, Stamatopoulos K, Österholm C, Rosenquist R.",
+      "abstract": "Chronic lymphocytic leukemia (CLL) comprises immunogenetically defined stereotyped subsets of patients with distinct B-cell receptor (BcR) immunoglobulin features and clinical trajectories, yet the molecular pathways underlying subset-specific differences remain incompletely characterized. To resolve disease-relevant heterogeneity obscured in bulk analyses, we performed integrated single-cell transcriptomic and immunogenetic profiling of 48 557 malignant and bystander immune cells from 13 treatment-naïve primary patient samples representing poor-prognostic subsets #1 and #2 and the indolent subset #4. Despite interpatient variability, leukemic cells exhibited pronounced subset-specific transcriptional features, with enrichment of hypoxia-related genes in subset #1, oxidative phosphorylation (OXPHOS), MYC/E2F targets, and mechanistic target of rapamycin complex 1 (mTORC1) signaling in subset #2, and negative enrichment of hypoxia, apoptosis, and reactive oxygen species-related pathways in subset #4. Notably, compared with indolent subset #4, aggressive subsets #1 and #2 harbored increased proportions of metabolically active and recently emigrated/proliferative leukemic cells, characterized by a CXCR4 dim CD5 bright transcriptional phenotype and concerted enrichment of MYC target genes, mTORC1 signaling, OXPHOS, and BcR signaling. Immunogenetic analyses revealed dominant malignant clones with evidence of intraclonal immunogenetic diversification in 11 of 13 cases. T cells were dominated by effector-memory phenotypes exhibiting progressive differentiation toward terminal cytotoxic states, accompanied by exhaustion-associated programs, and expanded T-cell clones largely restricted to terminal states. Ligand-receptor analysis further indicated costimulatory and inhibitory signaling between leukemic and immune cells. Together, this study provides an integrated view of the transcriptional and immunogenetic landscape of 3 major stereotyped CLL subsets, linking BcR immunoglobulin configuration with proliferative capacity and microenvironmental cross talk, thereby shaping clonal behavior.",
+      "date": "2026-08-11",
+      "dateLabel": "Published",
+      "doi": "10.1016/j.bneo.2026.100282",
+      "url": "https://doi.org/10.1016/j.bneo.2026.100282",
+      "source": "Europe PMC",
+      "venue": "Blood neoplasia",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by-nc-nd",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 16
+    },
+    {
+      "id": "doi:10.1002/mco2.71087",
+      "title": "Comprehensive Immune Repertoires of T Cell Receptor and B Cell Receptor Identify Key Immune Features Associated With Disease Activity of Systemic Lupus Erythematosus.",
+      "authors": "Wu J, Zhou Z, Yu A, Lin X, Ren Y, Teng J, Zhu D, Wang F, You Y, Ji X, Wang P, Li H, Yang C, Wang W, Du Y, Ye J.",
+      "abstract": "We integrated immune repertoire sequencing (CD4+ and CD8+ T cell receptor [TCR], B cell receptor [BCR]) and transcriptional profiling to characterize the peripheral immune landscape in 32 active systemic lupus erythematosus (SLE) patients, 30 stable SLE patients, and 35 healthy donors. CD4+ and CD8+ TCR α- and β-chain repertoires in SLE patients showed lower diversity, reduced similarity, and more heterogeneous V-J usage, with CD8+ TCR profiles exhibiting relatively consistent stepwise changes across healthy, stable, and active groups. CD8+ T-cell transcriptomics revealed activity-associated upregulation of CD38 , S100A11 , IFITM3 , and LAG3 . In addition, BCR immunoglobulin heavy chain (IGH) repertoire analysis showed isotype-specific remodeling in SLE, characterized by contracted IgM/IgD repertoires, increased IgA isotype ratio and richness, and enhanced IgG diversity. Active SLE showed further increased IgG richness with rare-clone enrichment and higher IgM diversity. Among the TCR, BCR, and CD8+ T-cell transcriptomic features evaluated, IGH-derived metrics, particularly IgG- and IgA-associated features, showed apparent within-cohort discrimination between active and stable SLE. Genetic algorithm-based label-guided feature selection followed by hierarchical clustering revealed a multi-omics pattern associated with disease activity within the current cohort. Our study characterized peripheral immune repertoire and transcriptional alterations in SLE and highlighted their value for characterizing disease activity.",
+      "date": "2026-10-23",
+      "dateLabel": "Published",
+      "doi": "10.1002/mco2.71087",
+      "url": "https://doi.org/10.1002/mco2.71087",
+      "source": "Europe PMC",
+      "venue": "MedComm",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.64898/2026.05.29.728700",
+      "title": "Computational identification of responding T cell clones from longitudinal repertoire sequencing",
+      "authors": "Milighetti, M.; Sethna, Z.; Martis, S.; Reiche, C.; Elhanati, Y.; Balachandran, V. P.; Greenbaum, B. D.; Walczak, A. M.; Mora, T.",
+      "abstract": "T cells activate and expand upon interaction with cognate antigen, derived from pathogens or mutated proteins. T cell clones can be identified by their T cell receptor (TCR) which acts as a unique barcode to track their expansion. Longitudinal TCR sequencing can be used to track T cell responses to a large array of stimuli. However, experimental identification of T cell clones of interest is challenging, especially when information about the driving antigen is lacking. Computational identification based on clonal dynamics is an antigen-agnostic alternative. However, it is subject to sequencing noise and biological variability, and relies on the choice of particular timepoints that are compared to find expanding and contracting clones. We review existing methods for identification of responding T cell clones from TCR sequencing, and the strategies that have been used to account for noise. We highlight that most methods look for clones at specific timepoints, and discuss the need for unbiased methods to shed light on new dynamics. We showcase how to address these needs by proposing CloneSearch, a method to identify expanding and contracting T cell clones from longitudinal TCR sequencing which is agnostic to the time of stimulus and can account for the noise these clones are subject to. CloneSearch can recapitulate previously identified responses from published data, and expand the analysis to show identification of previously undetected responses from these same datasets.",
+      "date": "2026-10-21",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.05.29.728700",
+      "url": "https://doi.org/10.64898/2026.05.29.728700",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.1016/j.autrev.2026.104201",
+      "title": "Decoding autoimmune diseases through the adaptive immune receptor repertoires.",
+      "authors": "Wang X, Zhu H, Li Z, Cao L.",
+      "abstract": "The adaptive immune receptor repertoire (AIRR), composed of T-cell receptors (TCRs) and B-cell receptors (BCRs), underpins antigen-specific immunity through extensive diversity generated by V(D)J recombination and junctional modification. Advances in high-throughput AIRR sequencing have enabled comprehensive characterization of clonal diversity, gene usage patterns, and antigen-driven selection at unprecedented resolution. In autoimmune diseases, breakdown of immune tolerance permits the persistence and expansion of autoreactive lymphocyte clones, and is associated with characteristic repertoire remodeling. Reported alterations include changes in repertoire diversity, oligoclonal expansion, biased V(D)J gene usage, and convergent CDR3 motifs. Notably, repertoire changes exhibit spatial and temporal heterogeneity across peripheral blood and target tissues, highlighting the compartmentalized nature of adaptive immune responses. This review synthesizes current evidence on TCR and BCR repertoire alterations across major autoimmune diseases, including rheumatoid arthritis, systemic lupus erythematosus, Sjögren's disease, type 1 diabetes, and ankylosing spondylitis. We summarize emerging computational frameworks for AIRR analysis and highlight machine learning approaches for clonotype classification and antigen specificity prediction. Furthermore, we discuss the diagnostic, prognostic, and therapeutic implications of AIRR profiling, particularly the potential for identifying disease-associated clonotypes and guiding antigen-specific immunotherapies. Despite ongoing technical and biological challenges, continued advances in sequencing technologies and computational modeling are strengthening the role of AIRR analysis as a valuable framework for elucidating autoimmune pathogenesis and advancing precision immunology.",
+      "date": "2026-10-20",
+      "dateLabel": "Published",
+      "doi": "10.1016/j.autrev.2026.104201",
+      "url": "https://doi.org/10.1016/j.autrev.2026.104201",
+      "source": "Europe PMC",
+      "venue": "Autoimmunity reviews",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.1080/22221751.2026.2751804",
+      "title": "Longitudinal BCR repertoire dynamics reveal the evolution of broadly binding antibodies following heterologous SARS-CoV-2 vaccination and breakthrough infection: a single-donor case study.",
+      "authors": "Qiao R, Chen X, Zhang X, Shao Y, Zhang L, Yang L, Mi Y, Lu Y, Li J, Chen Y, Yu H, Wang Y, Zhao X, Wang P.",
+      "abstract": "Continued SARS-CoV-2 antigenic drift and the persistent risk of zoonotic sarbecovirus spillover highlight the need for broadly protective countermeasures. Here, we longitudinally profiled the B-cell receptor (BCR) repertoire of a single volunteer who received heterologous booster vaccination followed by Omicron BF.7 breakthrough infection, integrating bulk BCR sequencing with single B-cell culture and antibody binding analysis. Breakthrough infection was associated with broadened serum neutralization across SARS-CoV-2 variants and related sarbecoviruses, consistent with recall of antibodies targeting conserved epitopes. Repertoire analysis revealed stage-specific remodeling, with high-affinity binding antibodies shifting from an IGHV1-46-enriched profile after vaccination to preferential representation of IGHV3-30-3 after infection. Isolated monoclonal antibodies exhibited nanomolar-to-picomolar binding affinities to diverse animal-derived sarbecovirus spikes, with broad binding commonly, but not universally, associated with CDRH3 lengths of 14-16 amino acids. Phylogenetic and sequence analyses defined divergent evolutionary trajectories for IGHV1-46 and IGHV3-30-3 lineages, highlighting candidate genetic features that warrant validation in larger cohorts. Together, these findings describe how sequential heterologous antigen exposures can reshape the humoral repertoire in one individual and generate hypotheses for future pan-sarbecovirus antibody and vaccine studies.",
+      "date": "2026-10-17",
+      "dateLabel": "Published",
+      "doi": "10.1080/22221751.2026.2751804",
+      "url": "https://doi.org/10.1080/22221751.2026.2751804",
+      "source": "Europe PMC",
+      "venue": "Emerging microbes & infections",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.1016/j.isci.2026.117918",
+      "title": "Single-cell dissection of self-derived versus donor-derived T cell exhaustion niches in patients with acute myeloid leukemia.",
+      "authors": "Yu CZ, Chen YL, Zhang XH, Xu LP, Wang Y, Chen H, Chen YH, Wang FR, Sun YQ, Zhang YY, Lv M, Mo XD, Cheng YF, Liu KY, Zhao XS, Sun XQ, Zhao XY, Huang XJ, Chang YJ.",
+      "abstract": "Relapse remains the main cause of death in acute myeloid leukemia (AML), and T cell exhaustion is related to relapse in both non-allografting and allografting settings. However, differences in exhausted T cells (T ex ) across different disease contexts remain incompletely understood. We performed single-cell RNA and T cell receptor (TCR) sequencing to systematically characterize T ex in AML. Both self-derived T ex in non-transplantation and donor-derived T ex in post-transplant settings express similar surface markers, but NFATC1/NFATC3 with downstream TOX and EOMES are enriched in self-derived T ex , while NFATC2 with downstream NR4A2 predominates in donor-derived T ex . Both self-derived and donor-derived bone marrow environments are enriched with immunosuppressive monocytes, dendritic cells, and regulatory T cells. Cell-cell interaction analysis reveals strong direct and indirect interactions between T ex and AML cells, primarily mediated by galectin-9, MIF, and TGF-β1. These findings highlight differences and commonalities between self-derived and donor-derived T ex and identify potential therapeutic targets for reversing T ex in AML.",
+      "date": "2026-10-16",
+      "dateLabel": "Published",
+      "doi": "10.1016/j.isci.2026.117918",
+      "url": "https://doi.org/10.1016/j.isci.2026.117918",
+      "source": "Europe PMC",
+      "venue": "iScience",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.64898/2026.10.06.757206",
+      "title": "Revealing pan-cancer clonal niches of T cells from single-cell RNA sequencing using contrastive learning",
+      "authors": "Shorer, O.; Pinhasi, A.; Amit, R.; Yizhak, K.",
+      "abstract": "T-cell clonal organization is central to anti-tumor immunity, yet its functional characterization typically requires paired single-cell RNA and TCR sequencing (scRNA/TCR-seq). Existing multimodal methods integrate transcriptome and TCR information but are limited when TCR data are unavailable. Here we present CloneTrast, a supervised contrastive-learning framework that uses paired scRNA/TCR-seq during training to learn clonal-functional states from gene expression, while requiring only scRNA-seq at inference. Using paired scRNA/TCR-seq profiles from 2.6 million human T cells across 16 cancer types, CloneTrast identified distinct T-cell clonal niches not explained solely by TCR sequence similarity or conventional cell-state annotations. Among these, an NK-like T-cell niche enriched for tumor-blood shared TCRs was consistently associated with poor immunotherapy response at the pan-cancer level. Analysis of antigen-specific T-cell clones revealed that tumor-resident and blood-borne antigen-specific T cells were preferentially associated with distinct clonal niches. Overall, CloneTrast enables scalable and interpretable inference of clonal organization from single-cell transcriptomes.",
+      "date": "2026-10-14",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.10.06.757206",
+      "url": "https://doi.org/10.64898/2026.10.06.757206",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology",
+        "Antigen & receptor prediction",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 14
+    },
+    {
+      "id": "doi:10.1007/s44307-026-00139-2",
+      "title": "A single-cell profile of the porcine immune repertoire: concurrent profiling of T cell receptor and B cell receptor V(D)J sequences in health.",
+      "authors": "Zhang H, Zhang Q, Zhang H, Wang P, Geng R, Pan R, Li C, Shi F, Liu J, Wu Y, Cao Y.",
+      "abstract": "Adaptive immune diversity is shaped by the complex organization of T cell receptor (TCR) and B cell receptor (BCR) repertoires across tissues. However, a systematic cross-tissue immune repertoire profiling in healthy pigs is still lacking. In this study, we used 3 14-day-old Duroc × Landrace × Yorkshire (DLY) crossbred piglets, all of which were male. After sample purification, a total of 71,731 cells were retained. We established single-cell profiling integrating paired BCR and TCR repertoires across 11 immune-associated tissues using single-cell RNA sequencing combined with V(D)J sequencing based on DLY crossbred piglets. Diverse populations of immune cells were identified, with significant tissue-specific heterogeneity being revealed in lymphatic, mucosal, and circulatory organs. Immune repertoire analysis demonstrated biased V(D)J gene usage, conserved complementarity-determining region 3 (CDR3) length distributions, preferential receptor pairing patterns, and extensive clonotype diversity. Cross-tissue analyses further revealed coordinated clonotype sharing and distinct clonal expansion patterns among immune cell subsets. In addition, using the Pig-specific V(D)J primers we designed, the sequencing results have achieved a modest improvement in the detection of immunoglobulin alleles compared to previous studies. It is expected to provide a more reliable technical solution for related research. Collectively, this work provides a comprehensive reference profiling of the healthy DLY crossbred piglet adaptive immune system and offers valuable resources for future studies of porcine immunology, infectious diseases, and vaccine responses.",
+      "date": "2026-10-09",
+      "dateLabel": "Published",
+      "doi": "10.1007/s44307-026-00139-2",
+      "url": "https://doi.org/10.1007/s44307-026-00139-2",
+      "source": "Europe PMC",
+      "venue": "Advanced biotechnology",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 14
+    }
+  ]
+}

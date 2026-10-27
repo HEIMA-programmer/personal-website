@@ -1,0 +1,18 @@
+#terminalEditor::-webkit-scrollbar {
+  display: none;
+}
+
+/* Colors for joystick */
+.nipple {
+  /* One over NavMenu */
+  z-index: 2 !important;
+}
+
+.nipple.back {
+  background: var(--joy-palette-background-level2) !important;
+}
+
+.nipple.front {
+  background: var(--joy-palette-neutral-softColor) !important;
+  opacity: 0.4;
+}
