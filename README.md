@@ -2,7 +2,7 @@
 
 Personal academic homepage adapted directly from [Leonard Niehaus's personal-website](https://github.com/niehaus1301/personal-website), retaining the original React / Joy UI design and Spline room.
 
-Upstream baseline: `c5198583b41468baf4dee184e53f6fdac4120af5`. The original Git history is retained. `upstream` points to the template and `origin` to [HEIMA-programmer/personal-website](https://github.com/HEIMA-programmer/personal-website).
+Upstream baseline: `c5198583b41468baf4dee184e53f6fdac4120af5`. The source history is retained with historical `.env` files removed because GitHub detected an old Mapbox secret in upstream history. Only the current public website configuration is restored in a new commit. `upstream` points to the template and `origin` to [HEIMA-programmer/personal-website](https://github.com/HEIMA-programmer/personal-website).
 
 ## Run locally
 
