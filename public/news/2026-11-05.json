@@ -1,0 +1,225 @@
+{
+  "version": 2,
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T07:58:16.839Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-23",
+    "end": "2026-11-05"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 526
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 857
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.11.03.763491",
+      "title": "High-fat diet promotes exhaustion-associated T-cell remodeling across vascular and lymphoid tissues in atherosclerosis-prone mice",
+      "authors": "Yarahmadi, P.; Xie, Y.; Huynh, D. T. N.; Lai, J.; Ling, Q.; Huang, X.; Nguyen, P. K.",
+      "abstract": "Background: Atherosclerosis is a chronic inflammatory disease driven by lipid accumulation and immune dysregulation. How chronic dietary lipid exposure reshapes T-cell states across vascular and lymphoid tissues, and whether these changes resolve after dietary normalization, remains incompletely defined. This study examined diet-associated T-cell remodeling and the contribution of macrophage-mediated stimulation. Methods: ApoE-deficient mice received a vegetarian diet (VD) or high-fat diet (HFD) for 12 or 24 weeks; a dietary reversal group received HFD for 12 weeks followed by VD for 12 weeks. CD45-positive cells from aorta, blood, spleen, lymph nodes, and bone marrow underwent single-cell RNA sequencing with matched T-cell receptor sequencing. T cell states were annotated using canonical markers, and exhaustion- and naive-associated programs were quantified using UCell scores. Analysis assessed T-cell composition, clonal expansion, and predicted macrophage-T cell communication, with splenic flow-cytometric validation. Results: HFD was associated with enrichment of exhaustion-associated states, with the highest exhaustion scores in the aorta. At 24 weeks, the pooled exhausted-cell proportion was 15.7% under HFD versus 10.6% under VD. Dietary reversal restored this proportion to 10.6%, while residual transcriptional changes persisted in a tissue-dependent manner. Flow cytometry corroborated increased inhibitory receptor expression and co-expression. Aortic macrophages exhibited inflammatory and antigen-presentation programs alongside increased predicted communication with T cells. Aortic T-cell activation and clonal expansion accompanied these changes, and clonotype size correlated with exhaustion score (Spearman correlation coefficient = 0.57, p = 0.029). Conclusion: Chronic HFD is associated with multicompartment T-cell remodeling, with prominent vascular exhaustion-associated programs and tissue-dependent recovery after dietary normalization. These findings suggest that dietary lipid exposure may leave a durable adaptive immune imprint across organs during atherosclerosis.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.763491",
+      "url": "https://doi.org/10.64898/2026.11.03.763491",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.763491.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 11,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "epmc:PMC:PMC13728433",
+      "title": "Single-cell and spatial transcriptomics in intrahepatic cholangiocarcinoma: spatial immune ecosystems, metabolic remodeling, and immunotherapeutic implications",
+      "authors": "Yan Y, Teng T, Luo X, Liu J, Wang J.",
+      "abstract": "",
+      "date": "2026-11-04",
+      "dateLabel": "Published",
+      "doi": "",
+      "url": "https://europepmc.org/article/PMC/PMC13728433",
+      "source": "Europe PMC",
+      "venue": "Frontiers in immunology",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "pmcid": "PMC13728433",
+      "openAccess": true,
+      "inEuropePmc": true,
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 10,
+      "firstSeen": "2026-11-05",
+      "figure": null,
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "no-reusable-figure"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763083",
+      "title": "Polygenic polymorphisms cooperate to drive expansion of HCMV adaptive NK cell and NK-like T cell populations",
+      "authors": "Le Luduec, J.-B.; Kontopoulos, T.; Panjwani, M. K.; Liu, H.; Sotille, R.; Lau, C.; Hsu, K.",
+      "abstract": "Human cytomegalovirus (HCMV) infection drives the expansion of several innate and innate-like lymphocyte populations. Characterized by high cell surface expression of NKG2C, these populations include the adaptive CD56+ Fc{epsilon}RI{gamma}- NK cell, an NK-like TCR{beta}+CD8+ T cell population and a V{gamma}9/V{delta}1+ T cells. Beyond NKG2C expression, both the adaptive NK cell and the NK-like T cell population exhibit enhanced cytokine response to antibody-dependent cellular cytotoxicity (ADCC). Expansion of each population is only observed in 30-40% of HCMV+ individuals and is independent of expansion of each other. In this study, we evaluated 200 healthy donors and identified several immunogenetic factors that influence NKG2C expression across the three lymphocyte populations. NKG2C (KLRC2) copy number and allelic polymorphism was associated with NKG2C+ NK cell frequency and surface expression density in HCMV- but not in HCMV+ individuals. Investigating other genetic loci encoding proteins related to adaptive NK function, we found that CD16a and HLA-E alleles act cumulatively with NKG2C copy number to drive NKG2C expression on lymphocytes among HCMV+ individuals. Polymorphism of the NKG2C ligand HLA-E influences strength of NK cell activation via NKG2C, where NK responsiveness was lower in individuals with the HLA-E*01:03 genotype, while CD16a polymorphism influenced strength of ADCC response among NKG2C+ TCR{beta}+CD8+ T cells. Based on these observations, we conclude that genetic polymorphisms in NKG2C, CD16a and HLA-E shape the NKG2C+ repertoire, influence NKG2C-mediated NK function and dictate capacity of ADCC in response to HCMV infection. Immunogenetic polymorphism among NKG2C-related genes therefore tunes innate immunity to HCMV infection providing additional protection beyond adaptive immunity.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763083",
+      "url": "https://doi.org/10.64898/2026.11.02.763083",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763083.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763646",
+      "title": "A fibroblast-CD8+ T cell circuit drives a Type 1 shift in allergic inflammatory memory",
+      "authors": "Kwong, A. C.; Oliver, I.; Yang, L.; Lotfy, P.; Ordovas-Montanes, J.",
+      "abstract": "Inflammatory memory in barrier tissues often manifests as exaggerated recall responses to previously encountered stimuli. While recall is generally thought to reinforce the Type of inflammation (e.g., Type 1 (T1), Type 2 (T2), or Type 17 (T17)) induced in the primary encounter, whether and how memory responses engage programs beyond the initiating Type is unclear. Here, we adapted well-characterized murine models of T2 atopic dermatitis (AD)-like and T17 psoriasis-like inflammation into repeated challenge paradigms to compare how inflammatory memory is stored and recalled through longitudinal single-cell RNA-sequencing. In T17 inflammation, a network of IL-17-producing {gamma}{delta}T cells, IL-17-responsive keratinocytes and myeloid cells established in primary challenge re-emerged in recall with increased abundance and accelerated kinetics. By contrast, allergic T2 memory drove a particularly exacerbated and durable recall response in which hallmark features of T1 immunity, including interferon (IFN) signaling and cytotoxic lymphocyte recruitment, were unexpectedly layered onto amplified T2 responses. This T2-to-T1 shift was initiated by CD8+ tissue-resident memory T (Trm) cells that expanded with repeated challenge, produced IFN{gamma}, TNF- and IL-13, and closely resembled treatment-refractory Trm cells in AD. Tissue rewiring was supported by Trm-derived T1 cytokines and the IL-4-rich T2 milieu whose synergy on fibroblasts amplified allergic recall via IL-15 and CCL19. By tuning fibroblast IFN responsiveness in vivo, we mechanistically dissect how this fibroblast-CD8+ T cell circuit supports cytotoxic CD8+ T cell responses. In human AD, both arms of allergic recall amplification by this two-cell circuit featuring T1 and T2 effector responses were conserved. Our findings reveal how a stromal-immune circuit drives a clinically relevant T1 immune axis to support allergic inflammatory memory.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763646",
+      "url": "https://doi.org/10.64898/2026.11.02.763646",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763646.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.03.764056",
+      "title": "Proteome-Wide Serology Identifies Secreted IgD against RSV Fusion Glycoprotein as a Signature of Broadly Elevated Antibody Response",
+      "authors": "Turner, Z.; Tang, W.; Rais, Y.; Drabovich, A. P.",
+      "abstract": "Serological evaluation of antibody response using conventional indirect immunoassays cannot capture the full depth, diversity, and functional complexity of human polyclonal antibodies. Here, we developed mass spectrometry-based Proteome-Wide Serology (ProWiSe) assays for the identification and absolute quantification of antigen-specific human antibodies across isotypes, subclasses, and variable-region repertoires. Using ProWiSe, we measured the depth and diversity of serum antibodies to multiple antigens of respiratory syncytial virus (RSV), a pathogen associated with repeated reinfections and skewed immune response. IgG1 antibodies targeting the fusion glycoprotein F (RSVF) dominated the antibody response, with a background-corrected median level of 1,700 ng/mL across 214 healthy maternal serum samples from the general population. ProWiSe identified reproducible co-enrichment of complement component 1q complexes, revealed the usage of several dozen IGHV variable-region germline genes in the anti-RSVF polyclonal response, and suggested limited IGHV repertoire diversity in some individuals. In addition to IgG1, we discovered a complex antibody response characterized by significantly elevated levels of nearly all human immunoglobulin isotypes and subclasses, including previously unexplored IgG4 and IgD. The identification of high-affinity IgD against prefusion and postfusion RSVF, but not against other antigens studied, was the most unexpected observation, occurring in 52% of the healthy maternal serum samples. ProWiSe unambiguously identified the secreted IgD isoform P01880-1 and supported the IgD paradox of preferential {lambda} light-chain usage in secreted IgD. Detectable anti-RSVF IgD levels ([&ge;]0.11 ng/mL) correlated with broadly elevated antibody responses across all other isotypes and subclasses, except IgE. ProWiSe assays offer a versatile platform for quantitative serological diagnostics, exploration of depth, diversity, and dynamics of polyclonal antibody response, and discovery of rare antibody isotypes.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.764056",
+      "url": "https://doi.org/10.64898/2026.11.03.764056",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.764056.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.762613",
+      "title": "CD200R1 Marks a Branchpoint During Human Natural Killer Cell Development in Tonsils",
+      "authors": "Youssef, Y.; Nalin, A.; Ruesch, M.; Lordo, M.; Koenigs, N. T.; Clever, D.; Cesar, J.; Broughton, M.; Chan, W. K.; Mansour, A. G.; Altynova, E.; Zhang, X.; Blachly, J.; Blaser, B.; Oakes, C. C.; Mundy-Bosse, B. L.; kraemer, b.; Freud, A.",
+      "abstract": "Human natural killer (NK) cells arise from common innate lymphoid cell (ILC) progenitor and precursor populations that are selectively enriched within secondary lymphoid tissues (SLTs) and that complete their terminal differentiation through stages of progressively lineage-restricted downstream developmental intermediates. We identify two subsets of tonsil CD94/NKG2A+NKp80- (stage 4A) NK-cell development intermediates that show differential expression of the inhibitory receptor, CD200R1. Ex vivo single-cell transcriptomic, DNA methylation, phenotypic, and functional analyses demonstrate that CD200R1 stage 4A cells represent an immature, oligopotent precursor population enriched for tissue-resident and cytokine-responsive programs. In contrast, CD200R1- stage 4A cells show more restricted NK-cell developmental potential concomitant with features of mature NK cells. These findings help to refine the human NK cell developmental pathway in tonsils and highlight CD200R1 as a useful marker delineating an uncommitted developmental state linking microenvironmental cues to NK-cell maturation and plasticity.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.762613",
+      "url": "https://doi.org/10.64898/2026.11.02.762613",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.762613.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763715",
+      "title": "Can the Human Plastisphere Account for the Rise of Type 1 Diabetes: A Computational Molecular Mimicry Study",
+      "authors": "Facelli, J.; jones, M.; Mistry, S.; Gouripeddi, R.",
+      "abstract": "An increased incidence of childhood type 1 diabetes mellitus (T1DM) has been widely documented, but its pathophysiological origins are poorly understood. The post-World War II expansion of the plastics industry in the United States and elsewhere coincides with a marked increase in T1DM incidence; however, no pathophysiological mechanism has been proposed that could justify such a temporal correlation. Here, we leverage recent advances in artificial intelligence and protein structure prediction and binding to show that molecular mimicry is a plausible pathophysiological mechanism for plastic fragments to induce onset of T1DM for individuals with certain HLA haplotypes.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763715",
+      "url": "https://doi.org/10.64898/2026.11.02.763715",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763715.source.xml",
+      "categories": [
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.03.764112",
+      "title": "CARTnet: Template-guided B-cell Epitope Prediction with Contact-aware Attention",
+      "authors": "Roy, R. S.; Abeer, A. N. M. N.; Yoon, B.-J.; Qian, X.",
+      "abstract": "B-cell epitope prediction remains challenging due to the limited availability of experimentally characterized data and the incomplete understanding of antibody-antigen recognition. Here, we present CARTnet, a novel contact-aware deep learning framework that integrates multimodal features and template-derived epitope information. CARTnet demonstrated superior performance when compared to the existing state-of-the-art methods across most evaluation metrics on both the internal and external test datasets. In particular, CARTnet achieved an AUPRC of 0.243 on the internal test set, compared with 0.220 for DiscoTope-3, 0.140 for BepiPred-2, and 0.198 for BepiPred-3. This improvement was also observed on the external test set, where CARTnet achieved an AUPRC of 0.267, compared with 0.192, 0.111, and 0.215 for DiscoTope-3, BepiPred-2, and BepiPred-3, respectively, supporting its generalizability. CARTnet also supports template-guided prediction, in which limited prior epitope information can improve the identification of additional epitope residues; a single template residue increased the AUPRC of the template-based variant from 0.225 to 0.403 on the internal test set. Furthermore, we demonstrated that epitope information from closely related viruses can be transferred across the genus Alphavirus to improve epitope prediction accuracy. These results establish CARTnet as an accurate framework for both de novo and template-guided B-cell epitope prediction.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.764112",
+      "url": "https://doi.org/10.64898/2026.11.03.764112",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.764112.source.xml",
+      "categories": [
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 5,
+      "firstSeen": "2026-11-05"
+    }
+  ]
+}

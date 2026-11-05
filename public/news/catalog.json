@@ -1,28 +1,227 @@
 {
   "version": 2,
   "coverageStart": "2026-10-01",
-  "updatedThrough": "2026-11-04",
-  "generatedAt": "2026-11-04T07:34:42.053Z",
+  "updatedThrough": "2026-11-05",
+  "generatedAt": "2026-11-05T07:58:16.794Z",
   "timezone": "UTC",
   "status": "complete",
   "searchWindow": {
-    "start": "2026-10-22",
-    "end": "2026-11-04"
+    "start": "2026-10-23",
+    "end": "2026-11-05"
   },
   "sources": [
     {
       "name": "bioRxiv",
       "status": "ok",
-      "records": 488
+      "records": 526
     },
     {
       "name": "Europe PMC",
       "status": "ok",
-      "records": 858
+      "records": 857
     }
   ],
   "selection": "All retrieved papers with computational methods and a substantive immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. Automatic topical relevance, not scientific-quality scoring. Dates are publication or preprint posting/revision dates, not historical website editions.",
   "papers": [
+    {
+      "id": "doi:10.64898/2026.11.03.763491",
+      "title": "High-fat diet promotes exhaustion-associated T-cell remodeling across vascular and lymphoid tissues in atherosclerosis-prone mice",
+      "authors": "Yarahmadi, P.; Xie, Y.; Huynh, D. T. N.; Lai, J.; Ling, Q.; Huang, X.; Nguyen, P. K.",
+      "abstract": "Background: Atherosclerosis is a chronic inflammatory disease driven by lipid accumulation and immune dysregulation. How chronic dietary lipid exposure reshapes T-cell states across vascular and lymphoid tissues, and whether these changes resolve after dietary normalization, remains incompletely defined. This study examined diet-associated T-cell remodeling and the contribution of macrophage-mediated stimulation. Methods: ApoE-deficient mice received a vegetarian diet (VD) or high-fat diet (HFD) for 12 or 24 weeks; a dietary reversal group received HFD for 12 weeks followed by VD for 12 weeks. CD45-positive cells from aorta, blood, spleen, lymph nodes, and bone marrow underwent single-cell RNA sequencing with matched T-cell receptor sequencing. T cell states were annotated using canonical markers, and exhaustion- and naive-associated programs were quantified using UCell scores. Analysis assessed T-cell composition, clonal expansion, and predicted macrophage-T cell communication, with splenic flow-cytometric validation. Results: HFD was associated with enrichment of exhaustion-associated states, with the highest exhaustion scores in the aorta. At 24 weeks, the pooled exhausted-cell proportion was 15.7% under HFD versus 10.6% under VD. Dietary reversal restored this proportion to 10.6%, while residual transcriptional changes persisted in a tissue-dependent manner. Flow cytometry corroborated increased inhibitory receptor expression and co-expression. Aortic macrophages exhibited inflammatory and antigen-presentation programs alongside increased predicted communication with T cells. Aortic T-cell activation and clonal expansion accompanied these changes, and clonotype size correlated with exhaustion score (Spearman correlation coefficient = 0.57, p = 0.029). Conclusion: Chronic HFD is associated with multicompartment T-cell remodeling, with prominent vascular exhaustion-associated programs and tissue-dependent recovery after dietary normalization. These findings suggest that dietary lipid exposure may leave a durable adaptive immune imprint across organs during atherosclerosis.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.763491",
+      "url": "https://doi.org/10.64898/2026.11.03.763491",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.763491.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 11,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "epmc:PMC:PMC13728433",
+      "title": "Single-cell and spatial transcriptomics in intrahepatic cholangiocarcinoma: spatial immune ecosystems, metabolic remodeling, and immunotherapeutic implications",
+      "authors": "Yan Y, Teng T, Luo X, Liu J, Wang J.",
+      "abstract": "",
+      "date": "2026-11-04",
+      "dateLabel": "Published",
+      "doi": "",
+      "url": "https://europepmc.org/article/PMC/PMC13728433",
+      "source": "Europe PMC",
+      "venue": "Frontiers in immunology",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "cc by",
+      "publishedDoi": "",
+      "pmcid": "PMC13728433",
+      "openAccess": true,
+      "inEuropePmc": true,
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 10,
+      "firstSeen": "2026-11-05",
+      "figure": null,
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "no-reusable-figure"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763083",
+      "title": "Polygenic polymorphisms cooperate to drive expansion of HCMV adaptive NK cell and NK-like T cell populations",
+      "authors": "Le Luduec, J.-B.; Kontopoulos, T.; Panjwani, M. K.; Liu, H.; Sotille, R.; Lau, C.; Hsu, K.",
+      "abstract": "Human cytomegalovirus (HCMV) infection drives the expansion of several innate and innate-like lymphocyte populations. Characterized by high cell surface expression of NKG2C, these populations include the adaptive CD56+ Fc{epsilon}RI{gamma}- NK cell, an NK-like TCR{beta}+CD8+ T cell population and a V{gamma}9/V{delta}1+ T cells. Beyond NKG2C expression, both the adaptive NK cell and the NK-like T cell population exhibit enhanced cytokine response to antibody-dependent cellular cytotoxicity (ADCC). Expansion of each population is only observed in 30-40% of HCMV+ individuals and is independent of expansion of each other. In this study, we evaluated 200 healthy donors and identified several immunogenetic factors that influence NKG2C expression across the three lymphocyte populations. NKG2C (KLRC2) copy number and allelic polymorphism was associated with NKG2C+ NK cell frequency and surface expression density in HCMV- but not in HCMV+ individuals. Investigating other genetic loci encoding proteins related to adaptive NK function, we found that CD16a and HLA-E alleles act cumulatively with NKG2C copy number to drive NKG2C expression on lymphocytes among HCMV+ individuals. Polymorphism of the NKG2C ligand HLA-E influences strength of NK cell activation via NKG2C, where NK responsiveness was lower in individuals with the HLA-E*01:03 genotype, while CD16a polymorphism influenced strength of ADCC response among NKG2C+ TCR{beta}+CD8+ T cells. Based on these observations, we conclude that genetic polymorphisms in NKG2C, CD16a and HLA-E shape the NKG2C+ repertoire, influence NKG2C-mediated NK function and dictate capacity of ADCC in response to HCMV infection. Immunogenetic polymorphism among NKG2C-related genes therefore tunes innate immunity to HCMV infection providing additional protection beyond adaptive immunity.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763083",
+      "url": "https://doi.org/10.64898/2026.11.02.763083",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763083.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763646",
+      "title": "A fibroblast-CD8+ T cell circuit drives a Type 1 shift in allergic inflammatory memory",
+      "authors": "Kwong, A. C.; Oliver, I.; Yang, L.; Lotfy, P.; Ordovas-Montanes, J.",
+      "abstract": "Inflammatory memory in barrier tissues often manifests as exaggerated recall responses to previously encountered stimuli. While recall is generally thought to reinforce the Type of inflammation (e.g., Type 1 (T1), Type 2 (T2), or Type 17 (T17)) induced in the primary encounter, whether and how memory responses engage programs beyond the initiating Type is unclear. Here, we adapted well-characterized murine models of T2 atopic dermatitis (AD)-like and T17 psoriasis-like inflammation into repeated challenge paradigms to compare how inflammatory memory is stored and recalled through longitudinal single-cell RNA-sequencing. In T17 inflammation, a network of IL-17-producing {gamma}{delta}T cells, IL-17-responsive keratinocytes and myeloid cells established in primary challenge re-emerged in recall with increased abundance and accelerated kinetics. By contrast, allergic T2 memory drove a particularly exacerbated and durable recall response in which hallmark features of T1 immunity, including interferon (IFN) signaling and cytotoxic lymphocyte recruitment, were unexpectedly layered onto amplified T2 responses. This T2-to-T1 shift was initiated by CD8+ tissue-resident memory T (Trm) cells that expanded with repeated challenge, produced IFN{gamma}, TNF- and IL-13, and closely resembled treatment-refractory Trm cells in AD. Tissue rewiring was supported by Trm-derived T1 cytokines and the IL-4-rich T2 milieu whose synergy on fibroblasts amplified allergic recall via IL-15 and CCL19. By tuning fibroblast IFN responsiveness in vivo, we mechanistically dissect how this fibroblast-CD8+ T cell circuit supports cytotoxic CD8+ T cell responses. In human AD, both arms of allergic recall amplification by this two-cell circuit featuring T1 and T2 effector responses were conserved. Our findings reveal how a stromal-immune circuit drives a clinically relevant T1 immune axis to support allergic inflammatory memory.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763646",
+      "url": "https://doi.org/10.64898/2026.11.02.763646",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763646.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.03.764056",
+      "title": "Proteome-Wide Serology Identifies Secreted IgD against RSV Fusion Glycoprotein as a Signature of Broadly Elevated Antibody Response",
+      "authors": "Turner, Z.; Tang, W.; Rais, Y.; Drabovich, A. P.",
+      "abstract": "Serological evaluation of antibody response using conventional indirect immunoassays cannot capture the full depth, diversity, and functional complexity of human polyclonal antibodies. Here, we developed mass spectrometry-based Proteome-Wide Serology (ProWiSe) assays for the identification and absolute quantification of antigen-specific human antibodies across isotypes, subclasses, and variable-region repertoires. Using ProWiSe, we measured the depth and diversity of serum antibodies to multiple antigens of respiratory syncytial virus (RSV), a pathogen associated with repeated reinfections and skewed immune response. IgG1 antibodies targeting the fusion glycoprotein F (RSVF) dominated the antibody response, with a background-corrected median level of 1,700 ng/mL across 214 healthy maternal serum samples from the general population. ProWiSe identified reproducible co-enrichment of complement component 1q complexes, revealed the usage of several dozen IGHV variable-region germline genes in the anti-RSVF polyclonal response, and suggested limited IGHV repertoire diversity in some individuals. In addition to IgG1, we discovered a complex antibody response characterized by significantly elevated levels of nearly all human immunoglobulin isotypes and subclasses, including previously unexplored IgG4 and IgD. The identification of high-affinity IgD against prefusion and postfusion RSVF, but not against other antigens studied, was the most unexpected observation, occurring in 52% of the healthy maternal serum samples. ProWiSe unambiguously identified the secreted IgD isoform P01880-1 and supported the IgD paradox of preferential {lambda} light-chain usage in secreted IgD. Detectable anti-RSVF IgD levels ([&ge;]0.11 ng/mL) correlated with broadly elevated antibody responses across all other isotypes and subclasses, except IgE. ProWiSe assays offer a versatile platform for quantitative serological diagnostics, exploration of depth, diversity, and dynamics of polyclonal antibody response, and discovery of rare antibody isotypes.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.764056",
+      "url": "https://doi.org/10.64898/2026.11.03.764056",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.764056.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.762613",
+      "title": "CD200R1 Marks a Branchpoint During Human Natural Killer Cell Development in Tonsils",
+      "authors": "Youssef, Y.; Nalin, A.; Ruesch, M.; Lordo, M.; Koenigs, N. T.; Clever, D.; Cesar, J.; Broughton, M.; Chan, W. K.; Mansour, A. G.; Altynova, E.; Zhang, X.; Blachly, J.; Blaser, B.; Oakes, C. C.; Mundy-Bosse, B. L.; kraemer, b.; Freud, A.",
+      "abstract": "Human natural killer (NK) cells arise from common innate lymphoid cell (ILC) progenitor and precursor populations that are selectively enriched within secondary lymphoid tissues (SLTs) and that complete their terminal differentiation through stages of progressively lineage-restricted downstream developmental intermediates. We identify two subsets of tonsil CD94/NKG2A+NKp80- (stage 4A) NK-cell development intermediates that show differential expression of the inhibitory receptor, CD200R1. Ex vivo single-cell transcriptomic, DNA methylation, phenotypic, and functional analyses demonstrate that CD200R1 stage 4A cells represent an immature, oligopotent precursor population enriched for tissue-resident and cytokine-responsive programs. In contrast, CD200R1- stage 4A cells show more restricted NK-cell developmental potential concomitant with features of mature NK cells. These findings help to refine the human NK cell developmental pathway in tonsils and highlight CD200R1 as a useful marker delineating an uncommitted developmental state linking microenvironmental cues to NK-cell maturation and plasticity.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.762613",
+      "url": "https://doi.org/10.64898/2026.11.02.762613",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.762613.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.02.763715",
+      "title": "Can the Human Plastisphere Account for the Rise of Type 1 Diabetes: A Computational Molecular Mimicry Study",
+      "authors": "Facelli, J.; jones, M.; Mistry, S.; Gouripeddi, R.",
+      "abstract": "An increased incidence of childhood type 1 diabetes mellitus (T1DM) has been widely documented, but its pathophysiological origins are poorly understood. The post-World War II expansion of the plastics industry in the United States and elsewhere coincides with a marked increase in T1DM incidence; however, no pathophysiological mechanism has been proposed that could justify such a temporal correlation. Here, we leverage recent advances in artificial intelligence and protein structure prediction and binding to show that molecular mimicry is a plausible pathophysiological mechanism for plastic fragments to induce onset of T1DM for individuals with certain HLA haplotypes.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.02.763715",
+      "url": "https://doi.org/10.64898/2026.11.02.763715",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.02.763715.source.xml",
+      "categories": [
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-05"
+    },
+    {
+      "id": "doi:10.64898/2026.11.03.764112",
+      "title": "CARTnet: Template-guided B-cell Epitope Prediction with Contact-aware Attention",
+      "authors": "Roy, R. S.; Abeer, A. N. M. N.; Yoon, B.-J.; Qian, X.",
+      "abstract": "B-cell epitope prediction remains challenging due to the limited availability of experimentally characterized data and the incomplete understanding of antibody-antigen recognition. Here, we present CARTnet, a novel contact-aware deep learning framework that integrates multimodal features and template-derived epitope information. CARTnet demonstrated superior performance when compared to the existing state-of-the-art methods across most evaluation metrics on both the internal and external test datasets. In particular, CARTnet achieved an AUPRC of 0.243 on the internal test set, compared with 0.220 for DiscoTope-3, 0.140 for BepiPred-2, and 0.198 for BepiPred-3. This improvement was also observed on the external test set, where CARTnet achieved an AUPRC of 0.267, compared with 0.192, 0.111, and 0.215 for DiscoTope-3, BepiPred-2, and BepiPred-3, respectively, supporting its generalizability. CARTnet also supports template-guided prediction, in which limited prior epitope information can improve the identification of additional epitope residues; a single template residue increased the AUPRC of the template-based variant from 0.225 to 0.403 on the internal test set. Furthermore, we demonstrated that epitope information from closely related viruses can be transferred across the genus Alphavirus to improve epitope prediction accuracy. These results establish CARTnet as an accurate framework for both de novo and template-guided B-cell epitope prediction.",
+      "date": "2026-11-04",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.03.764112",
+      "url": "https://doi.org/10.64898/2026.11.03.764112",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/04/2026.11.03.764112.source.xml",
+      "categories": [
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 5,
+      "firstSeen": "2026-11-05"
+    },
     {
       "id": "doi:10.64898/2026.10.31.763223",
       "title": "A Reproducible Pre-Transplant γδ T-cell Effector Signature Reveals Immune-Metabolic Programs Associated with Kidney Allograft Rejection",
@@ -46,6 +245,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 11,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -71,6 +272,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 10,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -134,6 +337,8 @@
         "Repertoire & clonal dynamics"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -159,6 +364,8 @@
         "Immunotherapy"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -174,18 +381,34 @@
       "venue": "The Journal of experimental medicine",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13729907",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Repertoire & clonal dynamics",
         "Single-cell immunology",
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 8,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b600/13729907/22dc81e8647e/jem_20260268_ga.webp",
+        "label": "Article figure",
+        "caption": "",
+        "sourceUrl": "https://europepmc.org/articles/PMC13729907#GA",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© 2026 Sun et al.",
+        "verifiedAt": "2026-11-05T07:56:58.882Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1007/s10142-026-02100-x",
@@ -209,7 +432,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.28.762471",
@@ -233,6 +459,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -258,6 +486,8 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -283,6 +513,8 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -307,6 +539,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 5,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -331,6 +565,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-04"
     },
     {
@@ -355,7 +591,10 @@
         "Systems immunology"
       ],
       "relevanceScore": 2,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.celrep.2026.118174",
@@ -380,7 +619,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 13,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1038/s41576-026-01026-1",
@@ -404,7 +646,10 @@
         "Repertoire & clonal dynamics"
       ],
       "relevanceScore": 12,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.24.761515",
@@ -456,7 +701,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 9,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1080/1744666x.2026.2754032",
@@ -508,7 +756,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 9,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1038/s41588-026-02795-5",
@@ -533,7 +784,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 8,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.30.763264",
@@ -583,7 +837,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.jgg.2026.10.015",
@@ -609,7 +866,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.matbio.2026.102068",
@@ -634,7 +894,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1038/s12276-026-01881-2",
@@ -658,7 +921,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1038/s41392-026-03017-4",
@@ -682,7 +948,6 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04",
       "figure": {
         "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f000/13724702/55d06fcdb4ba/41392_2026_3017_Fig1_HTML.webp",
         "label": "Fig. 1",
@@ -697,7 +962,9 @@
       },
       "figureCheckedAt": "2026-11-04",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "verified"
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1128/mbio.01444-26",
@@ -721,7 +988,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1177/15578100261499497",
@@ -746,7 +1016,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.4274/thoracrespract.2026.2026-5-13",
@@ -770,7 +1043,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.30.763025",
@@ -811,18 +1087,34 @@
       "venue": "International journal of genomics",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13725430",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Antigen & receptor prediction",
         "Immunotherapy"
       ],
       "relevanceScore": 6,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7fe3/13725430/11dbf5d495a8/IJOG-2026-5922810-g006.webp",
+        "label": "Figure 2",
+        "caption": "Multicohort prognostic gene screening and LASSO‐Cox predictive model construction. (A) PCA plot of four cohorts after batch effect correction; ellipses indicate 95% confidence regions per cohort. (B) Circos plot of chromosomal distribution of prognostic genes; black dots mark significant gene positions. (C) Multicohort Cox regression forest plot for 24 prognostic genes; points indicate HR, bars indicate 95% CI; orange, risk genes (HR > 1); blue, protective genes (HR ∗ p ∗∗ p ∗∗∗ p λ = 0.023. (G) Tenfold cross‐validation deviance curve; y ‐axis, partial likelihood deviance; vertical bars, standard error. Source and figure preparation: Panels A–G were created by the authors specifically for this manuscript using R Version 4.4.2. Bulk expression and clinical data were obtained from GEO datasets GSE19234 ( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19234 ), GSE22153 ( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE22153 ), GSE65904 ( https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65904 ) [ 20 , 21 ], and from The Cancer Genome Atlas Skin Cutaneous Melanoma project (TCGA‐SKCM), accessed through the Genomic Data Commons (GDC; https://portal.gdc.cancer.gov/projects/TCGA-SKCM ) [ 22 , 23 ]. Copy‐number alteration data in Panel D were derived from TCGA‐SKCM. Analyses included batch‐effect correction using limma and LASSO‐Cox modeling using glmnet. All panels display analyses performed by the authors for this study.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13725430#fig-0002",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Xiaoqing Li et al. International Journal of Genomics published by John Wiley & Sons Ltd.",
+        "verifiedAt": "2026-11-05T07:56:58.757Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.7554/elife.91547",
@@ -839,14 +1131,30 @@
       "version": "",
       "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13727075",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a6b9/13727075/5ec4860363d1/elife-91547-fig1.webp",
+        "label": "Figure 1.",
+        "caption": "A clustergram showing K = 13 for samples spanning the macrophage polarization spectrum and RF barcodes characteristic of each polarization state. The clustering pattern was obtained by using M3C, a widely used agnostic clustering method based on Monte Carlo referencing that uses stability selection to estimate the number of clusters. ( A ) Cluster–member associations in the consensus matrix for K = 13. Clusters with a single member are starred. Clusters 2 and 12 are singletons. ( B ) A heatmap showing pathways commonly enriched in inflammation and other immunological processes. The pathways marked in red are upregulated, while those marked in blue are downregulated. The metric chosen was the negative logarithm of the p-value for each associated pathway. ( C ) RF barcodes which are characteristic of the 13 different clusters. Each barcode is a heatmap of the differential expression profile of the identified transcription factors (as compared to the unstimulated Mo state) in each cluster. The length of the barcode (which is the number of RFs in each cluster) is indicated within parentheses. Barcodes of members within a cluster resemble each other extensively and are shown together.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13727075#fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© 2023, Ravichandran et al",
+        "verifiedAt": "2026-11-05T07:57:11.206Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1007/s11010-026-05797-3",
@@ -870,7 +1178,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1038/s41591-026-04710-1",
@@ -895,7 +1206,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1093/cei/uxag072",
@@ -920,7 +1234,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.5009/gnl260010",
@@ -944,7 +1261,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.27.762264",
@@ -1051,18 +1371,23 @@
       "venue": "Cancer immunology research",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13728807",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Repertoire & clonal dynamics",
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 11,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "no-reusable-figure",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1096/fj.202604338rr",
@@ -1114,7 +1439,6 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 10,
-      "firstSeen": "2026-11-04",
       "figure": {
         "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5dc0/13723759/5abc21ffc5dc/HUMU-2026-8639334-g016.webp",
         "label": "Article figure",
@@ -1129,7 +1453,9 @@
       },
       "figureCheckedAt": "2026-11-04",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "verified"
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1002/cam4.72465",
@@ -1144,17 +1470,33 @@
       "venue": "Cancer medicine",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13728466",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/36cb/13728466/d608f01db242/CAM4-15-e72465-g008.webp",
+        "label": "FIGURE 1",
+        "caption": "Workflow and immune‐metabolic remodeling in breast cancer. (A) Study workflow for data integration, model construction, validation, and biological interpretation. (B, C) Dysregulated C7 immune signatures between tumor and normal tissues. (D, E) Dysregulated KEGG metabolic pathways between tumor and normal tissues.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13728466#cam472465-fig-0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 The Author(s). Cancer Medicine published by John Wiley & Sons Ltd.",
+        "verifiedAt": "2026-11-05T07:57:14.596Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1002/ctm2.70865",
@@ -1245,7 +1587,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1080/1750743x.2026.2758058",
@@ -1270,7 +1615,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1111/tpj.71190",
@@ -1335,7 +1683,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/0008-5472.can-26-2386",
@@ -1350,17 +1701,33 @@
       "venue": "Cancer research",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13728789",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7fc4/13728789/e862e987dca7/can-26-2386_f1.webp",
+        "label": "Figure 1.",
+        "caption": "Bone metastases uniquely exhibit loss of TI IFN-I signaling and immunogenicity. A, Overview of the patient cohort: high-grade primary prostate cancer defined as NBmRC or BmRC, LN metastases, and bone metastases (met), analyzed by OPAL mIHC. B, Representative mIHC images ( n = 3/site) showing IFN-I signaling across disease sites. Red, HLA-I (HLA*ABC); yellow, IRF9; green, pSTAT1; pink, PanCK; blue, DAPI (nuclei). Scale bars, 100 μm. C–F, HALO-quantitated intratumoral, stromal ( C ; H-scores) and TI IRF9 ( D ) and HLA-I frequency ( E and F ) across disease sites ( n = 5–15/group). G, Log-transformed snRNA-seq expression of TI and stromal HLA-B in CASCADE LN, liver, and bone metastases ( n = 6). H, Correlation between intratumoral HLA-I and IRF9 expression in non–bone-metastatic primary tumors without recurrence (NBPNR), NBmRC, BmRC, and bone metastases ( n = 27; Pearson r = 0.79; P I–K, HALO quantification of IRF9/HLA-I coexpressing tumor and stromal cells ( I ), intratumoral nuclear IRF9 (IRF9 nu ; J ), and intratumoral active IRF9 (pSTAT + ; K ; n = 5–15/group). Student t test. *, P P P P L, Relative hazard of bone metastasis according to primary tumor HLA-I [hazard ratio (HR) = 0.97; P = 0.03] and IRF9 (HR = 0.92; P = 0.044) expression ( n = 22). M, Kaplan–Meier metastasis-free survival stratified by high vs. low primary tumor TI HLA-I (39.35%) or TI IRF9 (11.85%) expression (median cutoffs; n = 21). HRs and P values were determined using the log-rank (Mantel–Cox) test.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13728789#fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "license": "CC BY-NC-ND",
+        "nonCommercial": true,
+        "noDerivatives": true,
+        "credit": "©2026 The Authors; Published by the American Association for Cancer Research",
+        "verifiedAt": "2026-11-05T07:57:20.125Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/1541-7786.mcr-25-1164",
@@ -1385,7 +1752,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/2159-8290.cd-24-1908",
@@ -1410,11 +1780,12 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04",
       "figure": null,
       "figureCheckedAt": "2026-11-04",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "no-reusable-figure"
+      "figureCheckStatus": "no-reusable-figure",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/2326-6066.cir-25-1334",
@@ -1439,7 +1810,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/2326-6066.cir-26-0472",
@@ -1464,7 +1838,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/2643-3230.bcd-25-0482",
@@ -1490,8 +1867,11 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-04",
-      "figureCheckStatus": "source-unavailable"
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.21873/cgp.20624",
@@ -1515,7 +1895,6 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04",
       "figure": {
         "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2185/13724017/98a5b5437b62/cgp-23-1196-g0001.webp",
         "label": "Figure 1",
@@ -1530,7 +1909,9 @@
       },
       "figureCheckedAt": "2026-11-04",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "verified"
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.30.763081",
@@ -1611,16 +1992,32 @@
       "venue": "Proteomics. Clinical applications",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13729260",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d586/13729260/018234df6a4c/PRCA-20-e70061-g006.webp",
+        "label": "FIGURE 1",
+        "caption": "Technology roadmap. DSS: dextran sulfate sodium; NOR: control groups; UCM: ulcerative colitis model groups; DIA: data‐independent acquisition; DEGs: differentially expressed genes; DEPs: differentially expressed proteins; Co‐DEGs: common differential expression genes; GO: gene ontology; KEGG: Kyoto Encyclopedia of Genes an groups d genomes; GSEA: gene set enrichment analysis.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13729260#prca70061-fig-0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "license": "CC BY-NC-ND",
+        "nonCommercial": true,
+        "noDerivatives": true,
+        "credit": "© 2026 The Author(s). PROTEOMICS ‐ Clinical Applications published by Wiley‐VCH GmbH.",
+        "verifiedAt": "2026-11-05T07:57:20.005Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1002/vms3.71302",
@@ -1698,7 +2095,10 @@
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1080/07357907.2026.2757870",
@@ -1722,7 +2122,10 @@
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1111/1759-7714.70407",
@@ -1841,7 +2244,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/2326-6066.cir-25-1379",
@@ -1866,7 +2272,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1002/rcm.70177",
@@ -1909,16 +2318,32 @@
       "venue": "Scandinavian journal of immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13729257",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 2,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/df9f/13729257/18b4b0fa7116/SJI-104-e70164-g004.webp",
+        "label": "FIGURE 1",
+        "caption": "Schematic flow chart of cohorts and samples included.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13729257#sji70164-fig-0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© 2026 The Author(s). Scandinavian Journal of Immunology published by John Wiley & Sons Ltd on behalf of The Scandinavian Foundation for Immunology.",
+        "verifiedAt": "2026-11-05T07:57:27.414Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1158/0008-5472.can-26-0855",
@@ -1933,16 +2358,21 @@
       "venue": "Cancer research",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13728801",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Immunotherapy"
       ],
       "relevanceScore": 2,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "no-reusable-figure",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1093/cvr/cvag258",
@@ -2403,7 +2833,7 @@
       "venue": "Toxicon : official journal of the International Society on Toxinology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -3649,16 +4079,32 @@
       "venue": "Clinical, cosmetic and investigational dermatology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13726512",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/55a1/13726512/0d0b52090b18/CCID-19-620524-g0001.webp",
+        "label": "Figure 1",
+        "caption": "Identification of DEGs in psoriasis and AMI discovery datasets. ( A ) Heatmap of GSE30999 ; ( B ) Heatmap of GSE66360 ; ( C ) Venn diagram showing the intersection of upregulated DEGs in psoriasis and AMI; ( D ) Venn diagram showing the intersection of downregulated DEGs in psoriasis and AMI.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13726512#f0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 Fang et al.",
+        "verifiedAt": "2026-11-05T07:57:33.595Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.2147/copd.s629378",
@@ -3673,16 +4119,32 @@
       "venue": "International journal of chronic obstructive pulmonary disease",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13726642",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/dbce/13726642/c735a05a8075/COPD-21-629378-g0001.webp",
+        "label": "Figure 1",
+        "caption": "Cellular composition and annotation of the analyzed lung samples. ( A ) UMAP colored by unsupervised cluster. ( B ) UMAP colored by sample. ( C ) Marker-based cell-type annotations. ( D ) Distribution of COPD and control cells. ( E ) Representative marker-expression heatmap and functional annotations of cluster-associated genes. ( F ) Cell-type proportions by group and by sample. ( G ) Feature plots of representative markers. Points in UMAP represent cells; colors identify the categories or expression levels specified in each panel. Pooled cell proportions describe the sampled cells and do not constitute donor-level evidence of a disease effect. Abbreviations : UMAP, uniform manifold approximation and projection; COPD, chronic obstructive pulmonary disease.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13726642#f0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 Wang et al.",
+        "verifiedAt": "2026-11-05T07:57:29.199Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.4103/nrr.nrronline-d-26-00871",
@@ -4417,7 +4879,7 @@
       "venue": "Nature",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -5728,16 +6190,32 @@
       "venue": "Drug design, development and therapy",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724828",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/4536/13724828/d46477b9ef79/DDDT-20-651891-g0001.webp",
+        "label": "Article figure",
+        "caption": "",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724828#uf0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 Zhao et al.",
+        "verifiedAt": "2026-11-05T07:57:29.062Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.bbapap.2026.141197",
@@ -6054,9 +6532,9 @@
     },
     {
       "id": "doi:10.1016/j.exer.2026.111293",
-      "title": "Combining Single-Cell Data with Machine Learning Uncovers the Molecular Landscape of Keratoconus.",
+      "title": "Combining single-cell data with machine learning characterizes the molecular landscape of keratoconus.",
       "authors": "Fang X, Han P, Chen S, Zhang J, Hua X, Chen P.",
-      "abstract": "Purpose Keratoconus (KC) is a progressive disorder characterized by corneal ectasia, corneal thinning, and conical protrusion, which can lead to diminished vision and corneal scarring. However, the molecular mechanism underlying KC has not yet been fully elucidated. In this study, we combined bioinformatics tools and experimental assays to uncover cell-type-specific pathogenic regulators and promising diagnostic biomarkers of KC. Methods We analyzed the KC-associated bulk mRNA expression dataset GSE151631 (19 KC, 7 controls) and the single-cell RNA sequencing dataset GSE285060 (5 KC, 3 controls) from the Gene Expression Omnibus (GEO) database. After quality control, dimensionality reduction, clustering, and annotation of single cells, we assessed each subpopulation's role in the disease and conducted differential expression analysis on the most relevant subpopulation. Feature selection was then performed on the bulk RNA-seq dataset using LASSO regression and SVM-RFE algorithms to identify candidate diagnostic genes. As a preliminary in vivo validation, an acute rabbit model of KC was induced by intrastromal injection of collagenase type II, and corneal tissues were harvested at day 7 to assess key gene expression at mRNA and protein levels by RT-qPCR and immunofluorescence, respectively. We also performed immune infiltration analysis, Gene Set Enrichment Analysis (GSEA), Gene Set Variation Analysis (GSVA), transcriptional regulatory networks construction, pseudotime trajectory analysis, and connectivity map (cMap)-based drug prediction. Results Corneal stromal cells exhibited the highest contribution to the disease state. Three key genes (KIAA0930, CCDC85B, and KLHL21) were identified as potential diagnostic biomarkers. Notably, KIAA0930 was upregulated in the rabbit KC model, while CCDC85B and KLHL21 were downregulated, consistent with bioinformatic analysis. Immune infiltration analysis indicated increased cytolytic activity and CD8 + T cells in KC samples, with key genes showing significant correlations with various immune cell types and factors. GSEA and GSVA analyses revealed that these three genes are linked to ECM-receptor interaction, MAPK, PI3K-Akt, and WNT/β-catenin signaling pathways. Pseudotime analysis revealed distinct transcriptional states between KC and control cells. Several small-molecule compounds, including menadione and PAC-1, were computationally predicted to show negative connectivity with the KC-associated gene expression signature. Conclusions Our study identifies KIAA0930, CCDC85B, and KLHL21 as promising candidate biomarkers for KC diagnosis and highlights corneal stromal cells as a central contributor to KC pathological progression. By combining single-cell transcriptomics and machine learning with preliminary validation in an acute rabbit model, this work provides a molecular framework for early KC diagnosis and therapy, pending validation in chronic models and human cohorts.",
+      "abstract": "Purpose Keratoconus (KC) is a progressive disorder characterized by corneal ectasia, corneal thinning, and conical protrusion, which can lead to diminished vision and corneal scarring. However, the molecular mechanism underlying KC has not yet been fully elucidated. In this study, we combined bioinformatics tools and experimental assays to uncover cell-type-specific pathogenic regulators and candidate diagnostic biomarkers of KC. Methods We analyzed the KC-associated bulk mRNA expression dataset GSE151631 (19 KC, 7 controls) and the single-cell RNA sequencing dataset GSE285060 (5 KC, 3 controls) from the Gene Expression Omnibus (GEO) database. After quality control, dimensionality reduction, clustering, and annotation of single cells, we assessed each subpopulation's role in the disease and conducted differential expression analysis on the most relevant subpopulation. Feature selection was then performed on the bulk RNA-seq dataset using LASSO regression and SVM-RFE algorithms to identify candidate diagnostic genes. As a preliminary in vivo validation, an acute rabbit model of KC was induced by intrastromal injection of collagenase type II, and corneal tissues were harvested at day 7 to assess key gene expression at the mRNA level by RT-qPCR and to qualitatively assess protein expression trends by representative immunofluorescence images. We also performed immune infiltration analysis, Gene Set Enrichment Analysis (GSEA), Gene Set Variation Analysis (GSVA), transcriptional regulatory networks construction, pseudotime trajectory analysis, and connectivity map (cMap)-based drug prediction. Results Corneal stromal cells exhibited the highest contribution to the disease state. Three key genes (KIAA0930, CCDC85B, and KLHL21) were identified as candidate diagnostic biomarkers. Notably, KIAA0930 was upregulated in the rabbit KC model, while CCDC85B and KLHL21 were downregulated, consistent with bioinformatic analysis. Immune infiltration analysis indicated increased cytolytic activity and CD8 + T cells in KC samples, with key genes showing significant correlations with various immune cell types and factors. GSEA and GSVA analyses revealed that these three genes are linked to ECM-receptor interaction, MAPK, PI3K-Akt, and WNT/β-catenin signaling pathways. Pseudotime analysis revealed distinct transcriptional states between KC and control cells. Several small-molecule compounds, including menadione and PAC-1, were computationally predicted to show negative connectivity with the KC-associated gene expression signature. Conclusions Our study identifies KIAA0930, CCDC85B, and KLHL21 as promising candidate biomarkers for KC diagnosis and highlights corneal stromal cells as a central contributor to KC pathological progression. By combining single-cell transcriptomics and machine learning with preliminary validation in an acute rabbit model, this work provides a molecular framework for early KC diagnosis and therapy, pending validation in chronic models and human cohorts.",
       "date": "2026-10-26",
       "dateLabel": "Published",
       "doi": "10.1016/j.exer.2026.111293",
@@ -7187,7 +7665,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.jot.2026.101232",
@@ -8094,17 +8575,30 @@
       "version": "",
       "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
+      "pmcid": "PMC13728850",
       "openAccess": false,
       "inEuropePmc": false,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "figure": null,
-      "figureCheckedAt": "",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ae67/13728850/6b88265fbfe0/btag793f3.webp",
+        "label": "Figure 3",
+        "caption": "Visualization of ranking predictions on 18 sampled lists. The heatmap displays the ground truth ranks mapped to the model’s predicted positions. Each row represents a test list colored by their ground truth rank, and columns denote the predicted order. The bar chart shows the corresponding K τ calculated for each list row.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13728850#btag793-F3",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© The Author(s) 2026. Published by Oxford University Press.",
+        "verifiedAt": "2026-11-05T07:57:35.423Z"
+      },
+      "figureCheckedAt": "2026-11-05",
       "firstSeen": "2026-10-27",
-      "jatsUrl": ""
+      "jatsUrl": "",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified"
     },
     {
       "id": "doi:10.1007/s40203-026-00760-y",
@@ -9079,7 +9573,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.16.759551",
@@ -10826,7 +11323,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3390/ijms27209323",
@@ -11470,17 +11970,33 @@
       "venue": "Frontiers in neurology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724452",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Repertoire & clonal dynamics",
         "Single-cell immunology"
       ],
       "relevanceScore": 16,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7460/13724452/79a2a9eddb0c/fneur-17-1980412-g001.webp",
+        "label": "Figure 1",
+        "caption": "Study design and longitudinal changes in MG-ADL scores during Efgartigimod treatment in patients with gMG. (A) Schematic illustration of the treatment and follow-up schedule. Patients received Efgartigimod infusions across two treatment cycles, with clinical assessments performed at scheduled time points (V1–V8 corresponding to weeks 1, 2, 3, 4, 9, 10, 11, and 12). The numbers of patients assessed at each visit were 21 at V1–V4, 20 at V5–V7, and 19 at V8. (B) Longitudinal changes in MG-ADL scores over the course of treatment. Data are presented as median (IQR). Overall differences across visits were assessed using the Friedman test in patients with complete observations across V1–V8 ( n = 19). Post-hoc comparisons between V1 and each follow-up visit were performed using two-sided Wilcoxon signed-rank tests based on available paired observations, with p values adjusted for multiple comparisons using the Holm method. Sample sizes at each visit are shown in panel A. *** Holm-adjusted p (C) Distribution of MG-ADL severity categories at baseline, V4, and V8. MG-ADL scores were categorized as 0–1 (MSE), 2–4, 5–9, and ≥10. Overall differences in ordinal MG-ADL categories across the three time points were assessed using the Friedman test in patients with complete observations ( n = 19; p Post-hoc pairwise comparisons were performed using two-sided Wilcoxon signed-rank tests based on available paired observations, with p values adjusted for three comparisons using the Holm method. Sample sizes at each visit are shown in panel A. *** Holm-adjusted p",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724452#fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Tian, Zhang, Jin, Wang, Chen, Qiao, Guo, Li, Zhang, Zhao, Wang, Li and Wang.",
+        "verifiedAt": "2026-11-05T07:57:36.449Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.13.758550",
@@ -11565,17 +12081,33 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13725441",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Repertoire & clonal dynamics",
         "Single-cell immunology"
       ],
       "relevanceScore": 13,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/fd7d/13725441/69cde7ba1b41/fimmu-17-1982931-g001.webp",
+        "label": "Figure 1",
+        "caption": "Evidence framework for interpreting lymphocyte trajectories after liver transplantation. (A) Post-transplant immune signals are interpreted across approximate and overlapping perioperative (transplantation to ~14 days), early (~2 weeks–3 months), intermediate/relatively stable (~3–12 months), and long-term (>12 months) windows; clinical stability is state-dependent rather than defined by elapsed time alone. (B) Peripheral blood supports serial phenotyping and functional testing, whereas the liver allograft captures resident and graft-local programmes; targeted or event-driven paired sampling is most informative when tissue diagnosis or local mechanistic assessment is required. (C) Effector, regulatory, protective, and dysfunctional states can have different implications for alloimmune injury, tolerance, immune surveillance, and immune insufficiency. (D) Translation requires sequential progression from discovery to a compact panel, external validation, prespecified thresholds, and a strategy trial. The framework organises research evidence and is not a validated risk score or treatment algorithm. IRI, ischaemia–reperfusion injury.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13725441#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Gao, Shi, Jin, Jiao, Xu, Ye, Wang, Guo, Yang and Gao.",
+        "verifiedAt": "2026-11-05T07:57:44.344Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1007/s12016-026-09209-8",
@@ -11684,11 +12216,11 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13725358",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Repertoire & clonal dynamics",
         "Single-cell immunology",
@@ -11696,7 +12228,12 @@
         "Immunotherapy"
       ],
       "relevanceScore": 11,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "no-reusable-figure",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.13.758958",
@@ -11831,16 +12368,32 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724368",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 10,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b5da/13724368/b59797fd03e1/fimmu-17-1852877-g001.webp",
+        "label": "Figure 1",
+        "caption": "Identification of 10 PBMCs cell subsets. (A) UMAP embeddings and subset annotations of scRNA-Seq dataset from patients with PMRs and controls. (B) UMAP embedding for cell subsets in each sample. (C) Normalized expression of the top 50 ranked genes in different cell subsets. (D) Dot plots of marker genes in each cell subset. (E) Stacked bar chart showing the proportions of different cell types in each sample. (F) Statistical plots showing the proportions of cell subsets in patients and controls.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724368#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Cai, Qin, Jiang, Liu, Song and Zhang.",
+        "verifiedAt": "2026-11-05T07:57:46.043Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "epmc:PMC:PMC13668821",
@@ -12288,16 +12841,32 @@
       "venue": "Frontiers in genetics",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724551",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/7595/13724551/2d39afeb9fb3/fgene-17-1833196-abs.webp",
+        "label": "Article figure",
+        "caption": "",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724551#d69e424",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Chen, Dong, Wang, Liu, Wang, Bao, Huang, Li, Li, Cai and Wei.",
+        "verifiedAt": "2026-11-05T07:57:49.068Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fragi.2026.1963384",
@@ -12312,16 +12881,32 @@
       "venue": "Frontiers in aging",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724463",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/94bc/13724463/cac542b4ccba/fragi-07-1963384-g001.webp",
+        "label": "FIGURE 1",
+        "caption": "Distribution of anti-Spike IgG levels over time (12-month of follow-up in total). (A) Total population kinetics. Log-transformed anti-Spike IgG levels at baseline (T0) and follow-up visits (T1, T2, T3). Individual data points are shown as dots overlaid on boxplots. (B) Comparison by vaccination status. Stratified analysis of residents who received the 2023/2024 booster (left) versus non-boosted individuals (right). *Prior SARS-CoV-2 infection defined by the positivity of anti-N antibodies (T0).",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724463#F1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Palmieri, Damiano, Leone, Trevisan, Malara, Zucchelli, Incalzi, Prato, Fortunato, Baldovin, Coin, Minchella, Giordano, Palamara, Onder and Fedele.",
+        "verifiedAt": "2026-11-05T07:57:53.752Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3390/biomedicines14102391",
@@ -12510,16 +13095,32 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13725363",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 6,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/35a8/13725363/0db7969d9db5/fimmu-17-1959612-g004.webp",
+        "label": "Figure 4",
+        "caption": "A pragmatic framework for candidate molecular endotype programs in SLE. Three recurrent dominant programs—IFN/ISG, B cell/plasmablast, and neutrophil/NET activity—are depicted as quantitative, overlapping, and non-mutually exclusive molecular states. The immunometabolic program is shown as an emerging program because evidence supporting stable patient-level classification and prospective treatment selection remains limited. Complement/immune-complex activation is depicted as a cross-cutting effector axis that may amplify tissue injury across several programs. Candidate biomarkers, reported clinical associations, and therapeutic evidence for these programs are summarized in Table 3 . Individual patients may occupy different positions along these axes according to disease activity, treatment exposure, and organ compartment. Therefore, this framework should not be interpreted as a fixed one-patient/one-endotype classification. Abbreviation: IFN, interferon; ISG, interferon-stimulated genes; NET, neutrophil extracellular trap; SLE, systemic lupus erythematosus.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13725363#f4",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Terajima, Matsumoto, Nawachi, Asano, Hayashi, Miyawaki, Watanabe, Katsuyama, Katsuyama and Wada.",
+        "verifiedAt": "2026-11-05T07:58:04.734Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1080/1744666x.2026.2749714",
@@ -12624,7 +13225,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fimmu.2026.1806272",
@@ -12639,16 +13243,32 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724446",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/112a/13724446/b26d653c24fd/fimmu-17-1806272-g001.webp",
+        "label": "Figure 1",
+        "caption": "Study overview. Pre-pandemic healthy subjects (HC, n=8) and COVID-19 Group 1 (n=12) were screened via protein arrays to identify IgG-recognized autoantigens. Validation involved a second COVID-19 cohort (Group 2, n=28), stratified into those with thyroid disease (COVID-19-TD, n=11) and those without (n=17), alongside pre-pandemic Graves’ disease (n=29) and HC (n=20) controls. Functional characterization included: I) ELISA for autoantigen reactivity; II) lectin-based ELISA to quantify Spike-specific IgG fucosylation; and III) flow cytometry to assess NK cell activation (CD107a expression) and immortalized human thyroid epithelial cells recognition. (ALL: Lectin-HRP from Aleuria Aurantia, HRP: Horseradish Peroxidase).",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724446#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Pesce, Gobbini, Bombaci, Favalli, Maioli, Serapian, di Marzo, Sorrentino, Toccafondi, Gruarin, Lombardi, Armenti, Lorenzo, Bandera, Colombo, Muller and Grifantini.",
+        "verifiedAt": "2026-11-05T07:57:56.229Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3390/metabo16100794",
@@ -12756,16 +13376,32 @@
       "venue": "Frontiers in cardiovascular medicine",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724537",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c837/13724537/96538477d235/fcvm-13-1904246-g001.webp",
+        "label": "Figure 1",
+        "caption": "Public-cohort design, within-study quality audit, and discovery of differential expression. (A) Disease–reference sample counts in five prespecified contrasts. (B) Number of mapped genes retained in each study-specific matrix. (C) Kernel-density distributions of per-sample median log2 expression, demonstrating study-scale differences. (D) Principal component analysis (PCA) of the 1,000 most variable GSE59867 genes. (E) GSE59867 volcano plot; highlighted points (red: higher in STEMI, blue: lower in STEMI) satisfy the dual threshold FDR (F) Spearman correlations of gene-level disease–reference effects across cohorts.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724537#F1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© 2026 Pan, Chen, Li, Xie and Fan.",
+        "verifiedAt": "2026-11-05T07:58:06.593Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fimmu.2026.1959223",
@@ -12780,16 +13416,32 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724559",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f6d7/13724559/1a7c7fc99679/fimmu-17-1959223-g000.webp",
+        "label": "Article figure",
+        "caption": "",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724559#d69e300",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Huang, Zhao, Chen, Sui, Zhu, Fang, Li, Liu, Wu and Wang.",
+        "verifiedAt": "2026-11-05T07:58:06.843Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.10.13.755787",
@@ -12884,16 +13536,32 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13724367",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 2,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/eaaa/13724367/25605fcff865/fimmu-17-1957339-g001.webp",
+        "label": "Figure 1",
+        "caption": "Cohort design flowchart.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13724367#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Muñoz-López, Flores-Santamaría, Santano, Trigueros, Riveira-Muñoz, Cabrero de las Heras, Banaei, Pradenas, Trinité, Marfil, Gervassi, Urrea, Izquierdo-Pujol, Loste, Santos, Lladós, Aiello, Chamorro, Jiménez, Dobaño, Paredes, Blanco, Ballana, Moncunill, Mateu, Nevot and Massanella.",
+        "verifiedAt": "2026-11-05T07:58:07.595Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1111/ahg.70063",
@@ -24484,7 +25152,7 @@
       ],
       "relevanceScore": 4,
       "figure": null,
-      "figureCheckedAt": "2026-10-28",
+      "figureCheckedAt": "2026-11-05",
       "figurePolicyVersion": 2,
       "figureCheckStatus": "no-reusable-figure",
       "firstSeen": "2026-10-27",
@@ -27526,17 +28194,33 @@
       "venue": "Nature communications",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13728165",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 9,
-      "firstSeen": "2026-11-04"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ce15/13728165/ec06085c78a4/41467_2026_78304_Fig1_HTML.webp",
+        "label": "Fig. 1",
+        "caption": "DGC development by RhoA Y42C. A–C RHOA and CDH1 mutations in gastric cancer ( n = 945) and DGC subtype ( n = 431) shown by OncoPlot ( A ), pi chart ( B ), and table ( C ). THE RHOA Y42C mutation is shown separately from other variants. WT = wild type, MT = mutations other than Y42C, Y42C: RHOA Y42C mutation. D Immunohistochemical (IHC) and immunofluorescence (IF) staining of genetically engineered murine GOs for bright-field images, hematoxylin and eosin (H&E), MKI67, and cleaved caspase-3 (CC3). Representative images are shown from at least three replicates; scale bars: bright-field (200 µm [upper] and 50 µm [lower]); H&E (50 µm); MKI67 and CC3 (20 µm). E Representative image of RKP allograft tumors. F Tumor growth of EKP ( n = 9 independent tumors) and RKP ( n = 15 independent tumors). Data are illustrated as mean ± SEM. P values were calculated using Student’s t-test. G H&E images of EKP and RKP tumors. Tumor (tu) and immune cell-infiltrated (im) regions are indicated. Representative images ( n ≥ 3). H IHC for epithelial cells (EPCAM) and immune cells (CD45) in EKP and RKP tumors. Diffuse (d) and intestinal-like (i) epithelial cell populations are annotated. Representative images ( n ≥ 3).",
+        "sourceUrl": "https://europepmc.org/articles/PMC13728165#Fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "license": "CC BY-NC-ND",
+        "nonCommercial": true,
+        "noDerivatives": true,
+        "credit": "© The Author(s) 2026",
+        "verifiedAt": "2026-11-05T07:58:08.772Z"
+      },
+      "figureCheckedAt": "2026-11-05",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fimmu.2026.1920627",
@@ -28919,7 +29603,6 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 8,
-      "firstSeen": "2026-11-04",
       "figure": {
         "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/74b2/13724723/2d44af6d49a9/41467_2026_78100_Fig1_HTML.webp",
         "label": "Fig. 1",
@@ -28934,7 +29617,9 @@
       },
       "figureCheckedAt": "2026-11-04",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "verified"
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-04",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1002/art.70359",
