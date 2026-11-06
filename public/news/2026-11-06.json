@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T07:58:48.392Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-24",
+    "end": "2026-11-06"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 535
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 767
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.11.04.760965",
+      "title": "Clonally Convergent Tph/Tfh-like CD4+ T Cells are Shared Across Recovery and Recurrence in Experimental Periodontitis",
+      "authors": "Sharma, A.; Olmedo, V.; Rojas, L.; Suliman, S.; Mohammadi, S.; Lauwens, K.; Nguyen, G.; Cruz-Dwyer, K.; Aguilar Angulo, A.; Khan, Y.; Dang, J.; Bluff, C.; Yakar, N.; Tornaas, S.; Costea, D.-E.; Dongre, H.; Guney, Z.; Oner, F.; Bor, B.; Ali, S.; Hasturk, H.; Hajishengallis, G.; Kirkwood, K. L.; Kantarci, A.; Alvarez Rivas, C.",
+      "abstract": "Periodontitis is a chronic inflammatory disease of the tooth-supporting structures (periodontium) that requires life-long maintenance to prevent progression. Using a sensitized model of recurrent periodontitis in mice (SeRPD), in which regulatory breakdown was induced by temporary Treg depletion concurrent with disease, we mapped the gingival T cell imprint across each disease phase. Transient regulatory breakdown left a durable mucosal imprint after clinical recovery, characterized by enrichment of local and regional CD4 T cells. Paired single-cell RNA and TCR sequencing of gingival immune cells identified a convergent clonotype expanded from recovery into recurrence that carried a Tfh/Tph-like transcriptional identity. An analogous CD4 T cell population was detected in human periodontitis lesions by single-cell transcriptomics. Together, these findings support a paradigm in which clinical recovery does not ensure a local T cell repertoire reset; instead, a reservoir of antigen-experienced, tissue-adapted CD4 T cells persist in the mucosa and participate in recurrence.",
+      "date": "2026-11-05",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.04.760965",
+      "url": "https://doi.org/10.64898/2026.11.04.760965",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/05/2026.11.04.760965.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 11,
+      "firstSeen": "2026-11-06"
+    }
+  ]
+}

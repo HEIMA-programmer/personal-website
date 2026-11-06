@@ -1,28 +1,53 @@
 {
   "version": 2,
   "coverageStart": "2026-10-01",
-  "updatedThrough": "2026-11-05",
-  "generatedAt": "2026-11-05T07:58:16.794Z",
+  "updatedThrough": "2026-11-06",
+  "generatedAt": "2026-11-06T07:58:48.350Z",
   "timezone": "UTC",
   "status": "complete",
   "searchWindow": {
-    "start": "2026-10-23",
-    "end": "2026-11-05"
+    "start": "2026-10-24",
+    "end": "2026-11-06"
   },
   "sources": [
     {
       "name": "bioRxiv",
       "status": "ok",
-      "records": 526
+      "records": 535
     },
     {
       "name": "Europe PMC",
       "status": "ok",
-      "records": 857
+      "records": 767
     }
   ],
   "selection": "All retrieved papers with computational methods and a substantive immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. Automatic topical relevance, not scientific-quality scoring. Dates are publication or preprint posting/revision dates, not historical website editions.",
   "papers": [
+    {
+      "id": "doi:10.64898/2026.11.04.760965",
+      "title": "Clonally Convergent Tph/Tfh-like CD4+ T Cells are Shared Across Recovery and Recurrence in Experimental Periodontitis",
+      "authors": "Sharma, A.; Olmedo, V.; Rojas, L.; Suliman, S.; Mohammadi, S.; Lauwens, K.; Nguyen, G.; Cruz-Dwyer, K.; Aguilar Angulo, A.; Khan, Y.; Dang, J.; Bluff, C.; Yakar, N.; Tornaas, S.; Costea, D.-E.; Dongre, H.; Guney, Z.; Oner, F.; Bor, B.; Ali, S.; Hasturk, H.; Hajishengallis, G.; Kirkwood, K. L.; Kantarci, A.; Alvarez Rivas, C.",
+      "abstract": "Periodontitis is a chronic inflammatory disease of the tooth-supporting structures (periodontium) that requires life-long maintenance to prevent progression. Using a sensitized model of recurrent periodontitis in mice (SeRPD), in which regulatory breakdown was induced by temporary Treg depletion concurrent with disease, we mapped the gingival T cell imprint across each disease phase. Transient regulatory breakdown left a durable mucosal imprint after clinical recovery, characterized by enrichment of local and regional CD4 T cells. Paired single-cell RNA and TCR sequencing of gingival immune cells identified a convergent clonotype expanded from recovery into recurrence that carried a Tfh/Tph-like transcriptional identity. An analogous CD4 T cell population was detected in human periodontitis lesions by single-cell transcriptomics. Together, these findings support a paradigm in which clinical recovery does not ensure a local T cell repertoire reset; instead, a reservoir of antigen-experienced, tissue-adapted CD4 T cells persist in the mucosa and participate in recurrence.",
+      "date": "2026-11-05",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.04.760965",
+      "url": "https://doi.org/10.64898/2026.11.04.760965",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/05/2026.11.04.760965.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 11,
+      "firstSeen": "2026-11-06"
+    },
     {
       "id": "doi:10.64898/2026.11.03.763491",
       "title": "High-fat diet promotes exhaustion-associated T-cell remodeling across vascular and lymphoid tissues in atherosclerosis-prone mice",
@@ -46,6 +71,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 11,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -100,6 +127,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -124,6 +153,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -148,6 +179,8 @@
         "Repertoire & clonal dynamics"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -172,6 +205,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -196,6 +231,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -220,6 +257,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 5,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-05"
     },
     {
@@ -1871,6 +1910,34 @@
       "figureCheckedAt": "",
       "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-04",
+      "jatsUrl": ""
+    },
+    {
+      "id": "doi:10.1158/2767-9764.crc-26-0167",
+      "title": "Cancer Cell CD73 Loss Promotes a Dual Inflammatory and Immunosuppressive Microenvironment in Endometrial Carcinoma.",
+      "authors": "Lee HN, Zhang X, Crumley SM, Rabjohns EM, Phan LH, Wu D, Broaddus RR, Vaziri C, Bowser JL.",
+      "abstract": "CD73 is an emerging immunotherapy target that is overexpressed in many tumors and generates an adenosine-rich microenvironment to suppress antitumor immunity. In low-grade endometrial carcinoma, CD73 expression varies, and its impact on tumor immunobiology is unknown. Using two microsatellite-stable, grade 2 endometrioid endometrial carcinoma cohorts, in vitro NT5E (CD73) knockout/knockdown, and single-cell and spatial analyses, we show that cancer cell CD73 loss promotes a dual inflammatory and immunosuppressive microenvironment. Cancer cell CD73 loss was associated with increased lymphovascular space invasion and worse recurrence-free and overall survival, whereas stromal CD73 expression did not correlate with outcomes. CD73 downregulation induced pro-inflammatory gene expression, which strongly correlated with upregulation of immunosuppressive genes, including CD274 (PD-L1), suggesting a compensatory mechanism limiting antitumor immunity. Tumors with low cancer cell CD73 exhibited higher PD-L1 expression that correlated with increased CD3+ T-cell infiltration, reflecting an immune-engaged but checkpoint-restrained microenvironment. Single-cell analyses demonstrated that NT5E+ nonimmune cells in immune-responsive clusters were three times less likely to express CD274. In clinically relevant low-grade endometrial carcinoma models, functional studies confirmed that CD73 loss promoted both pro-inflammatory and immunosuppressive programs. These results reveal a context-specific role for CD73 in shaping the immune landscape of low-grade endometrial carcinoma that is distinct from its function in other solid tumors. Significance Unlike most cancers, in which CD73 drives immunosuppression via overexpression, we show that cancer cell CD73 loss promotes an inflammatory yet compensatory immunosuppressive microenvironment in low-grade endometrial carcinoma, revealing a context-specific role. CD73 loss in endometrial carcinoma therefore may be as immunologically significant as its overexpression in other cancers.",
+      "date": "2026-11-01",
+      "dateLabel": "Published",
+      "doi": "10.1158/2767-9764.crc-26-0167",
+      "url": "https://doi.org/10.1158/2767-9764.crc-26-0167",
+      "source": "Europe PMC",
+      "venue": "Cancer research communications",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": false,
+      "inEuropePmc": false,
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-10-27",
       "jatsUrl": ""
     },
     {
@@ -4024,18 +4091,31 @@
       "venue": "STAR protocols",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13733458",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "figure": null,
-      "figureCheckedAt": "",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0af7/13733458/1324e8f96b00/ga1.webp",
+        "label": "Article figure",
+        "caption": "",
+        "sourceUrl": "https://europepmc.org/articles/PMC13733458#undfig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 The Author(s)",
+        "verifiedAt": "2026-11-06T07:58:41.004Z"
+      },
+      "figureCheckedAt": "2026-11-06",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-11-01",
       "jatsUrl": ""
     },
@@ -4269,15 +4349,28 @@
       "version": "",
       "license": "cc by-nc",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13733198",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Systems immunology"
       ],
       "relevanceScore": 5,
-      "figure": null,
-      "figureCheckedAt": "",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/0d0b/13733198/e97fb374ca68/KMAB_A_2753234_F0001_OC.webp",
+        "label": "Figure 1.",
+        "caption": "(a) Multiple spatially separated predicted contact hotspots are observed across the EGFR surface. (b) SprintX exhibits a diverse distribution of antibody–antigen interactions without bias toward specific residue pairs.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13733198#f0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "license": "CC BY-NC",
+        "nonCommercial": true,
+        "noDerivatives": false,
+        "credit": "© 2026 The Author(s). Published with license by Taylor & Francis Group, LLC.",
+        "verifiedAt": "2026-11-06T07:58:44.259Z"
+      },
+      "figureCheckedAt": "2026-11-06",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-10-31",
       "jatsUrl": ""
     },
@@ -4509,7 +4602,7 @@
       "venue": "Biofabrication",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -6274,7 +6367,7 @@
     {
       "id": "doi:10.3791/73234",
       "title": "Oncogenic Role of PLOD3 in Melanoma Progression via Wnt/β-catenin Signaling and Tumor Microenvironment Reprogramming.",
-      "authors": "Xu H, Zhang Y.",
+      "authors": "Zhang Y, Xu H.",
       "abstract": "Melanoma is an aggressive malignancy, and treatment strategies remain limited for patients with advanced disease, highlighting the need for a better understanding of the driving mechanisms. This study aimed to identify genes associated with melanoma tumorigenesis, characterize their potential mechanisms, and explore the therapeutic relevance and druggability of selected candidates through experimental and computational approaches. Melanoma-related hub genes were screened by integrating weighted gene co-expression network analysis (WGCNA) with least absolute shrinkage and selection operator (LASSO) regression analysis. The biological functions of the candidate gene were validated using proliferation and migration assays in melanoma cells. RNA sequencing was applied to investigate the underlying molecular mechanism, whereas CIBERSORT and xCell analyses were used to investigate the relationship between PLOD3 and immune infiltration. Structure-based virtual screening was performed to explore candidate PLOD3-binding compounds. PLOD3, C4orf48, BUB1, and CD300LF were identified as a melanoma-related gene signature, among which PLOD3 exhibited the strongest association with melanoma progression and metastasis. PLOD3 was significantly upregulated in melanoma and positively correlated with epithelial-mesenchymal transition (EMT) signatures across multiple independent cohorts. Loss-of-function experiments revealed reduced proliferation, migration, and invasion of melanoma cells following PLOD3 depletion. PLOD3 expression was also associated with Wnt/β-catenin pathway activity, and treatment with a pharmacological Wnt/β-catenin activator partially restored the cellular phenotypes suppressed by PLOD3 silencing. Furthermore, elevated PLOD3 expression was associated with reduced CD8⁺ T-cell infiltration and an immunosuppressive tumor microenvironment. Structure-based virtual screening identified four candidate compounds-Rosamultin, Actein, Temsirolimus, and Punicalagin-with strong predicted binding affinity to the catalytic glycosyltransferase (GT) domain of PLOD3, supporting its target potential. PLOD3 functions as a critical driver of melanoma progression by promoting Wnt/β-catenin signaling and shaping an immunosuppressive tumor microenvironment. These findings identify PLOD3 as a promising therapeutic target and provide candidate compounds for further investigation in melanoma-targeted therapy.",
       "date": "2026-10-27",
       "dateLabel": "Published",
@@ -8668,7 +8761,7 @@
       "venue": "International immunopharmacology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -9452,34 +9545,6 @@
       "figure": null,
       "figureCheckedAt": "",
       "firstSeen": "2026-10-28",
-      "jatsUrl": ""
-    },
-    {
-      "id": "doi:10.1158/2767-9764.crc-26-0167",
-      "title": "Cancer cell CD73 loss promotes a dual inflammatory and immunosuppressive microenvironment in endometrial carcinoma.",
-      "authors": "Lee HN, Zhang X, Crumley SM, Rabjohns EM, Phan LH, Wu D, Broaddus RR, Vaziri C, Bowser JL.",
-      "abstract": "CD73 is an emerging immunotherapy target that is overexpressed in many tumors and generates an adenosine-rich microenvironment to suppress antitumor immunity. In low-grade endometrial carcinoma (EC), CD73 expression varies, and its impact on tumor immunobiology is unknown. Using two microsatellite-stable, grade 2 endometrioid EC (G2 EECMSS) cohorts, in vitro NT5E (CD73) knockout/knockdown, and single-cell and spatial analyses, we show that cancer cell CD73 loss promotes a dual inflammatory and immunosuppressive microenvironment. Cancer cell CD73 loss was associated with increased lymphovascular space invasion and worse recurrence-free and overall survival, whereas stromal CD73 expression did not correlate with outcomes. CD73 downregulation induced proinflammatory gene expression, which strongly correlated with upregulation of immunosuppressive genes, including CD274 (PD-L1), suggesting a compensatory mechanism limiting antitumor immunity. Tumors with low cancer cell CD73 exhibited higher PD-L1 expression that correlated with increased CD3⁺ T-cell infiltration, reflecting an immune-engaged but checkpoint-restrained microenvironment. Single-cell analyses demonstrated that NT5E+ non-immune cells in immune-responsive clusters were three times less likely to express CD274. In clinically relevant low-grade EC models, functional studies confirmed that CD73 loss promoted both proinflammatory and immunosuppressive programs. These results reveal a context-specific role for CD73 in shaping the immune landscape of low-grade EC that is distinct from its function in other solid tumors.",
-      "date": "2026-10-22",
-      "dateLabel": "Published",
-      "doi": "10.1158/2767-9764.crc-26-0167",
-      "url": "https://doi.org/10.1158/2767-9764.crc-26-0167",
-      "source": "Europe PMC",
-      "venue": "Cancer research communications",
-      "publicationType": "Journal article",
-      "version": "",
-      "license": "",
-      "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
-      "categories": [
-        "Single-cell immunology",
-        "Immunotherapy"
-      ],
-      "relevanceScore": 7,
-      "figure": null,
-      "figureCheckedAt": "",
-      "firstSeen": "2026-10-27",
       "jatsUrl": ""
     },
     {
