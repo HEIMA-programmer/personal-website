@@ -1,0 +1,149 @@
+{
+  "version": 2,
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T07:16:16.394Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-25",
+    "end": "2026-11-07"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 574
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 701
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.11.04.764339",
+      "title": "TACO: An open, interpretable model for microsecond-scale TCR specificity prediction",
+      "authors": "Garcia Noceda, M. A.; Calfee, E.; Zhang, B. C.; Osborne, E.; Greenfield, B.; Klinger, M.; Noakes, M. T.; Howie, B.; Robins, H.",
+      "abstract": "Predicting antigen-induced T-cell activation from T-cell receptor (TCR) and peptide sequence remains difficult for TCRs and peptides not represented in training data. We present TACO (T-Cell Activation from Chemistry and Orientation), an open statistical model for predicting TCR specificity against HLA-A*02:01-presented peptides. TACO takes as input the peptide sequence and six TCR CDR loop sequences. Learning from binary activation labels, TACO selects a single canonical orientation of the CDR loops over the peptide and learns five amino-acid contact-potential matrices as well as two peptide-exposure profiles.The orientation is fixed and does not require experimentally determined or predicted structures. We evaluate TACO on held-out peptides separated by Levenshtein distance at least four from all training and validation peptides, limiting near-neighbor shortcut learning. TACO achieves AUROC 0.67 on a large held-out activation dataset and 0.68 on IMMREP25 HLA-A*02:01, exceeding the open structure-based models evaluated here and matching the reported AlphaFold3-TCRdock result. The model has 2,019 fitted parameters, retains most within-peptide ranking signal with TCR$\\beta$ sequence alone, and reaches 406,000 TCR--peptide predictions per second on CPU. This throughput enables computational evaluation of large TCR-peptide search spaces. We show its potential use for prioritizing candidate target peptides from large peptide libraries, reducing the search space for downstream experimental investigation. TACO fitted parameters also expose candidate physicochemical patterns that can be inspected directly. We release TACO's parameters and complete training, evaluation, and inference code.",
+      "date": "2026-11-06",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.04.764339",
+      "url": "https://doi.org/10.64898/2026.11.04.764339",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/06/2026.11.04.764339.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 9,
+      "firstSeen": "2026-11-07"
+    },
+    {
+      "id": "doi:10.64898/2026.11.04.764088",
+      "title": "Plate design confounds donor variation and model evaluation in single-cell perturbation screens",
+      "authors": "Ghajari, G.; Thirunarayan, K.; Amsaad, F.",
+      "abstract": "Single-cell screens of immune cells from many donors are used to study why individuals respond differently and to benchmark response models. Each donor-perturbation combination typically occupies one well, controls are grouped, and donors share one layout, so technical effects can look biological. Using a 90-cytokine screen, two compound screens, four cohorts and simulations, we show that well effects explain most replicate-control variation in abundant cell types, controls carry a shared offset, and identical control wells differ by hundreds of differentially expressed genes at a standard threshold, about as many as two receptor-negative proteins do. Negative controls, design-aware estimators and perturbation-specific evaluation change the interpretation of four recent analyses. A deep-learning model that scores below a perturbation-agnostic predictor under standard evaluation outperforms a simple baseline on perturbation-specific differences in two of three cell types (significantly in one with stricter controls), but predicts less well the component shared with inert wells.",
+      "date": "2026-11-06",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.04.764088",
+      "url": "https://doi.org/10.64898/2026.11.04.764088",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/06/2026.11.04.764088.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-07"
+    },
+    {
+      "id": "doi:10.64898/2026.11.04.764292",
+      "title": "scDisentangle: sequential disentanglement for single-cell perturbation response prediction",
+      "authors": "El Mejjad, S.; Enezari, S.; Bedraoui, A.; El Hajji, F. Z.; El Fatimy, R.; Hofree, M.; Daouda, T.",
+      "abstract": "Predicting the transcriptional response of single cells to perturbation is a central goal of single-cell modeling, with broad application to analysis and experimental design. Existing methods often fail to beat simple baselines and offer little insight into how biological variation is organized. We present scDisentangle, a model that decomposes single-cell expression into observed attributes and a sequence of residual components, generating counterfactuals that preserve source cell identity. scDisentangle outperformed current models and naive baselines on cytokine stimulation, liver infection, and unseen combinatorial genetic perturbations, on which accuracy was largely independent of how closely a response resembled the average perturbation effect. In an immune checkpoint inhibitor-associated myocarditis cohort, cell-resolved counterfactuals predicted donor-specific intracardiac CD8+ T cell states from peripheral blood. In a castration-regeneration prostate atlas, predictions recapitulated luminal dynamics and progenitor-marker kinetics upon androgen add-back. scDisentangle's coarse-to-fine latent structure aligned with hematopoietic lineage organization, with early levels capturing a less differentiated core progressively refined into cell-type-specific programs.",
+      "date": "2026-11-06",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.04.764292",
+      "url": "https://doi.org/10.64898/2026.11.04.764292",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/06/2026.11.04.764292.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-07"
+    },
+    {
+      "id": "doi:10.64898/2026.11.05.764385",
+      "title": "A novel KIR3DL2-directed CAR T-cell therapy for cutaneous and systemic T-cell lymphomas",
+      "authors": "Aletti, F. M.; Weng, J.; Le, C. C.; Liu, J.; Darbaniyan, F.; Rehman, A.; Richard, M. D.; Kolsuz, S.; Cheng, X.; Patchva, S.; Tang, Y.; Lin, C.-Y.; Cao, J.; Singh, K.; Reddy, S. D.; Rawat, S. G.; Mohapatra, S.; Wei, J.; Chohan, K.; Kettlun Leyton, C.; Dcunha, N. J.; Saini, N.; Chu, F.; Green, M. R.; Iyer, S. P.; Vega, F.; Neelapu, S. S.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has transformed the treatment of B-cell malignancies and multiple myeloma, but its extension to T-cell lymphomas (TCLs) has been constrained by the paucity of antigens that can be safely targeted. While targeting pan-T antigens broadens the therapeutic reach across various TCLs, it carries a substantial risk of immunosuppression and infection. Here, we report killer cell immunoglobulin-like receptor, three Ig domains and long cytoplasmic tail 2 (KIR3DL2/CD158k) as a viable target for CAR T-cell therapy against a wide range of TCLs. Using single-cell RNA-seq data analysis and flow cytometric phenotyping, we observed that KIR3DL2 expression is restricted to a subset of mature NK cells and a minor fraction of CD8 T cells, with negligible expression in other healthy adult tissues. Among TCLs, KIR3DL2 expression was noted in various subtypes of cutaneous and systemic TCLs. Anti-KIR3DL2 CAR constructs (3DL2CARs) efficiently and selectively redirected T cells against antigen-positive cell lines but not isogenic KIR3DL2-negative counterparts, with antigen-specific signaling, cytotoxicity, proliferation, and cytokine production. Importantly, 3DL2CART cells produced sustained tumor regression and prolonged survival in two distinct cell line-derived xenograft models of cutaneous TCL and in one patient-derived xenograft model of hepatosplenic TCL. 3DL2CART cells exhibited minimal off-target activity against bystander immune cells and showed no appreciable fratricide. To mitigate the risk of tumor cell contamination in autologous CAR T-cell products, we established a two-tiered strategy that integrates immunomagnetic depletion of KIR3DL2-positive tumor cells with in vivo activation of a safety switch if inadvertently transduced malignant cells contribute to immune escape. Together, our results establish the preclinical efficacy and safety of 3DL2CART-cell therapy and support its clinical translation. This approach may offer a targeted alternative to pan-T-cell-directed CAR T-cell strategies for patients with relapsed/refractory cutaneous and systemic TCLs, addressing a critical unmet clinical need.",
+      "date": "2026-11-06",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.05.764385",
+      "url": "https://doi.org/10.64898/2026.11.05.764385",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/06/2026.11.05.764385.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-07"
+    },
+    {
+      "id": "doi:10.64898/2026.11.05.764518",
+      "title": "Microglial AhR Drives Sex-Biased Amyloid Pathology",
+      "authors": "Nieto-Vaquero, C.; Garcia-Culebras, A.; Rubio-Ponce, A.; Chamoso-Sanchez, D.; Gomez, M. J.; de Castro-Millan, F. J.; Parra-Perez, C.; Vazquez-Reyes, S.; Semerano, A.; Bravo-Ferrer, I.; Moraga-Yebenes, A.; Barbas, C.; Bueno, H.; Morenas-Rodriguez, E.; Sanchez-Cabo, F.; Villarejo-Galende, A.; Saito, T.; Saido, T. C.; Fernandez-Salguero, P. M.; Lizasoain, I.; Cuartero, M. I.; Moro, M. A.",
+      "abstract": "Microglia integrate local and systemic signals that can modify their response to amyloid-{beta} (A{beta}), but the molecular pathways connecting these signals to Alzheimer's disease (AD) pathology remain incompletely understood. Here, we identify the aryl hydrocarbon receptor (AhR), a sensor of microbiota- and host-derived metabolites, as a microglial regulator of amyloid pathology. Sustained administration of the AhR agonist indoxyl-3-sulfate (I3S) exacerbated cortical A{beta} deposition and plaque-associated neuritic damage in APPNL-F mice. Conversely, constitutive AhR deficiency reduced amyloid burden, promoted plaque compaction, and preserved behavioural performance, whereas inducible deletion of AhR in microglia was sufficient to reduce plaque accumulation. Single-cell RNA sequencing revealed that AhR loss reprogrammed microglia toward phagolysosomal and A{beta}-recognition states and enhanced microglial A{beta} uptake, with markedly stronger effects in females. APPNL-F mice also exhibited sex-dependent remodelling of the gut microbiota and tryptophan-derived metabolites. Circulating indole-3-aldehyde (IAld) robustly activated AhR and was associated with cortical amyloid pathology. AhR-activating bioactivity was increased in mouse serum, cortex and faecal extracts and was higher in serum from the COGNIBIO12 analytical subcohort than in independently recruited cognitively unimpaired H2H participants. Among amyloid-positive patients, higher serum AhR bioactivity was associated with lower CSF A{beta}42 concentrations. Together, these findings identify microglial AhR as a metabolically responsive regulator linking systemic ligand availability, biological sex, and microglial control of amyloid pathology.",
+      "date": "2026-11-06",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.05.764518",
+      "url": "https://doi.org/10.64898/2026.11.05.764518",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/06/2026.11.05.764518.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-07"
+    }
+  ]
+}
