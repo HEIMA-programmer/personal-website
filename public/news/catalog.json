@@ -1,24 +1,24 @@
 {
   "version": 2,
   "coverageStart": "2026-10-01",
-  "updatedThrough": "2026-11-07",
-  "generatedAt": "2026-11-07T07:16:16.348Z",
+  "updatedThrough": "2026-11-08",
+  "generatedAt": "2026-11-08T07:28:46.834Z",
   "timezone": "UTC",
   "status": "complete",
   "searchWindow": {
-    "start": "2026-10-25",
-    "end": "2026-11-07"
+    "start": "2026-10-26",
+    "end": "2026-11-08"
   },
   "sources": [
     {
       "name": "bioRxiv",
       "status": "ok",
-      "records": 574
+      "records": 561
     },
     {
       "name": "Europe PMC",
       "status": "ok",
-      "records": 701
+      "records": 600
     }
   ],
   "selection": "All retrieved papers with computational methods and a substantive immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. Automatic topical relevance, not scientific-quality scoring. Dates are publication or preprint posting/revision dates, not historical website editions.",
@@ -46,6 +46,8 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
     },
     {
@@ -70,6 +72,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
     },
     {
@@ -95,6 +99,8 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
     },
     {
@@ -120,6 +126,8 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
     },
     {
@@ -144,6 +152,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
     },
     {
@@ -2648,7 +2658,7 @@
       "venue": "Genomics",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -3577,7 +3587,7 @@
       "venue": "Journal of advanced research",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -4702,15 +4712,16 @@
       "version": "",
       "license": "",
       "publishedDoi": "",
-      "pmcid": "",
+      "pmcid": "PMC13741732",
       "openAccess": false,
-      "inEuropePmc": false,
+      "inEuropePmc": true,
       "categories": [
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 2,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-10-31",
       "jatsUrl": ""
     },
@@ -5434,17 +5445,18 @@
       "venue": "Neurotherapeutics : the journal of the American Society for Experimental NeuroTherapeutics",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13738182",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-10-30",
       "jatsUrl": ""
     },
@@ -8156,17 +8168,30 @@
       "venue": "Poultry science",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13735247",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 10,
-      "figure": null,
-      "figureCheckedAt": "",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9235/13735247/dbb218f9ac80/gr1.webp",
+        "label": "Fig. 1",
+        "caption": "Single-cell transcriptomic profile of the chicken thymus. (A) Visualisation of cell clustering and cell type annotation using Uniform Manifold Approximation and Projection (UMAP). (B-G) Violin plots showing the expression of characteristic marker genes. (I) Proportion of each cluster in thymus samples of different ages (ALV-FJ15TH0 and NC).",
+        "sourceUrl": "https://europepmc.org/articles/PMC13735247#fig0001",
+        "licenseUrl": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "license": "CC BY-NC-ND",
+        "nonCommercial": true,
+        "noDerivatives": true,
+        "credit": "© 2026 The Authors",
+        "verifiedAt": "2026-11-08T07:28:17.328Z"
+      },
+      "figureCheckedAt": "2026-11-08",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-10-30",
       "jatsUrl": ""
     },
@@ -9660,15 +9685,16 @@
       "version": "",
       "license": "",
       "publishedDoi": "",
-      "pmcid": "",
+      "pmcid": "PMC13734699",
       "openAccess": false,
-      "inEuropePmc": false,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-10-28",
       "jatsUrl": ""
     },
@@ -16803,7 +16829,7 @@
       "figure": null,
       "figureCheckedAt": "2026-10-31",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "no-reusable-figure",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-10-28",
       "jatsUrl": ""
     },

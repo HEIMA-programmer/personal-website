@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T07:28:46.868Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-26",
+    "end": "2026-11-08"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 561
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 600
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": []
+}
