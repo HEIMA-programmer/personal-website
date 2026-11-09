@@ -1,24 +1,25 @@
 {
   "version": 2,
   "coverageStart": "2026-10-01",
-  "updatedThrough": "2026-11-08",
-  "generatedAt": "2026-11-08T07:28:46.834Z",
+  "updatedThrough": "2026-11-09",
+  "generatedAt": "2026-11-09T08:06:29.831Z",
   "timezone": "UTC",
-  "status": "complete",
+  "status": "partial",
   "searchWindow": {
-    "start": "2026-10-26",
-    "end": "2026-11-08"
+    "start": "2026-10-27",
+    "end": "2026-11-09"
   },
   "sources": [
     {
       "name": "bioRxiv",
-      "status": "ok",
-      "records": 561
+      "status": "unavailable",
+      "records": 0,
+      "error": "The operation was aborted due to timeout"
     },
     {
       "name": "Europe PMC",
       "status": "ok",
-      "records": 600
+      "records": 564
     }
   ],
   "selection": "All retrieved papers with computational methods and a substantive immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. Automatic topical relevance, not scientific-quality scoring. Dates are publication or preprint posting/revision dates, not historical website editions.",
@@ -155,6 +156,33 @@
       "figure": null,
       "figureCheckedAt": "",
       "firstSeen": "2026-11-07"
+    },
+    {
+      "id": "doi:10.1055/a-2991-9733",
+      "title": "Lymphangioleiomyomatosis: From Genetics to Management.",
+      "authors": "Papiris SA, Skontzou E, Kolilekas L, Kallieri M, Prountzos S, Athanasopoulou V, Kaltsakas G, Spanou M, Brountzos E, Dinopoulos A, Pujana MA, Manali ED.",
+      "abstract": "Abstract Lymphangioleiomyomatosis (LAM) is a rare multisystem disease that exemplifies how sustained investigation can transform both biological understanding and clinical management. LAM is diagnosed almost exclusively in women, typically during the reproductive years, consistent with an important role for hormonal influences in disease activity. The disease is characterized by diffuse cystic lung remodeling that can lead to progressive loss of lung function and, in severe cases, respiratory failure. Once viewed primarily as an unusual smooth muscle-like proliferation, LAM is now considered a low-grade metastasizing neoplasm characterized by heterogeneous disease-cell states that contribute to remodeling of the lung parenchyma and interact dynamically with stromal, lymphatic, immune, metabolic, and hormonal cues. Although the anatomical origin of LAM cells remains debated and continues to be an active area of research, sporadic and tuberous sclerosis complex-associated LAM (S-LAM and TSC-LAM, respectively) share a central molecular mechanism: biallelic inactivation of TSC1 or TSC2 , which disrupts the TSC1 - TSC2 protein complex and results in constitutive activation of mechanistic target of rapamycin complex 1 (mTORC1). This mechanistic insight provided the rationale for mTORC1 inhibition with sirolimus, which has transformed disease management by stabilizing lung function and reducing disease burden in many patients. In parallel, serum vascular endothelial growth factor-D has emerged as a clinically useful biomarker supporting noninvasive diagnosis and the assessment of disease burden and treatment response. Yet current therapies are not curative, and LAM cells persist despite mTORC1 inhibition. Continued advances in single-cell biology, genomic studies, hormonal and metabolic regulation, mechanistic dissection of disease-cell states, immune-stromal interactions, and biomarker discovery are now reshaping LAM as a model of precision medicine for rare neoplastic diseases. These efforts may guide rational combination therapies aimed not only at controlling disease progression but also, ultimately, at eliminating persistent LAM cells.",
+      "date": "2026-11-06",
+      "dateLabel": "Published",
+      "doi": "10.1055/a-2991-9733",
+      "url": "https://doi.org/10.1055/a-2991-9733",
+      "source": "Europe PMC",
+      "venue": "Seminars in respiratory and critical care medicine",
+      "publicationType": "Journal article",
+      "version": "",
+      "license": "",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": false,
+      "inEuropePmc": false,
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 4,
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-10-30",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.11.04.760965",
@@ -2753,17 +2781,18 @@
       "venue": "Brazilian journal of otorhinolaryngology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13743948",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 9,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-02",
       "jatsUrl": ""
     },
@@ -3652,7 +3681,7 @@
       ],
       "relevanceScore": 4,
       "figure": null,
-      "figureCheckedAt": "2026-11-01",
+      "figureCheckedAt": "2026-11-09",
       "figurePolicyVersion": 2,
       "figureCheckStatus": "no-reusable-figure",
       "firstSeen": "2026-10-31",
@@ -5454,36 +5483,21 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "figure": null,
-      "figureCheckedAt": "",
-      "figureCheckStatus": "source-unavailable",
-      "firstSeen": "2026-10-30",
-      "jatsUrl": ""
-    },
-    {
-      "id": "doi:10.1055/a-2991-9733",
-      "title": "Lymphangioleiomyomatosis (LAM): From Genetics to Management.",
-      "authors": "Papiris SA, Skontzou E, Kolilekas L, Kallieri M, Prountzos S, Athanasopoulou V, Kaltsakas G, Spanou M, Brountzos E, Dinopoulos A, Pujana MA, Manali ED.",
-      "abstract": "Lymphangioleiomyomatosis (LAM) is a rare multisystem disease that exemplifies how sustained investigation can transform both biological understanding and clinical management. LAM is diagnosed almost exclusively in women, typically during the reproductive years, consistent with an important role for hormonal influences in disease activity. The disease is characterized by diffuse cystic lung remodeling that can lead to progressive loss of lung function and, in severe cases, respiratory failure. Once viewed primarily as an unusual smooth muscle-like proliferation, LAM is now considered a low-grade metastasizing neoplasm characterized by heterogeneous disease-cell states that contribute to remodeling of the lung parenchyma and interact dynamically with stromal, lymphatic, immune, metabolic, and hormonal cues. Although the anatomical origin of LAM cells remains debated and continues to be an active area of research, sporadic and tuberous sclerosis complex-associated LAM (S-LAM and TSC-LAM, respectively) share a central molecular mechanism: biallelic inactivation of TSC1 or TSC2, which disrupts the TSC1-TSC2 protein complex and results in constitutive activation of mechanistic target of rapamycin complex 1 (mTORC1). This mechanistic insight provided the rationale for mTORC1 inhibition with sirolimus, which has transformed disease management by stabilizing lung function and reducing disease burden in many patients. In parallel, serum VEGF-D has emerged as a clinically useful biomarker supporting noninvasive diagnosis and the assessment of disease burden and treatment response. Yet current therapies are not curative, and LAM cells persist despite mTORC1 inhibition. Continued advances in single-cell biology, genomic studies, hormonal and metabolic regulation, mechanistic dissection of disease-cell states, immune-stromal interactions, and biomarker discovery are now reshaping LAM as a model of precision medicine for rare neoplastic diseases. These efforts may guide rational combination therapies aimed not only at controlling disease progression but also, ultimately, at eliminating persistent LAM cells.",
-      "date": "2026-10-28",
-      "dateLabel": "Published",
-      "doi": "10.1055/a-2991-9733",
-      "url": "https://doi.org/10.1055/a-2991-9733",
-      "source": "Europe PMC",
-      "venue": "Seminars in respiratory and critical care medicine",
-      "publicationType": "Journal article",
-      "version": "",
-      "license": "",
-      "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
-      "categories": [
-        "Single-cell immunology"
-      ],
-      "relevanceScore": 4,
-      "figure": null,
-      "figureCheckedAt": "",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f197/13738182/b4ce580c3156/gr1.webp",
+        "label": "Fig. 1",
+        "caption": "Schematic representation of experimental design and subsequent analyses.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13738182#fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© 2026 The Author(s)",
+        "verifiedAt": "2026-11-09T08:05:52.009Z"
+      },
+      "figureCheckedAt": "2026-11-09",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-10-30",
       "jatsUrl": ""
     },
@@ -16827,9 +16841,9 @@
       ],
       "relevanceScore": 7,
       "figure": null,
-      "figureCheckedAt": "2026-10-31",
+      "figureCheckedAt": "2026-11-09",
       "figurePolicyVersion": 2,
-      "figureCheckStatus": "source-unavailable",
+      "figureCheckStatus": "no-reusable-figure",
       "firstSeen": "2026-10-28",
       "jatsUrl": ""
     },
