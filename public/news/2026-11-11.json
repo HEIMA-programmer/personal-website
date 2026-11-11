@@ -1,0 +1,247 @@
+{
+  "version": 2,
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T07:53:24.952Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-10-29",
+    "end": "2026-11-11"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 543
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 688
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.06.09.727013",
+      "title": "BenchRep-T: A Systematic Evaluation of T-Cell Repertoire-Based Disease Diagnostics",
+      "authors": "Buendia, A.; Im, C.; Kundaje, A.; Boyd, S. D.; Cohen-Lavi, L.",
+      "abstract": "Adaptive immune receptor repertoire sequencing data has emerged as a promising potential modality for disease diagnosis, relying on computational methods to analyze T-cell receptor (TCR) sequences from an individual's blood sample. Published methods rely on different cohorts, data preprocessing pipelines, and evaluation metrics, making direct comparison across methods challenging. We present BenchRep-T, a unified benchmark that standardizes multiple publicly available TCR repertoire datasets and evaluates nine computational approaches, spanning statistical enrichment of shared sequences, feature-engineered ensembles, deep learning, and sequence clustering. BenchRep-T evaluates methods on four tasks: disease classification across conditions, performance scaling under restricted sequence-sampling depth, recovery of known antigen-specific driver sequences, and evaluation of sensitivity to demographic confounding. Under controlled evaluation, simple baselines prove competitive, with tree-based models trained on V- and J-gene usage and short sequence motifs approaching the classification performance of more complex methods. Our findings underscore the complexity of modeling TCR repertoire data, and show that no single method dominates across all tasks. BenchRep-T provides a framework for rigorous and reproducible evaluation of TCR repertoire classification methods to accelerate the development of immune repertoire-based diagnostics.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.06.09.727013",
+      "url": "https://doi.org/10.64898/2026.06.09.727013",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_by_nc",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.06.09.727013.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics"
+      ],
+      "relevanceScore": 12,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.02.23.707583",
+      "title": "CRISPR screens of noncanonical coding sequences and integrative multiomics uncover novel retrovirus-derived proteins",
+      "authors": "Malekos, E.; Smaliy, V.; Carpenter, S.; Sudek, L.",
+      "abstract": "Ribosome profiling has revealed thousands of noncanonical translation events across mammalian genomes, yet functional characterization has overwhelmingly focused on proliferative fitness in cancer cell lines. Here, we present a comprehensive survey of noncanonical translation in the mouse immune system and its functional consequences in macrophages. By performing a meta-analysis of Ribo-seq across 20 public mouse leukocyte and 5 human leukocyte datasets we define a compendium of 22,572 mouse and 18,701 human noncanonical coding sequences (nCDSs), including upstream ORFs (uORFs), downstream ORFs, and ORFs on noncoding RNAs and pseudogenes (ncORFs). Cross species conservation and proteogenomic integration with reanalyzed mass spectrometry data prioritizes a high-confidence subset. To move beyond cataloging, we carried out two orthogonal CRISPR screens in immortalized bone marrow-derived macrophages: a fitness screen identifying nCDSs required for macrophage viability, and a TLR1/TLR2-NF{kappa}B reporter screen uncovering nCDSs that modulate innate immune signaling. These screens suggested dozens of nCDSs for functional follow up including a family of endogenous retroviral envelope-derived proteins translated in adult mouse myeloid cells. Updated single-cell RNA-seq annotations and an interactive UCSC Genome Browser session integrating Ribo-seq, proteomics, and CRISPR screen data are provided as community resources. Together, these findings expand the functional landscape of noncanonical translation in immunity and nominate endogenous retroviral proteins as previously unrecognized regulators of murine macrophage biology.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.02.23.707583",
+      "url": "https://doi.org/10.64898/2026.02.23.707583",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_by_nc",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.02.23.707583.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.08.762395",
+      "title": "Dual CD40/CD28 co-stimulation reprograms the solid-tumor microenvironment to unleash CAR-T and endogenous anti-tumor immunity",
+      "authors": "Zi, Z.; Feng, J.; Han, C.; Yang, F.; Wang, J.; Zhu, G.; Liu, X.; Zhao, Y.",
+      "abstract": "Chimeric antigen receptor (CAR) T-cell therapy has shown limited efficacy against solid tumors, owing to poor T-cell persistence, an immunosuppressive tumor microenvironment (TME) and cancer immune evasion. Here we describe LACO-Stim (lymphocytes-APC co-stimulator), a chimeric co-stimulatory molecule composed of an agonistic anti-CD40 single-chain variable fragment (scFv) and the CD28 intracellular signaling domain, such that a single molecule activates CD40-expressing antigen-presenting cells while delivering CD28 co-stimulation to the T cell that bears it. Co-expressed with a 4-1BB-based CAR (LACO-CAR-T), it enhanced anti-tumor activity in vitro and achieved durable, complete in most mice, tumor regression rather than transient control in xenograft and immunocompetent models. In immunocompetent hosts, LACO-CAR-T activated dendritic cells, reprogrammed tumor macrophages toward M1-like, antigen-presenting states, and induced epitope spreading with endogenous CD8 T-cell responses against tumor neoantigens. Single-cell transcriptomics and RNA-velocity analysis revealed coordinated immune remodeling: T cells shifted toward a more stem-like, less terminally exhausted state, regulatory T cells declined in frequency and suppressive function, and myeloid cells acquired antigen-presentation programs while excessive inflammatory and suppressive signaling was restrained. LACO-Stim further synergized with anti-PD-1 blockade to control tumor growth. LACO-Stim thus enables CAR-T cells to coordinate intrinsic T-cell reinforcement with extrinsic immune reprogramming, converting an immunosuppressive TME into a de-inflamed (reduced inflammatory signaling), de-suppressed rather than merely armed niche that supports endogenous anti-tumor immunity.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.08.762395",
+      "url": "https://doi.org/10.64898/2026.11.08.762395",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.08.762395.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Antigen & receptor prediction",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.09.764574",
+      "title": "Deep CyTOF immune profiles of ex vivo granulomatous responses to Mycobacterium tuberculosis differ with European and African geographical origin",
+      "authors": "Schmidiger, S.; McCaffrey, E. F.; Schmidt, J. M.; Zaragoza-Infante, L.; Ross, A.; Mpina, M.; Tumbo, A.; Mfinanga, E.; Haraka, F.; Hella, J.; Carballido, J. M.; Reither, K.; Arbues, A.; Portevin, D.",
+      "abstract": "Genetic and environmental factors influence human immunity and modulate responses to infection. Accounting for immune heterogeneity across human populations is critical to the design of novel vaccines and host-directed interventions that would optimally benefit populations experiencing the highest disease burden. Tuberculosis (TB) burden is unevenly distributed across geographical regions and our understanding of the differential immune response to Mycobacterium tuberculosis (Mtb) across human populations remains limited. Here, we sought to evaluate the impact of geographical origin on ex vivo granulomatous responses to Mtbinfection. We found that peripheral blood mononuclear cells (PBMCs) from healthy African donors exhibited greater control of Mtbgrowth ex vivo than those isolated from European individuals. High-dimensional single-cell profiling of the granulomatous responses by cytometry by time-of-flight (CyTOF) revealed divergent profiles based on the specimens' geographical origin. Monocytes from European donors displayed a pro-inflammatory phenotype - correlating with Mtbgrowth -, whereas PBMCs of African individuals were enriched in activated, cytotoxic T cells - correlating with Mtbcontrol. Reduced inflammatory response in African monocytes following various microbial stimulations was confirmed. Taken together, our comprehensive immune profiling indicates that environmental and genetic factors shape a cytotoxic-regulatory response that promotes bacterial control. Against the current \"one-treatment-fits-all\" approach, our findings support the use of specimens from intervention-relevant settings to inform the targeted design of TB vaccines and host-directed interventions.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.09.764574",
+      "url": "https://doi.org/10.64898/2026.11.09.764574",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.09.764574.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.09.765236",
+      "title": "IL13 critically contributes to the antitumor activity of polyfunctional CD4+ T cells driven by constitutively active Stat5",
+      "authors": "Okoko, O. D.; Kehinde-Ige, M.; Wang, X.; Ye, Y.; Bhasin, A.; Pei, L.; Brandle, C.; Gazi, M. Y.; Ding, Z.-c.; Pacholczyk, R.; Shi, H.; Zhou, G.",
+      "abstract": "The presence of polyfunctional T cells capable of concurrently producing multiple cytokines correlates with favorable clinical outcomes in patients with cancer. We previously reported that overexpression of constitutively active Stat5a (CASTAT5) confers polyfunctionality on tumor-specific CD4 T cells, enabling durable antitumor immunity following adoptive cell therapy. However, the mechanisms underlying the enhanced antitumor effects of CASTAT5-modified T cells remain unclear. Here, we identify interleukin-13 (IL13) as a critical effector cytokine contributing to the multifaceted antitumor activity of CASTAT5-conditioned polyfunctional CD4 T cells (C5-CD4). C5-CD4 T cells exhibit a prominent T helper 2 (Th2) cytokine profile, accompanied by extensive epigenomic remodeling at the Th2 cytokine loci, as revealed by Hi-C and histone-modification CUT&Tag assays. Neutralization of IL13 diminished the antitumor efficacy of C5-CD4 T cells. Furthermore, targeted Il13 disruption substantially impaired tumor control and was associated with reduced donor T cell expansion and persistence, diminished systemic cytokine and chemokine responses, and attenuated activation of endogenous tumor-reactive CD8 T cells. Nonetheless, IL13 overexpression alone in donor CD4 T cells failed to fully recapitulate the therapeutic activity of C5-CD4 T cells, indicating that IL13 is a critical contributor but is insufficient to account for the full antitumor activity conferred by CASTAT5. Single-cell RNA sequencing associated donor-derived IL13 with increased representation of tumor-infiltrating myeloid cells and IL13-signaling in monocytes and macrophages exhibiting tissue-repair-associated transcriptional programs. Moreover, Il13 disruption diminished the therapeutic efficacy of CASTAT5-expressing CD19-targeted CAR-T cells in a mouse B-cell lymphoma model. Reanalysis of a human CD19CAR-T infusion-product dataset further revealed an association between IL13 expression and type 2 cytokine signatures linked to prolonged clinical response, suggesting a potential contribution of IL13 to the efficacy of human CD19CAR-T therapy. Together, these findings uncover an unexpected antitumor role for IL13 and establish it as a critical node linking polyfunctional donor T cells with endogenous immune cells to promote sustained tumor immunity.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.09.765236",
+      "url": "https://doi.org/10.64898/2026.11.09.765236",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc0_ng",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.09.765236.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.10.14.758936",
+      "title": "A Multidimensional Arithmetical Ontology for High-Parameter Cytometry: Gaussian Primes and Cryptographic Hashing for Cell Population Standardization",
+      "authors": "Yue, A.; Masquelier, C.; Cosma, A.",
+      "abstract": "Background. The rapid expansion of high-dimensional single-cell technologies has outpaced the development of standardized metadata infrastructure. Current text-based ontology for cell populations and gating strategies lacks computational rigor, hindering process automation and cross-study reproducibility. Our previous frameworks, the Prime Population System (PPS) and the Unique Gating Identifier (UGI), proposed arithmetical solutions but were limited by biological fragility (no inherent link between a protein and its structural isoforms) and by computational bottlenecks caused by exponential integer growth. Objective. To develop a scalable, multidimensional arithmetical ontology that unambiguously identifies cell populations and hierarchical gating strategies. Methods. We transition the marker dictionary from the one-dimensional real axis (R) to the complex plane of Gaussian integers (a+bi). The reviewed human proteome of the UniProt Knowledgebase is paired with Gaussian primes satisfying a > b > 0. Each protein receives a contiguous reserved block of 64 primes: slot 0 addresses the protein with isoform unresolved, and slot k addresses UniProt isoform k, the slot index being read directly off the accession. Carbohydrate epitopes, which have no UniProt entry, are paired through the CD nomenclature instead: in a CD region beyond the 80,000 blocks reserved for the proteome, each CD number receives a block of 1,024 primes, with the slot read off the suffix of the designation. A bipartite encoding represents positive (a+bi) and negative (b+ai) expression states through Conjugate Pair Symmetry. To avoid the integer explosion of Godel exponentiation, hierarchical gating sequences are held as vectorized arrays of complex numbers and compressed by SHA-256 deterministic hashing. Results. Pairing against the human proteome assigns 53,296 identifiers, 20,431 protein-level and 32,865 isoform-level. Every isoform description resolves under a single rule, including the 329 descriptions whose accession prefix differs from the entry that cites them. The 19 carbohydrate designations of the CD list, CD57 among them, receive identifiers in the CD region. Localized vectorization with SHA-256 hashing yields immutable 64-character hexadecimal fingerprints for entire gating strategies, resolving the integer explosion problem. Conclusion. By combining Gaussian primes with hashing, Gaussian Prime Cytometry provides a scalable, computationally lightweight and biologically accurate identifier system. The system eliminates nomenclature ambiguity and facilitates machine learning applications and centralized global cytometry databases.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.10.14.758936",
+      "url": "https://doi.org/10.64898/2026.10.14.758936",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.10.14.758936.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Antigen & receptor prediction"
+      ],
+      "relevanceScore": 4,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.07.765073",
+      "title": "Uncovering Viral Signals Across Cell Populations in Colorectal Cancer",
+      "authors": "Mahmanzar, M.; Rahimian, K.; Kavousi, K.; Deng, Y.",
+      "abstract": "Viral sequences have been detected in colorectal cancer, but their cellular and anatomical distribution remains poorly resolved. We aimed to establish a cell-type-resolved map of viral reference-associated RNA signals across colorectal cancer, tumour-adjacent normal tissue, and healthy colon. We repurposed human-unmapped reads from single-cell RNA sequencing libraries generated in ten publicly available studies. We retained cell-barcode and unique molecular identifier information, removed duplicate molecules, and aligned reads to a curated human-associated viral reference using three aligners. Viral signals were analysed across cell types, tissue conditions, and colorectal segments. We used participant-grouped repeated cross-validation to evaluate tissue-condition classification and screened an independent paired colorectal cancer proteomics cohort for compatible peptide matches. The study included 547 libraries from 112 participants, including 49 with matched colorectal cancer and tumour-adjacent normal samples, and approximately 415,000 cells spanning ten major cell populations. Viral reference-associated RNA signals differed across epithelial, immune, stromal, and vascular compartments, tissue conditions, and anatomical regions of the colon. Of 318 independent healthy-reference viral-load comparisons, seven involving six virus-cell-type groups remained significant after Benjamini-Hochberg correction, including plasma-cell HHV-7 and HHV-6B and mast-cell HCV-2. Cell-type-resolved viral features distinguished colorectal cancer, tumour-adjacent normal tissue, and healthy colon in participant-grouped validation; random forest achieved a macro-AUC of 0.957 (SD 0.028), with HERV-K113 as the leading quantitative feature. An independent proteomic screen identified peptide matches compatible with 20 candidate viral groups. We established a cell-type-resolved map of viral reference-associated RNA signals across colorectal tissue conditions and anatomical regions. By identifying candidate viral signals in epithelial and immune compartments, this map provides a basis for investigating virus-host pathways involved in tumour biology, immune regulation, and antigen-presentation states, and could help prioritise future combination strategies pairing virus-directed or virus-mimetic approaches with standard treatment or immune checkpoint blockade.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.07.765073",
+      "url": "https://doi.org/10.64898/2026.11.07.765073",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.07.765073.source.xml",
+      "categories": [
+        "Single-cell immunology",
+        "Immunotherapy"
+      ],
+      "relevanceScore": 4,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.08.765157",
+      "title": "LingoCell interprets gene perturbations through natural language and tissue niches",
+      "authors": "Yang, Y.; Xu, W.; Zhang, Z.; Cui, Y.; Yu, X.; Gu, W.; Wang, J.; Nakai, K.",
+      "abstract": "Single-cell foundation models are general tools for resolving cell identities and disease states, but struggle to interpret changes in expression magnitude in biological language, to transfer to sparse spatial measurements, and to explain cellular niches. We introduce LingoCell, a foundation model connecting single-cell and spatial transcriptomics. It aligns cell representations with language while keeping gene expression editable, supporting cell annotation, cross-batch integration, description generation, and disease-language readouts of single-gene and combinatorial in silico perturbations. Extended to tissues, it annotates cells without single-cell references, learns identity-conditioned niche embeddings, and performs spatial in silico perturbation by replacing and editing neighbor expression. In lung adenocarcinoma, LingoCell revealed synergistic disease responses to jointly weakening alveolar differentiation programs and strengthening malignant programs. In colorectal cancer, it revealed different programs conveyed by the same fibroblast state to T cells, macrophages, and tumor cells. LingoCell provides a unified framework for prioritizing target combinations and stromal intervention programs.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.08.765157",
+      "url": "https://doi.org/10.64898/2026.11.08.765157",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.08.765157.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 4,
+      "firstSeen": "2026-11-11"
+    },
+    {
+      "id": "doi:10.64898/2026.11.09.765290",
+      "title": "Identification and localization of bone marrow ILC2s using Id2/Cxcr6 dual-reporter mice",
+      "authors": "Lepetit, C.; Hedde, P.; Jacquemin, G.; Gomez-Perdiguero, E.; Mancini, S. J.; GOLUB, R.",
+      "abstract": "Type 2 innate lymphoid cells (ILC2s) are present in the bone marrow, where their identification and spatial localization remain challenging because of their low abundance and the expression of shared markers by other lymphoid populations. Here, we evaluated the use of Id2YFP/+ Cxcr6GFP/+ dual-reporter mice to identify and visualize bone marrow ILC2s. Using spectral flow cytometry, we showed that both ST2- and ST2 ILC2s expressed high levels of ID2, whereas CXCR6 expression differed between these subsets. However, the ID2 expressing compartments also contained NK cells, NKT cells, conventional T cells and ILC progenitors. Surface marker profiling identified CD25 and ICOS as useful markers for enriching ILC2 populations, with ST2 enabling the segregation of the ST2- and ST2 subsets. Single-cell RNA sequencing further characterized the diversity of Id2 and Cxcr6 expressing lymphoid populations and supported the use of CD5 and NKp46 as exclusion markers. Combining these markers with the dual-reporter system, confocal microscopy revealed YFPGFPCD5-NKp46- cells compatible with an ILC2 phenotype, distributed throughout the bone marrow as isolated cells or within multicellular clusters. Complementary flow cytometric analyses demonstrated that ILC2s accounted for more than 90% of a phenotypically related reporter-positive population after exclusion of major T and NK cell populations, providing additional support for the identification of the cells visualized in situ as putative ILC2s. Together, these findings establish a strategy combining dual-reporter mice, flow cytometry, transcriptomic profiling and confocal imaging to investigate the localization and spatial organization of putative bone marrow ILC2s.",
+      "date": "2026-11-10",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.09.765290",
+      "url": "https://doi.org/10.64898/2026.11.09.765290",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/10/2026.11.09.765290.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 4,
+      "firstSeen": "2026-11-11"
+    }
+  ]
+}
