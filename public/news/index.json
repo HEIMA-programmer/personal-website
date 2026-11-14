@@ -1,7 +1,12 @@
 {
   "version": 2,
-  "latest": "2026-11-13",
+  "latest": "2026-11-14",
   "editions": [
+    {
+      "date": "2026-11-14",
+      "count": 43,
+      "status": "complete"
+    },
     {
       "date": "2026-11-13",
       "count": 65,
