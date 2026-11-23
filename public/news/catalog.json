@@ -1,28 +1,124 @@
 {
   "version": 2,
   "coverageStart": "2026-10-01",
-  "updatedThrough": "2026-11-22",
-  "generatedAt": "2026-11-22T08:11:34.353Z",
+  "updatedThrough": "2026-11-23",
+  "generatedAt": "2026-11-23T09:20:44.201Z",
   "timezone": "UTC",
   "status": "complete",
   "searchWindow": {
-    "start": "2026-11-09",
-    "end": "2026-11-22"
+    "start": "2026-11-10",
+    "end": "2026-11-23"
   },
   "sources": [
     {
       "name": "bioRxiv",
       "status": "ok",
-      "records": 502
+      "records": 470
     },
     {
       "name": "Europe PMC",
       "status": "ok",
-      "records": 778
+      "records": 776
     }
   ],
   "selection": "All retrieved papers with computational methods and a substantive immunology focus: immune terminology in the title, receptor-specific evidence, or multiple immune concepts or sentences in the abstract. Automatic topical relevance, not scientific-quality scoring. Dates are publication or preprint posting/revision dates, not historical website editions.",
   "papers": [
+    {
+      "id": "doi:10.64898/2026.11.20.768159",
+      "title": "Dynamic T-cell receptor repertoire remodeling is associated with murine and human lung allograft dysfunction",
+      "authors": "Wang, Y.; Palchevskiy, V.; Lari, S.; Palmer, S.; Todd, J. L.; Weigt, S. S.; Belperio, J. A.",
+      "abstract": "Chronic lung allograft dysfunction (CLAD) is a major cause of late graft failure after lung transplantation. Acute cellular rejection is an established risk factor for CLAD. However, its diagnosis by biopsy may incompletely capture dynamic and spatially heterogeneous immune remodeling within the allograft. We investigated whether lung graft proximal T-cell receptor beta-chain (TCR{beta}) repertoire features reflect alloimmune remodeling and associate with acute cellular rejection (ACR) and CLAD. TCR{beta}; sequencing was performed on graft-infiltrating T-cells from a murine orthotopic lung transplant model and on 90 longitudinal bronchoalveolar lavage cell-pellet (BAL-cp) samples from 23 lung transplant recipients during the first post-transplant year. In the murine model, allografts showed persistent histologic injury and strong, consistent TCR{beta}; repertoire remodeling relative to isografts. Across days 28 and 56, murine allografts had higher productive clonality (Cliff's {delta}; = 0.93, p = 0.0087) and maximum productive frequency (Cliff's {delta}; = 0.93, p = 0.014), with complete rank separation at each time point. Murine allografts also exhibited greater pairwise Morisita repertoire overlap (p < 0.0001) and enrichment of recurrent, high-frequency shared clonotypes. Productive clonality from human lung transplant recipients' BAL-cp was higher at the a priori selected month-6 visit from patients who developed CLAD, as compared to those who remained CLAD-free (p = 0.0326). In a month-6 surveillance-visit index analysis, high productive clonality was associated with early onset CLAD (CLAD within 2 years of transplant) (log-rank p = 0.038). In a patient-specific index-event analysis, CLAD-free survival differed across high and low productive clonality groups among acute rejectors (log-rank p = 0.019). Together, these findings establish measurable graft-localized TCR{beta}; repertoire remodeling and position BAL TCR{beta}; profiling as a potential complement to biopsy diagnosis. With validation in larger cohorts, graft-proximal repertoire measures may help identify CLAD-associated immune states before the onset of lung function decline and inform more individualized surveillance.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.768159",
+      "url": "https://doi.org/10.64898/2026.11.20.768159",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.768159.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics"
+      ],
+      "relevanceScore": 14,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.64898/2026.11.20.767965",
+      "title": "Terminally differentiated CX3CR1+ natural killer cells drive coronary arteritis through an NFAT-T-bet axis",
+      "authors": "Fujita, M.; Satooka, H.; Hoshino, S.; Matsumoto, S.; Verbeke, E. J.; Kondo, K.; Agata, Y.; Ema, M.; Maruo, Y.; Hirata, T.",
+      "abstract": "Natural killer (NK) cells acquire potent effector function through terminal differentiation, yet the signals driving this program toward pathogenicity in vascular inflammation remain undefined. Using an FK565-induced mouse model of Kawasaki disease and single-cell transcriptomics from patients, we identify NK cells as major drivers of coronary arteritis through cytotoxicity and CCL5-CCR1-mediated recruitment of myeloid cells. This activity is concentrated in a terminally differentiated, T-bet-driven NK cell subset, the cardiac accumulation of which depends on CX3CR1, and a corresponding population is enriched in patient transcriptomic datasets. We further identify signaling through calcineurin and nuclear factor of activated T cells (NFAT) as an upstream driver of this program, with NFATc1 induced in NK cells. Calcineurin inhibition suppressed T-bet induction, reduced this subset and attenuated disease development. These findings define an NFAT-T-bet-CX3CR1 axis that couples terminal NK cell differentiation to coronary inflammation.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.767965",
+      "url": "https://doi.org/10.64898/2026.11.20.767965",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.767965.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.64898/2026.11.20.768015",
+      "title": "Machine Learning-based Transcriptomic Data Analysis of Long COVID Patients: Generating Hypotheses for Molecular Signatures",
+      "authors": "George, J. P.; Rana, S.; Sapra, D.; Singh, H.; Sharma, J.",
+      "abstract": "Introduction: Long COVID (LC) remains a global public-health challenge, affecting an estimated 10-30% of COVID-19-survivors. Machine learning (ML) can help identify molecular features associated with LC. Human ion channels (HICs), that regulate immune-cell signaling and cellular homeostasis, may contribute to LC-associated processes and offer insights into relevant pathways and potential drug-repurposing candidates. Methodology: RNA-seq data from COVID-19-recovered and LC patients across six datasets were integrated, preprocessed, and corrected for batch effects. Supervised ML models were evaluated using leave-one-batch-out validation, with SHAP identifying features across validation folds. Functional enrichment, host-host and host-viral protein-protein interaction analyses were performed, followed by drug interaction analysis of potential HICs within the resulting interactome. Results: A support vector classifier with an RBF kernel achieved a mean-AUC of 0.664 across six validation folds. SHAP analysis of the three selected folds (AUC = 0.722, 0.836, and 0.817) identified 225, 153, and 241 genes, respectively. Functional enrichment highlighted pathways including histidine metabolism and TNF signaling. Among the 613 genes identified across these folds, 9 were HICs and 39 were immune signaling-related genes (ISGs), whose protein-protein interaction analysis revealed a pharmacologically relevant interactome. Furthermore, four HICs including CLCN3, KCNQ3, RYR1, and ZACN interacted with 30 approved drugs. Conclusion: ML-based analysis of integrated RNA-seq data identified HICs and ISGs associated with LC, while functional enrichment and PPI analyses provided insights into their potential biological relevance. Drug interaction analysis further highlighted candidate HIC-targeting drugs for future investigation in LC management. This computational framework provides preliminary, hypothesis-generating insights to guide future research.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.768015",
+      "url": "https://doi.org/10.64898/2026.11.20.768015",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.768015.source.xml",
+      "categories": [
+        "Systems immunology"
+      ],
+      "relevanceScore": 5,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.1101/2024.06.17.599449",
+      "title": "Single-nucleus proteomics reveals proteins regulating LPS-induced nucleocytoplasmic transport in macrophages",
+      "authors": "Derks, J.; Jonson, T.; Leduc, A.; Khan, S.; Koury, L.; Rafiee, M.-R.; Slavov, N.",
+      "abstract": "Background Variation in the proteome configuration of unstimulated cells may be associated with differences in how individual cells respond to stimulation. Multiplexed single-cell proteomics by liquid chromatography mass spectrometry can uncover these associations at high depth and throughput. Results Here we develop an approach that links proteomic and phenotypic variation across individual cells and nuclei to identify potential regulators of biological processes for targeted validation. We apply this approach to identify regulators of nucleocytoplasmic protein transport in macrophages stimulated with lipopolysaccharide (LPS). We quantify the proteomes of 3,412 individual nuclei across the dynamic response to LPS and associated proteomic variation with differences in transport. Within minutes of stimulation, protein transport in individual nuclei correlates strongly with the abundance of known protein transport regulators, revealing how natural protein variation relates to cellular responses. Simple biophysical constraints, including nuclear pore abundance, partially explain the variation in LPS-induced nucleocytoplasmic transport. We select 16 new potential regulators of protein transport to test by targeted knockdown. The knockdown phenotypes confirm the inferences derived from natural protein and functional variation of single nuclei. Conclusions By linking proteomic and functional variation among individual nuclei, we identify proteins associated with LPS-induced nucleocytoplasmic transport and prioritize potential regulators for functional validation. This approach should be broadly applicable to discovering protein regulators and enhancing the functional interpretation of single-cell omics data.",
+      "date": "2026-11-22",
+      "dateLabel": "Posted / revised",
+      "doi": "10.1101/2024.06.17.599449",
+      "url": "https://doi.org/10.1101/2024.06.17.599449",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/22/2024.06.17.599449.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-23"
+    },
     {
       "id": "doi:10.64898/2026.11.12.766320",
       "title": "Deciphering the role of adenosine-related genes in regulating smooth muscle cell phenotypic switch in coronary heart disease via single-cell RNA sequencing",
@@ -45,6 +141,8 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 9,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-22"
     },
     {
@@ -69,13 +167,15 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
+      "figure": null,
+      "figureCheckedAt": "",
       "firstSeen": "2026-11-22"
     },
     {
       "id": "doi:10.1016/j.ard.2026.10.3178",
       "title": "Citrullinated antigens induce TLR4-mediated cross-presentation to drive cytotoxic anti-citrullinated antigen CD8⁺ T cell responses in rheumatoid arthritis.",
       "authors": "Moon JS, Zhang M, van Dam LS, Song EK, Sharpe O, Carman JA, Ramirez DC, Smith MH, Donlin LT, Howard MC, Davis MM, Robinson WH.",
-      "abstract": "Rheumatoid arthritis (RA) is characterised by anticitrullinated protein antibodies (ACPAs) and synovial infiltration of activated immune cells. CD8⁺ T cells are increased in ACPA⁺ RA and can recognise major histocompatibility complex (MHC) class I-restricted citrullinated autoantigens. We investigated the mechanisms by which citrullinated antigens drive cytotoxic CD8⁺ T cell activation in RA. Single-cell RNA sequencing with paired T cell receptor (TCR) repertoire profiling was performed on T cells from RA blood and synovium. Flow cytometry and immunofluorescence were used to assess oral bacteria-induced neutrophil extracellular trap (NET) formation and citrullinated antigen generation. In vitro coculture assays evaluated cross-presentation of citrullinated antigens by monocyte-derived dendritic cells (MoDCs) and ACPA⁺ B cells. Toll-like receptor (TLR)4 and interleukin-1 receptor-associated kinase (IRAK)4 inhibitors were used to assess innate signalling pathways. Single-cell analyses identified clonally expanded cytotoxic CD8⁺ T cells shared between RA blood and synovium, with enrichment of activated GZMB⁺IFNG⁺ effector populations in synovial tissue. RA-associated oral bacteria-induced NET formation and peptidyl arginine deiminase-dependent generation of extracellular citrullinated antigens. These antigens were cross-presented by MoDCs and ACPA⁺ B cells through human leukocyte antigen (HLA) class I, promoting cytotoxic CD8⁺ T cell activation and clonal expansion. TLR4 signalling enhanced cross-presentation and CD8⁺ T cell responses, whereas IRAK4 inhibition suppressed these effects. Citrullinated antigens also induced interleukin-8 secretion by autoreactive B cells, which can recruit CXCR1/2⁺ cytotoxic CD8⁺ T cells. Citrullinated antigens promote TLR4-dependent cross-presentation by MoDCs and ACPA-expressing B cells, leading to HLA class I-dependent activation of CD8⁺ T cells. These findings define a pathogenic pathway that may contribute to synovial inflammation and joint damage in RA.",
+      "abstract": "Objectives Rheumatoid arthritis (RA) is characterised by anticitrullinated protein antibodies (ACPAs) and synovial infiltration of activated immune cells. CD8⁺ T cells are increased in ACPA⁺ RA and can recognise major histocompatibility complex (MHC) class I-restricted citrullinated autoantigens. We investigated the mechanisms by which citrullinated antigens drive cytotoxic CD8⁺ T cell activation in RA. Methods Single-cell RNA sequencing with paired T cell receptor (TCR) repertoire profiling was performed on T cells from RA blood and synovium. Flow cytometry and immunofluorescence were used to assess oral bacteria-induced neutrophil extracellular trap (NET) formation and citrullinated antigen generation. In vitro coculture assays evaluated cross-presentation of citrullinated antigens by monocyte-derived dendritic cells (MoDCs) and ACPA⁺ B cells. Toll-like receptor (TLR)4 and interleukin-1 receptor-associated kinase (IRAK)4 inhibitors were used to assess innate signalling pathways. Results Single-cell analyses identified clonally expanded cytotoxic CD8⁺ T cells shared between RA blood and synovium, with enrichment of activated GZMB⁺IFNG⁺ effector populations in synovial tissue. RA-associated oral bacteria-induced NET formation and peptidyl arginine deiminase-dependent generation of extracellular citrullinated antigens. These antigens were cross-presented by MoDCs and ACPA⁺ B cells through human leukocyte antigen (HLA) class I, promoting cytotoxic CD8⁺ T cell activation and clonal expansion. TLR4 signalling enhanced cross-presentation and CD8⁺ T cell responses, whereas IRAK4 inhibition suppressed these effects. Citrullinated antigens also induced interleukin-8 secretion by autoreactive B cells, which can recruit CXCR1/2⁺ cytotoxic CD8⁺ T cells. Conclusions Citrullinated antigens promote TLR4-dependent cross-presentation by MoDCs and ACPA-expressing B cells, leading to HLA class I-dependent activation of CD8⁺ T cells. These findings define a pathogenic pathway that may contribute to synovial inflammation and joint damage in RA.",
       "date": "2026-11-20",
       "dateLabel": "Published",
       "doi": "10.1016/j.ard.2026.10.3178",
@@ -95,7 +195,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 11,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.11.19.767775",
@@ -129,7 +232,7 @@
       "id": "doi:10.1016/j.stem.2026.10.016",
       "title": "Human iPS cell-derived thymus-seeding T cell progenitors support in vivo polyclonal naive-like T cell development.",
       "authors": "Iriguchi S, Miyake Y, Shinohara T, Kaneko C, Guo Q, Kometani K, Shioiri M, Koga K, Hamazaki Y, Kassai Y, Kaneko S.",
-      "abstract": "Strategies to provide less-differentiated naive T cell clones in patients with cancer and immunodeficiencies are expected to improve the efficacy of immunotherapies. Adoptive transfer of T cell progenitors with thymus-seeding progenitors (TSPs) differentiated from human induced pluripotent stem cells (iPS cells) represents a potential approach to provide histocompatible naive T cell clones. In contrast to mature T cells, the generation of TSPs from human iPS cells remained a challenge. Here, we identified a chemically defined condition to generate VE-cadherin+CD34hiCD7med TSP-like cells (iTSPs) from human iPS cell-derived hemogenic endothelial cells (HECs). The differentiated cells engrafted into the thymus of immunodeficient mice and yielded CCR7+CD45RA+CD62L+TCF7+ naive T cells expressing a diverse T cell receptor (TCR) repertoire. iTSPs expressing a CD19-targeting chimeric antigen receptor (CAR) differentiated into CAR T cells in recipients and mediated antitumor activity against CD19+ leukemia. Together, these findings establish a platform for generating human iTSPs and provide developmental insight into naive-like T cell generation in vivo.",
+      "abstract": "Strategies to provide less-differentiated naive T cell clones in patients with cancer and immunodeficiencies are expected to improve the efficacy of immunotherapies. Adoptive transfer of T cell progenitors with thymus-seeding progenitors (TSPs) differentiated from human induced pluripotent stem cells (iPS cells) represents a potential approach to provide histocompatible naive T cell clones. In contrast to mature T cells, the generation of TSPs from human iPS cells remained a challenge. Here, we identified a chemically defined condition to generate VE-cadherin + CD34 hi CD7 med TSP-like cells (iTSPs) from human iPS cell-derived hemogenic endothelial cells (HECs). The differentiated cells engrafted into the thymus of immunodeficient mice and yielded CCR7 + CD45RA + CD62L + TCF7 + naive T cells expressing a diverse T cell receptor (TCR) repertoire. iTSPs expressing a CD19-targeting chimeric antigen receptor (CAR) differentiated into CAR T cells in recipients and mediated antitumor activity against CD19 + leukemia. Together, these findings establish a platform for generating human iTSPs and provide developmental insight into naive-like T cell generation in vivo.",
       "date": "2026-11-20",
       "dateLabel": "Published",
       "doi": "10.1016/j.stem.2026.10.016",
@@ -148,7 +251,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 9,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.4103/mgr.medgasres-d-26-00136",
@@ -181,7 +287,7 @@
       "id": "doi:10.1007/s10067-026-08549-2",
       "title": "Shared genetic susceptibility to ulcerative colitis and rheumatoid arthritis: an integrative analysis of B cells and candidate genes.",
       "authors": "Wu Y, Zhu W, Luo Q, Zhang L, Wang C.",
-      "abstract": "To identify shared genetic susceptibility to ulcerative colitis (UC) and rheumatoid arthritis (RA), and the cell types and genes that may link these diseases. We integrated genetic association data from populations of European ancestry with evidence on gene regulation and gene expression in tissues and individual cells. This approach assessed shared genetic susceptibility and prioritized relevant cell types and genes across complementary sources of evidence. We also examined patterns of coordinated gene expression in B cells to provide additional biological context for each disease. Additional analyses examined the consistency of prioritization across analytical settings. UC and RA showed a positive genome-wide genetic correlation (r_g = 0.1591, P = 5.77 × 10⁻4). Eighteen genomic regions showed significant correlations, including 11 positive and seven negative correlations. Tissue analyses implicated intestinal and immune tissues. B cells were the only cell type meeting the primary selection criteria. IRF5, MMEL1 and TYK2 emerged as shared candidate genes supported by genetic association and gene regulatory evidence in both diseases. All three remained eligible under a stricter threshold for shared genetic signals in the analysis that included all tissues. Integrating genetic, regulatory, and single-cell evidence identified B cells and three candidate genes as priorities for understanding the shared susceptibility to UC and RA. These findings provide a basis for investigating shared immune pathways and potential therapeutic targets for both diseases. Further functional studies can clarify their biological roles and therapeutic relevance. Key Points • UC and RA share genetic susceptibility with heterogeneous effect directions across genomic regions. • B cells met the primary prioritization criteria, although selection was sensitive to analytical choices. • IRF5, MMEL1, and TYK2 were prioritized by shared association and matched bilateral colocalization. • Separate UC and RA B cell networks provided transcriptional context without establishing shared causal mechanisms.",
+      "abstract": "Objectives To identify shared genetic susceptibility to ulcerative colitis (UC) and rheumatoid arthritis (RA), and the cell types and genes that may link these diseases. Methods We integrated genetic association data from populations of European ancestry with evidence on gene regulation and gene expression in tissues and individual cells. This approach assessed shared genetic susceptibility and prioritized relevant cell types and genes across complementary sources of evidence. We also examined patterns of coordinated gene expression in B cells to provide additional biological context for each disease. Additional analyses examined the consistency of prioritization across analytical settings. Results UC and RA showed a positive genome-wide genetic correlation (r_g = 0.1591, P = 5.77 × 10⁻ 4 ). Eighteen genomic regions showed significant correlations, including 11 positive and seven negative correlations. Tissue analyses implicated intestinal and immune tissues. B cells were the only cell type meeting the primary selection criteria. IRF5, MMEL1 and TYK2 emerged as shared candidate genes supported by genetic association and gene regulatory evidence in both diseases. All three remained eligible under a stricter threshold for shared genetic signals in the analysis that included all tissues. Conclusions Integrating genetic, regulatory, and single-cell evidence identified B cells and three candidate genes as priorities for understanding the shared susceptibility to UC and RA. These findings provide a basis for investigating shared immune pathways and potential therapeutic targets for both diseases. Further functional studies can clarify their biological roles and therapeutic relevance. Key Points • UC and RA share genetic susceptibility with heterogeneous effect directions across genomic regions. • B cells met the primary prioritization criteria, although selection was sensitive to analytical choices. • IRF5, MMEL1, and TYK2 were prioritized by shared association and matched bilateral colocalization. • Separate UC and RA B cell networks provided transcriptional context without establishing shared causal mechanisms.",
       "date": "2026-11-20",
       "dateLabel": "Published",
       "doi": "10.1007/s10067-026-08549-2",
@@ -199,7 +305,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.exphem.2026.105983",
@@ -224,13 +333,16 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1111/cas.70599",
       "title": "Advanced Pancreatic Adenocarcinoma With Complete Response to Chemoimmunotherapy: A Case Report and Single-Cell Profiling.",
       "authors": "Lu X, Liu Z, Liu C, Gao L, Zhang B, Ran T, Zhang Y, Zhou C, Zou D.",
-      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) has a poor prognosis, especially in unresectable disease. We report a patient with metastatic PDAC who achieved durable complete remission after PD-1 blockade combined with gemcitabine and albumin-bound paclitaxel and remains disease-free 4 years after diagnosis. To explore the immune basis of this response, we performed single-cell RNA sequencing of peripheral blood mononuclear cells from seven patients receiving the same regimen. Responders showed enrichment of terminally differentiated CD8+ T (Temra) and CD4 ISG+ T helper (Th) cells compared with nonresponders. Across independent cohorts, these two programs were positively correlated, suggesting coordinated immune activation during effective therapy. Predicted ligand-target interactions were linked to cytotoxic and immune activation pathways. These findings suggest that coordinated expansion of CD4+ ISG+ Th and CD8+ Temra cells are associated with durable chemoimmunotherapy responses in PDAC and support peripheral blood immune profiling as a minimally invasive monitoring strategy. Trial Registration: ClinicalTrials.gov identifier: NCT05201729.",
+      "abstract": "Pancreatic ductal adenocarcinoma (PDAC) has a poor prognosis, especially in unresectable disease. We report a patient with metastatic PDAC who achieved durable complete remission after PD-1 blockade combined with gemcitabine and albumin-bound paclitaxel and remains disease-free 4 years after diagnosis. To explore the immune basis of this response, we performed single-cell RNA sequencing of peripheral blood mononuclear cells from seven patients receiving the same regimen. Responders showed enrichment of terminally differentiated CD8 + T (Temra) and CD4 ISG + T helper (Th) cells compared with nonresponders. Across independent cohorts, these two programs were positively correlated, suggesting coordinated immune activation during effective therapy. Predicted ligand-target interactions were linked to cytotoxic and immune activation pathways. These findings suggest that coordinated expansion of CD4 + ISG + Th and CD8 + Temra cells are associated with durable chemoimmunotherapy responses in PDAC and support peripheral blood immune profiling as a minimally invasive monitoring strategy. Trial Registration: ClinicalTrials.gov identifier: NCT05201729.",
       "date": "2026-11-20",
       "dateLabel": "Published",
       "doi": "10.1111/cas.70599",
@@ -239,7 +351,7 @@
       "venue": "Cancer science",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -248,7 +360,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1186/s40164-026-00856-3",
@@ -263,17 +378,21 @@
       "venue": "Experimental hematology & oncology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13788645",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3892/ijo.2026.5961",
@@ -403,7 +522,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1186/s43556-026-00670-7",
@@ -418,16 +540,32 @@
       "venue": "Molecular biomedicine",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13788158",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-22"
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/37dd/13788158/eb36764c9a7d/43556_2026_670_Fig1_HTML.webp",
+        "label": "Fig. 1",
+        "caption": "TDEVs as multifaceted biomarkers in liquid biopsy. TDEV s can be isolated from various body fluids. Their diverse molecular cargo, including proteins, nucleic acids, lipids, and metabolites, serves as a valuable source of biomarkers for early cancer detection, treatment monitoring, and prognostic evaluation across multiple cancer types",
+        "sourceUrl": "https://europepmc.org/articles/PMC13788158#Fig1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "© The Author(s) 2026",
+        "verifiedAt": "2026-11-23T09:14:02.101Z"
+      },
+      "figureCheckedAt": "2026-11-23",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3892/ijmm.2026.6056",
@@ -2427,7 +2565,7 @@
       "id": "doi:10.1016/j.redox.2026.104490",
       "title": "Dual-layer regulation of macrophage grancalcin links diabetic redox-metabolic imbalance to impaired vascularized bone regeneration.",
       "authors": "Jin S, Song Z, Fang L, Zhang J, Ling Z, Lu C, Guo S, Song X, Shen X, Jiang H.",
-      "abstract": "Effective bone regeneration requires the timely transition of immune cells from inflammatory defense to regenerative support. However, how diabetic redox-metabolic stress sustains maladaptive immune states and drives regenerative failure remains incompletely understood. Herein, using a mouse jawbone defect model combined with single-cell RNA sequencing, metabolic assays and human peri-extraction gingival specimens, we identified a senescence-associated macrophage state characterized by elevated grancalcin (GCA). Functionally, recombinant GCA impaired osteogenic and endothelial responses, whereas GCA neutralization partially reversed the inhibitory effects of diabetic macrophage-conditioned medium, supporting extracellular GCA as a functional mediator of regenerative dysfunction. Mechanistically, diabetic macrophages exhibited enhanced glycolytic activity, impaired mitochondrial oxidative phosphorylation, and a reduced NAD+/NADH ratio. This redox imbalance lowered SIRT6 abundance, increased H3K9ac/H3K56ac enrichment at the accessible Gca regulatory locus and sustained Gca transcription. Meanwhile, hyperglycemia-triggered Ca2+ signaling promoted GCA recruitment to membrane-proximal regions and increased both total extracellular and extracellular vesicle-associated GCA. Local delivery of quercetin using a β-cyclodextrin/GelMA hydrogel attenuated macrophage GCA dysregulation, reduced senescence-associated macrophage features and improved vascularized jawbone regeneration. Collectively, this work defines a dual-layer paradigm controlling extracellular GCA bioavailability, thereby linking diabetic redox-metabolic perturbation to defective bone regeneration and supporting local targeting of macrophage GCA for diabetic bone-healing therapy.",
+      "abstract": "Effective bone regeneration requires the timely transition of immune cells from inflammatory defense to regenerative support. However, how diabetic redox-metabolic stress sustains maladaptive immune states and drives regenerative failure remains incompletely understood. Herein, using a mouse jawbone defect model combined with single-cell RNA sequencing, metabolic assays and human peri-extraction gingival specimens, we identified a senescence-associated macrophage state characterized by elevated grancalcin (GCA). Functionally, recombinant GCA impaired osteogenic and endothelial responses, whereas GCA neutralization partially reversed the inhibitory effects of diabetic macrophage-conditioned medium, supporting extracellular GCA as a functional mediator of regenerative dysfunction. Mechanistically, diabetic macrophages exhibited enhanced glycolytic activity, impaired mitochondrial oxidative phosphorylation, and a reduced NAD + /NADH ratio. This redox imbalance lowered SIRT6 abundance, increased H3K9ac/H3K56ac enrichment at the accessible Gca regulatory locus and sustained Gca transcription. Meanwhile, hyperglycemia-triggered Ca 2+ signaling promoted GCA recruitment to membrane-proximal regions and increased both total extracellular and extracellular vesicle-associated GCA. Local delivery of quercetin using a β-cyclodextrin/GelMA hydrogel attenuated macrophage GCA dysregulation, reduced senescence-associated macrophage features and improved vascularized jawbone regeneration. Collectively, this work defines a dual-layer paradigm controlling extracellular GCA bioavailability, thereby linking diabetic redox-metabolic perturbation to defective bone regeneration and supporting local targeting of macrophage GCA for diabetic bone-healing therapy.",
       "date": "2026-11-17",
       "dateLabel": "Published",
       "doi": "10.1016/j.redox.2026.104490",
@@ -2445,7 +2583,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1097/qad.0000000000004649",
@@ -2991,7 +3132,7 @@
       "id": "doi:10.1016/j.neo.2026.101406",
       "title": "Integrated multi-omics and experimental analyses characterize an IGF2BP3-MMP7-associated pattern in extracellular matrix remodeling and Treg-associated immune suppression in pancreatic adenocarcinoma.",
       "authors": "Lu C, He Y, Wang W.",
-      "abstract": "Pancreatic adenocarcinoma (PAAD) is characterized by extensive extracellular matrix (ECM) remodeling and a profoundly immunosuppressive tumor microenvironment. As an important N6-methyladenosine (m6A) reader, insulin-like growth factor 2 mRNA-binding protein 3 (IGF2BP3) has been implicated in tumor progression; however, its downstream regulatory network and potential role in immune microenvironment remodeling remain incompletely understood. Public datasets from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) were analyzed to identify prognostic IGF2BP3-related genes. Functional enrichment analysis, prognostic model construction, immune infiltration analysis, somatic mutation profiling, single-cell RNA sequencing, spatial transcriptomic analysis, and CellChat-based cell-cell communication analysis were performed. In vitro experiments, including qRT-PCR, western blotting, wound healing, transwell, CCK-8, and RNA stability assays, were conducted to evaluate the cellular effects of IGF2BP3 silencing. Multiplex immunofluorescence, immunohistochemistry, an orthotopic syngeneic mouse model, drug sensitivity analysis, and molecular docking were further performed to explore immune microenvironment associations and potential therapeutic implications. IGF2BP3 was significantly upregulated in PAAD and associated with poor prognosis. MMP1, MMP7, and ITGA2 were identified as candidate IGF2BP3-associated ECM-related genes. IGF2BP3 knockdown was associated with changes in the proliferation, migration, and invasion of Panc-1 cells and was accompanied by decreased stability of these transcripts. A prognostic signature consisting of IGF2BP3, MMP1, MMP7, and ITGA2 demonstrated consistent prognostic stratification across multiple independent cohorts. Single-cell transcriptomic analyses revealed predominant expression of these genes in epithelial cell populations and highlighted their potential association with PAAD-related cellular states and intercellular communication. Among the downstream targets, MMP7 emerged as a candidate downstream effector based on RNA stability assays, SHAP feature importance analysis, gene interaction network analysis, and single-cell expression profiling. Both IGF2BP3 and MMP7 were positively associated with regulatory T-cell (Treg) infiltration. Spatial transcriptomic analyses further demonstrated significant spatial correlations among IGF2BP3, MMP7, and Treg-enriched immune niches, while multiplex immunofluorescence, immunohistochemistry, and an orthotopic syngeneic mouse model supported their association with immunosuppressive microenvironment features. Drug sensitivity analysis computationally prioritized Trametinib as a candidate for further investigation in high-risk PAAD, while molecular docking suggested favorable predicted interactions between Trametinib and the four signature proteins. IGF2BP3 was associated with PAAD progression, and its depletion was accompanied by reduced stability of ECM-associated transcripts and changes in the tumor immune microenvironment. Integrated bulk transcriptomic, single-cell transcriptomic, spatial transcriptomic, and experimental analyses identify MMP7 as a candidate downstream effector associated with IGF2BP3 and suggest that the IGF2BP3-MMP7-associated pattern is related to Treg-enriched immunosuppressive niches in PAAD. Furthermore, Trametinib was identified as a hypothesis-generating therapeutic candidate for further evaluation in high-risk PAAD.",
+      "abstract": "Background Pancreatic adenocarcinoma (PAAD) is characterized by extensive extracellular matrix (ECM) remodeling and a profoundly immunosuppressive tumor microenvironment. As an important N6-methyladenosine (m6A) reader, insulin-like growth factor 2 mRNA-binding protein 3 (IGF2BP3) has been implicated in tumor progression; however, its downstream regulatory network and potential role in immune microenvironment remodeling remain incompletely understood. Methods Public datasets from The Cancer Genome Atlas (TCGA) and Gene Expression Omnibus (GEO) were analyzed to identify prognostic IGF2BP3-related genes. Functional enrichment analysis, prognostic model construction, immune infiltration analysis, somatic mutation profiling, single-cell RNA sequencing, spatial transcriptomic analysis, and CellChat-based cell-cell communication analysis were performed. In vitro experiments, including qRT-PCR, western blotting, wound healing, transwell, CCK-8, and RNA stability assays, were conducted to evaluate the cellular effects of IGF2BP3 silencing. Multiplex immunofluorescence, immunohistochemistry, an orthotopic syngeneic mouse model, drug sensitivity analysis, and molecular docking were further performed to explore immune microenvironment associations and potential therapeutic implications. Results IGF2BP3 was significantly upregulated in PAAD and associated with poor prognosis. MMP1, MMP7, and ITGA2 were identified as candidate IGF2BP3-associated ECM-related genes. IGF2BP3 knockdown was associated with changes in the proliferation, migration, and invasion of Panc-1 cells and was accompanied by decreased stability of these transcripts. A prognostic signature consisting of IGF2BP3, MMP1, MMP7, and ITGA2 demonstrated consistent prognostic stratification across multiple independent cohorts. Single-cell transcriptomic analyses revealed predominant expression of these genes in epithelial cell populations and highlighted their potential association with PAAD-related cellular states and intercellular communication. Among the downstream targets, MMP7 emerged as a candidate downstream effector based on RNA stability assays, SHAP feature importance analysis, gene interaction network analysis, and single-cell expression profiling. Both IGF2BP3 and MMP7 were positively associated with regulatory T-cell (Treg) infiltration. Spatial transcriptomic analyses further demonstrated significant spatial correlations among IGF2BP3, MMP7, and Treg-enriched immune niches, while multiplex immunofluorescence, immunohistochemistry, and an orthotopic syngeneic mouse model supported their association with immunosuppressive microenvironment features. Drug sensitivity analysis computationally prioritized Trametinib as a candidate for further investigation in high-risk PAAD, while molecular docking suggested favorable predicted interactions between Trametinib and the four signature proteins. Conclusions IGF2BP3 was associated with PAAD progression, and its depletion was accompanied by reduced stability of ECM-associated transcripts and changes in the tumor immune microenvironment. Integrated bulk transcriptomic, single-cell transcriptomic, spatial transcriptomic, and experimental analyses identify MMP7 as a candidate downstream effector associated with IGF2BP3 and suggest that the IGF2BP3-MMP7-associated pattern is related to Treg-enriched immunosuppressive niches in PAAD. Furthermore, Trametinib was identified as a hypothesis-generating therapeutic candidate for further evaluation in high-risk PAAD.",
       "date": "2026-11-16",
       "dateLabel": "Published",
       "doi": "10.1016/j.neo.2026.101406",
@@ -3010,7 +3151,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 10,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.neo.2026.101409",
@@ -3036,7 +3180,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 10,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1177/03000605261506563",
@@ -4798,7 +4945,7 @@
       "venue": "Nanomedicine : nanotechnology, biology, and medicine",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by-nc-nd",
       "publishedDoi": "",
       "pmcid": "",
       "openAccess": false,
@@ -9176,7 +9323,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 12,
-      "firstSeen": "2026-11-22"
+      "firstSeen": "2026-11-22",
+      "figure": null,
+      "figureCheckedAt": "",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.vetimm.2026.111243",
@@ -9279,7 +9429,7 @@
       "id": "doi:10.3389/fimmu.2026.1965629",
       "title": "Integrative multi-omics, machine learning, computational toxicology, and experimental validation reveal PFAS-associated immune-inflammatory signatures in chronic obstructive pulmonary disease.",
       "authors": "Hu Z, Yang Y, Yu J, Nian M, Cui J, Ran P, Cao X, Xin H, Wang X, Yang G, Gui Z, Ma Z, Chen J.",
-      "abstract": "Per- and polyfluoroalkyl substances (PFAS) are persistent environmental contaminants increasingly implicated in respiratory disorders. However, the systems-level connections among PFAS-associated molecular perturbations, immune dysregulation, and chronic obstructive pulmonary disease (COPD) remain poorly understood. This study aimed to prioritize candidate links between PFAS-associated target information and COPD-related transcriptional and inflammatory signatures. PFAS-associated target information was integrated with bulk transcriptomic differential expression and weighted gene co-expression network analysis to identify overlapping candidate genes. Protein-protein interaction analysis and 113 machine-learning model combinations were used for candidate prioritization and cross-cohort classification evaluation. CIBERSORT and xCell provided computational immune-cell signatures, with Benjamini-Hochberg correction applied to group comparisons and gene-signature correlations; single-cell transcriptomics provided cell-type expression context. Candidate expression was examined in cigarette-smoke-extract-treated cells, clinical samples, and public human and murine datasets. Molecular docking and molecular dynamics simulations explored candidate PFAS-protein interactions. HMOX1, JUNB, CXCL12, and PTGS2 were prioritized as candidate genes overlapping PFAS-associated target information and COPD-related expression patterns. Enrichment and immune-deconvolution analyses suggested associations with inflammatory and immune-related signatures, while single-cell analysis described their distribution across annotated cell types. Exploratory plasma ELISA measurements supported higher levels of the four candidate proteins in participants with COPD, with additional expression support varying by gene and experimental model. Docking and molecular dynamics generated structural hypotheses for PFOA/PFOS-protein interactions, including HMOX1. This integrative systems-immunology framework delineates immune-inflammatory signatures at the PFAS-COPD interface and identifies HMOX1, JUNB, CXCL12, and PTGS2 as convergent molecular nodes. The findings do not establish exposure causality but provide a multi-scale basis for future epidemiological and mechanistic studies of how persistent environmental pollutants may contribute to COPD-associated immune and inflammatory alterations.",
+      "abstract": "Background Per- and polyfluoroalkyl substances (PFAS) are persistent environmental contaminants increasingly implicated in respiratory disorders. However, the systems-level connections among PFAS-associated molecular perturbations, immune dysregulation, and chronic obstructive pulmonary disease (COPD) remain poorly understood. This study aimed to prioritize candidate links between PFAS-associated target information and COPD-related transcriptional and inflammatory signatures. Methods PFAS-associated target information was integrated with bulk transcriptomic differential expression and weighted gene co-expression network analysis to identify overlapping candidate genes. Protein-protein interaction analysis and 113 machine-learning model combinations were used for candidate prioritization and cross-cohort classification evaluation. CIBERSORT and xCell provided computational immune-cell signatures, with Benjamini-Hochberg correction applied to group comparisons and gene-signature correlations; single-cell transcriptomics provided cell-type expression context. Candidate expression was examined in cigarette-smoke-extract-treated cells, clinical samples, and public human and murine datasets. Molecular docking and molecular dynamics simulations explored candidate PFAS-protein interactions. Results HMOX1, JUNB, CXCL12, and PTGS2 were prioritized as candidate genes overlapping PFAS-associated target information and COPD-related expression patterns. Enrichment and immune-deconvolution analyses suggested associations with inflammatory and immune-related signatures, while single-cell analysis described their distribution across annotated cell types. Exploratory plasma ELISA measurements supported higher levels of the four candidate proteins in participants with COPD, with additional expression support varying by gene and experimental model. Docking and molecular dynamics generated structural hypotheses for PFOA/PFOS-protein interactions, including HMOX1. Conclusions This integrative systems-immunology framework delineates immune-inflammatory signatures at the PFAS-COPD interface and identifies HMOX1, JUNB, CXCL12, and PTGS2 as convergent molecular nodes. The findings do not establish exposure causality but provide a multi-scale basis for future epidemiological and mechanistic studies of how persistent environmental pollutants may contribute to COPD-associated immune and inflammatory alterations.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fimmu.2026.1965629",
@@ -9297,7 +9447,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 10,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1080/08916934.2026.2756737",
@@ -9743,7 +9896,7 @@
       "id": "doi:10.3389/fimmu.2026.1938186",
       "title": "Oxeiptosis-associated transcriptional states, immune heterogeneity, and oxidative-stress susceptibility in triple-negative breast cancer.",
       "authors": "Zhuang Z, Zhang H, Lei J, Zou C, Lin Y, Yang C, Chen Y.",
-      "abstract": "Triple-negative breast cancer (TNBC) exhibits substantial variation in treatment response. In the phase 2 NeoSAC trial, higher baseline oxeiptosis-associated transcriptional activity was associated with pathological complete response (pCR). However, the malignant-cell and immune features underlying this transcriptional state remain poorly defined, as do the molecular factors that influence cellular susceptibility to oxidative stress. We integrated single-cell and bulk transcriptomic analyses to characterize oxeiptosis-associated tumor states and immune features in TNBC. CellChat was used to infer candidate intercellular communication patterns. An oxeiptosis-associated prognostic model was developed and evaluated in breast cancer cohorts. In MDA-MB-231 cells, ALG3 loss- and gain-of-function experiments were used to assess cellular responses to the KEAP1 activator VVD-130037. We also examined the effects of VVD-130037 alone and in combination with docetaxel on tumor-cell growth. TNBCs with higher oxeiptosis-associated transcriptional scores showed greater representation of memory T cells and selected dendritic and inflammatory myeloid populations. CellChat inferred differences in candidate MIF-related, SPP1-CD44, and MHC-associated communication patterns between the score-defined groups, suggesting the coexistence of immune engagement and regulatory features. A five-gene model comprising MAL2, TYMP, LIMCH1, ALG3, and PDLIM4 showed prognostic value across breast cancer cohorts, with moderate performance that varied between cohorts. VVD-130037 increased intracellular ROS and reduced AIFM1 Ser116 phosphorylation. N-acetyl-L-cysteine attenuated these responses and the accompanying growth inhibition, whereas z-VAD-fmk did not provide comparable protection against growth inhibition. ALG3 depletion reduced VVD-130037-induced ROS accumulation, attenuated AIFM1 Ser116 dephosphorylation, and decreased sensitivity to VVD-containing treatment. ALG3 overexpression promoted the VVD-associated decrease in AIFM1 Ser116 phosphorylation. VVD-130037 combined with docetaxel produced greater growth inhibition than either agent alone. Oxeiptosis-associated transcriptional states were associated with distinct malignant-cell and immune features in TNBC. In MDA-MB-231 cells, ALG3 expression modified the cellular response to VVD-130037-induced oxidative stress. These findings warrant further investigation in independent clinical and experimental models.",
+      "abstract": "Background Triple-negative breast cancer (TNBC) exhibits substantial variation in treatment response. In the phase 2 NeoSAC trial, higher baseline oxeiptosis-associated transcriptional activity was associated with pathological complete response (pCR). However, the malignant-cell and immune features underlying this transcriptional state remain poorly defined, as do the molecular factors that influence cellular susceptibility to oxidative stress. Methods We integrated single-cell and bulk transcriptomic analyses to characterize oxeiptosis-associated tumor states and immune features in TNBC. CellChat was used to infer candidate intercellular communication patterns. An oxeiptosis-associated prognostic model was developed and evaluated in breast cancer cohorts. In MDA-MB-231 cells, ALG3 loss- and gain-of-function experiments were used to assess cellular responses to the KEAP1 activator VVD-130037. We also examined the effects of VVD-130037 alone and in combination with docetaxel on tumor-cell growth. Results TNBCs with higher oxeiptosis-associated transcriptional scores showed greater representation of memory T cells and selected dendritic and inflammatory myeloid populations. CellChat inferred differences in candidate MIF-related, SPP1-CD44, and MHC-associated communication patterns between the score-defined groups, suggesting the coexistence of immune engagement and regulatory features. A five-gene model comprising MAL2, TYMP, LIMCH1, ALG3, and PDLIM4 showed prognostic value across breast cancer cohorts, with moderate performance that varied between cohorts. VVD-130037 increased intracellular ROS and reduced AIFM1 Ser116 phosphorylation. N-acetyl-L-cysteine attenuated these responses and the accompanying growth inhibition, whereas z-VAD-fmk did not provide comparable protection against growth inhibition. ALG3 depletion reduced VVD-130037-induced ROS accumulation, attenuated AIFM1 Ser116 dephosphorylation, and decreased sensitivity to VVD-containing treatment. ALG3 overexpression promoted the VVD-associated decrease in AIFM1 Ser116 phosphorylation. VVD-130037 combined with docetaxel produced greater growth inhibition than either agent alone. Conclusion Oxeiptosis-associated transcriptional states were associated with distinct malignant-cell and immune features in TNBC. In MDA-MB-231 cells, ALG3 expression modified the cellular response to VVD-130037-induced oxidative stress. These findings warrant further investigation in independent clinical and experimental models.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fimmu.2026.1938186",
@@ -9762,13 +9915,16 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fimmu.2026.1967143",
       "title": "A high-throughput functional 3D droplet microfluidic platform for function-to-transcriptome profiling identifies candidate lncRNAs associated with engineered NK cell function.",
       "authors": "Thomas J, Raman K, Rampelli A, Akligoh H, Chalise S, Tang X, Bobilev E, Sheffer M, Romee R, Konry T.",
-      "abstract": "Natural killer (NK) cell-based immunotherapies show considerable promise for cancer treatment; however, their efficacy against solid tumors remains limited by functional heterogeneity and the restrictive tumor microenvironment. Engineered NK cells, including mesothelin-directed chimeric antigen receptor cytokine-induced memory-like (MSLN-CAR CIML) NK cells, exhibit enhanced cytotoxic potential, yet the transcriptional programs underlying effective tumor killing remain poorly defined. Although protein-coding regulators of NK cell function have been extensively studied, the contribution of long non-coding RNAs (lncRNAs) to cytotoxic NK cell states remains largely unexplored, particularly in engineered NK cell therapies. To address this gap, we developed and applied a three-dimensional (3D) Matrigel-based droplet microfluidic screening platform that enables single-cell resolution analysis of NK-tumor interactions. Unlike conventional bulk transcriptomic approaches, this function-to-transcriptome workflow enables functional isolation of killer and non-killer NK cell populations prior to transcriptomic profiling enabling the direct comparison of transcriptional programs associated with cytotoxic function while minimizing confounding effects of bulk population analyses. Using this approach, we profiled donor-matched MSLN-CAR CIML NK cells and CIML NK controls from three independent donors. Comparative transcriptomic analysis revealed widespread differences in lncRNA expression between killer and non-killer NK cell populations, characterized predominantly by broad lncRNA downregulation that was consistently observed across donors and more pronounced in MSLN-CAR CIML NK cells than in CIML controls. Integrated lncRNA-mRNA analyses prioritized candidate lncRNA-gene pairs based on genomic proximity and coordinated co-expression patterns, identifying several lncRNAs associated with cytotoxic gene programs. These transcriptional signatures were further associated with enrichment of cytotoxic and inflammatory pathways characteristic of highly functional NK cell states. Together, these findings demonstrate the utility of our functional droplet microfluidic screening platform in prioritizing candidate lncRNAs associated with cytotoxic NK cell states within matrix-restricted tumor environments. By integrating functional phenotyping with transcriptomic profiling, this platform provides a framework for identifying candidate lncRNA and other potential biomarkers associated with cytotoxic NK states for future mechanistic validation and the rational optimization of NK cell-based immunotherapies for solid tumors.",
+      "abstract": "Background Natural killer (NK) cell-based immunotherapies show considerable promise for cancer treatment; however, their efficacy against solid tumors remains limited by functional heterogeneity and the restrictive tumor microenvironment. Engineered NK cells, including mesothelin-directed chimeric antigen receptor cytokine-induced memory-like (MSLN-CAR CIML) NK cells, exhibit enhanced cytotoxic potential, yet the transcriptional programs underlying effective tumor killing remain poorly defined. Although protein-coding regulators of NK cell function have been extensively studied, the contribution of long non-coding RNAs (lncRNAs) to cytotoxic NK cell states remains largely unexplored, particularly in engineered NK cell therapies. Methods To address this gap, we developed and applied a three-dimensional (3D) Matrigel-based droplet microfluidic screening platform that enables single-cell resolution analysis of NK-tumor interactions. Unlike conventional bulk transcriptomic approaches, this function-to-transcriptome workflow enables functional isolation of killer and non-killer NK cell populations prior to transcriptomic profiling enabling the direct comparison of transcriptional programs associated with cytotoxic function while minimizing confounding effects of bulk population analyses. Using this approach, we profiled donor-matched MSLN-CAR CIML NK cells and CIML NK controls from three independent donors. Results Comparative transcriptomic analysis revealed widespread differences in lncRNA expression between killer and non-killer NK cell populations, characterized predominantly by broad lncRNA downregulation that was consistently observed across donors and more pronounced in MSLN-CAR CIML NK cells than in CIML controls. Integrated lncRNA-mRNA analyses prioritized candidate lncRNA-gene pairs based on genomic proximity and coordinated co-expression patterns, identifying several lncRNAs associated with cytotoxic gene programs. These transcriptional signatures were further associated with enrichment of cytotoxic and inflammatory pathways characteristic of highly functional NK cell states. Conclusions Together, these findings demonstrate the utility of our functional droplet microfluidic screening platform in prioritizing candidate lncRNAs associated with cytotoxic NK cell states within matrix-restricted tumor environments. By integrating functional phenotyping with transcriptomic profiling, this platform provides a framework for identifying candidate lncRNA and other potential biomarkers associated with cytotoxic NK states for future mechanistic validation and the rational optimization of NK cell-based immunotherapies for solid tumors.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fimmu.2026.1967143",
@@ -9777,23 +9933,27 @@
       "venue": "Frontiers in immunology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13785221",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology",
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fonc.2026.1948068",
       "title": "A single-cell transcriptomics-based prognostic model identifies TM4SF1 as a key promoter of malignant progression in lung adenocarcinoma.",
       "authors": "Li J, Liu T, Li L, Lu W, Huang J, Li X, Zhou Y.",
-      "abstract": "Intratumor heterogeneity in lung adenocarcinoma (LUAD) profoundly influences tumor progression and immune evasion. However, current prognostic models largely fail to capture the complex cellular dynamics of the tumor microenvironment (TME) at single-cell resolution. We integrated single-cell RNA sequencing with bulk transcriptomics to derive cell-type-specific signatures. A systematic evaluation of 101 machine learning algorithm combinations was performed across multiple independent cohorts to construct a robust prognostic model. Immune landscape, mutational features, intercellular communication, and immunotherapy responsiveness were comprehensively evaluated. The biological functions of the identified hub gene, transmembrane 4 L six family member 1 (TM4SF1), were rigorously validated in vitro. The optimal StepCox[forward]-Ridge model showed strong prognostic stratification in five cohorts. Low-risk tumors exhibited an immune-inflamed phenotype, suggesting greater predicted good responses to immune checkpoint blockade. In contrast, high-risk tumors had an immunosuppressive TME with overactive cell communication driven by fibroblasts and myeloid cells. TM4SF1 was a key driver in this high-risk signature. TM4SF1 silencing significantly inhibited LUAD cell proliferation, migration, and invasion, and strongly induced apoptosis. TM4SF1 depletion reversed tumor immune evasion by reducing PD-L1, increasing MHC-I, and lowering the secretion of CCL5. This single-cell-guided machine-learning framework provides strong prognostic stratification in LUAD and captures immune phenotypes associated with potential immunotherapy responsiveness. TM4SF1 emerged as a candidate mediator associated with malignant progression and immune-related phenotypes in LUAD, warranting further mechanistic and in vivo investigation. This suggests it could be a useful therapeutic target.",
+      "abstract": "Background Intratumor heterogeneity in lung adenocarcinoma (LUAD) profoundly influences tumor progression and immune evasion. However, current prognostic models largely fail to capture the complex cellular dynamics of the tumor microenvironment (TME) at single-cell resolution. Methods We integrated single-cell RNA sequencing with bulk transcriptomics to derive cell-type-specific signatures. A systematic evaluation of 101 machine learning algorithm combinations was performed across multiple independent cohorts to construct a robust prognostic model. Immune landscape, mutational features, intercellular communication, and immunotherapy responsiveness were comprehensively evaluated. The biological functions of the identified hub gene, transmembrane 4 L six family member 1 (TM4SF1), were rigorously validated in vitro . Results The optimal StepCox[forward]-Ridge model showed strong prognostic stratification in five cohorts. Low-risk tumors exhibited an immune-inflamed phenotype, suggesting greater predicted good responses to immune checkpoint blockade. In contrast, high-risk tumors had an immunosuppressive TME with overactive cell communication driven by fibroblasts and myeloid cells. TM4SF1 was a key driver in this high-risk signature. TM4SF1 silencing significantly inhibited LUAD cell proliferation, migration, and invasion, and strongly induced apoptosis. TM4SF1 depletion reversed tumor immune evasion by reducing PD-L1, increasing MHC-I, and lowering the secretion of CCL5. Conclusions This single-cell-guided machine-learning framework provides strong prognostic stratification in LUAD and captures immune phenotypes associated with potential immunotherapy responsiveness. TM4SF1 emerged as a candidate mediator associated with malignant progression and immune-related phenotypes in LUAD, warranting further mechanistic and in vivo investigation. This suggests it could be a useful therapeutic target.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fonc.2026.1948068",
@@ -9813,13 +9973,16 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fphar.2026.1941671",
       "title": "Single-cell multi-omics reveals cellular atlases and cell-cell interaction networks in metabolic dysfunction-associated steatotic liver disease (MASLD).",
       "authors": "Dou L, Qi W, Li J, Tian Y, Ao Y, Hu S, Li X.",
-      "abstract": "To summarize recent advances in single-cell multi-omics technologies in metabolic dysfunction-associated steatotic liver disease (MASLD), with a focus on cellular atlases, cellular heterogeneity, and intercellular communication networks in hepatic and extrahepatic tissues. This narrative review synthesizes findings from studies identified primarily through PubMed searches supplemented by manual curation of reference lists. Search terms included \"single-cell,\" \"spatial transcriptomics,\" \"MASLD,\" \"NAFLD,\" \"NASH,\" \"MASH,\" \"steatohepatitis,\" and \"liver fibrosis.\" Studies applying single-cell transcriptomics, single-nucleus RNA sequencing, spatial transcriptomics, single-cell eQTL analysis, and integrative multi-omics approaches were included. The last literature search was conducted in July 2026. Results: Single-cell technologies have revealed key cellular alterations during MASLD progression, including disrupted hepatocyte metabolic zonation, heterogeneous activation states of hepatic stellate cells, macrophage functional reprogramming, immune cell dysfunction, and dynamic remodeling of the hepatic microenvironment. Spatial transcriptomics has further resolved the spatial organization of these cellular changes, whereas single-cell eQTL analyses have linked genetic susceptibility loci to cell-specific regulatory programs. Single-cell profiling of intestinal, adipose, and vascular tissues has expanded the understanding of extrahepatic contributions and gut-liver communication in MASLD. These advances provide a foundation for drug target identification, mechanistic understanding of current and investigational therapies, and assessment of treatment response at cellular resolution. Single-cell multi-omics is transforming MASLD research from tissue-level characterization toward cellular-resolution understanding, providing novel insights into disease stratification, therapeutic target discovery, and biomarker development, and advancing precision hepatology.",
+      "abstract": "Objective To summarize recent advances in single-cell multi-omics technologies in metabolic dysfunction-associated steatotic liver disease (MASLD), with a focus on cellular atlases, cellular heterogeneity, and intercellular communication networks in hepatic and extrahepatic tissues. Methods This narrative review synthesizes findings from studies identified primarily through PubMed searches supplemented by manual curation of reference lists. Search terms included \"single-cell,\" \"spatial transcriptomics,\" \"MASLD,\" \"NAFLD,\" \"NASH,\" \"MASH,\" \"steatohepatitis,\" and \"liver fibrosis.\" Studies applying single-cell transcriptomics, single-nucleus RNA sequencing, spatial transcriptomics, single-cell eQTL analysis, and integrative multi-omics approaches were included. The last literature search was conducted in July 2026. Results: Single-cell technologies have revealed key cellular alterations during MASLD progression, including disrupted hepatocyte metabolic zonation, heterogeneous activation states of hepatic stellate cells, macrophage functional reprogramming, immune cell dysfunction, and dynamic remodeling of the hepatic microenvironment. Spatial transcriptomics has further resolved the spatial organization of these cellular changes, whereas single-cell eQTL analyses have linked genetic susceptibility loci to cell-specific regulatory programs. Single-cell profiling of intestinal, adipose, and vascular tissues has expanded the understanding of extrahepatic contributions and gut-liver communication in MASLD. These advances provide a foundation for drug target identification, mechanistic understanding of current and investigational therapies, and assessment of treatment response at cellular resolution. Conclusion Single-cell multi-omics is transforming MASLD research from tissue-level characterization toward cellular-resolution understanding, providing novel insights into disease stratification, therapeutic target discovery, and biomarker development, and advancing precision hepatology.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fphar.2026.1941671",
@@ -9828,16 +9991,20 @@
       "venue": "Frontiers in pharmacology",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13785021",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 7,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.64898/2026.11.04.764088",
@@ -10033,7 +10200,7 @@
       "id": "doi:10.3389/fimmu.2026.1922286",
       "title": "Plasmacytoid dendritic cells and M2 macrophages are associated with clinical outcomes in human papillomavirus-independent vulvar squamous cell carcinoma.",
       "authors": "Peñuelas N, Sisuashvili L, Marimón L, Díez-Ahijado L, Carreras-Dieguez N, Gonzalez-Serra C, Darecka K, Muñoz-Hurtado J, Saco A, Del Pino M, Torné A, Valls-Losada S, Escoda-Suarez A, Sánchez-Hoyo B, Gaba L, Ordi J, Albero R, Rakislova N.",
-      "abstract": "Vulvar squamous cell carcinoma (VSCC) is a rare malignancy comprising HPV-associated (HPV-A) and HPV-independent (HPV-I) subtypes. HPV-I is associated with high recurrence rates and poor survival, yet lacks validated prognostic biomarkers and therapeutic stratification tools. Although immunotherapy has transformed cancer care and highlighted the tumor microenvironment (TME) as an important determinant of clinical outcome, the rarity of VSCC has limited its molecular characterization, and the TME remains poorly understood. We therefore aimed to define the VSCC TME in an HPV-specific context and identify immune features associated with clinical outcomes. We analyzed 70 surgically treated VSCC (18 HPV-A and 52 HPV-I) using targeted transcriptomic profiling (HTG EdgeSeq). Immune and stromal cell composition was inferred by computational deconvolution, primarily with xCell and supported by EPIC, quanTIseq and MCPcounter. TME composition was compared by HPV status and, within HPV-I VSCC, by p53 and PD-L1 immunohistochemical status. Associations with recurrence-free and disease-specific survival were assessed using Firth-penalized Cox regression adjusted for FIGO stage and p53 status, and candidate populations were evaluated by CD123 and CD163 immunohistochemistry. HPV-A tumors showed higher immune and overall microenvironment scores, with enrichment of diverse lymphoid and myeloid populations, whereas HPV-I tumors showed lower immune-cell enrichment. Within HPV-I VSCC, plasmacytoid dendritic cell (pDC) enrichment showed the most consistent association with favorable survival across deconvolution-based analyses, with immunohistochemistry confirming CD123+ cell infiltration as an independent favorable prognostic factor. PD-L1 positivity occurred in 44% of HPV-I tumors and was associated with CD163+ macrophage infiltration, which, in turn, was independently associated with poor outcomes. TME profiling identified two clinically relevant immune populations within HPV-I VSCC: CD123+ cell infiltration was associated with favorable outcomes, whereas CD163+ macrophage infiltration was associated with PD-L1 positivity and poorer outcomes. These findings provide a rationale for further investigation of the TME as a source of prognostic and potentially therapeutic biomarkers. Validation in larger, independent cohorts is required before clinical utility can be established.",
+      "abstract": "Background Vulvar squamous cell carcinoma (VSCC) is a rare malignancy comprising HPV-associated (HPV-A) and HPV-independent (HPV-I) subtypes. HPV-I is associated with high recurrence rates and poor survival, yet lacks validated prognostic biomarkers and therapeutic stratification tools. Although immunotherapy has transformed cancer care and highlighted the tumor microenvironment (TME) as an important determinant of clinical outcome, the rarity of VSCC has limited its molecular characterization, and the TME remains poorly understood. We therefore aimed to define the VSCC TME in an HPV-specific context and identify immune features associated with clinical outcomes. Methods We analyzed 70 surgically treated VSCC (18 HPV-A and 52 HPV-I) using targeted transcriptomic profiling (HTG EdgeSeq). Immune and stromal cell composition was inferred by computational deconvolution, primarily with xCell and supported by EPIC, quanTIseq and MCPcounter. TME composition was compared by HPV status and, within HPV-I VSCC, by p53 and PD-L1 immunohistochemical status. Associations with recurrence-free and disease-specific survival were assessed using Firth-penalized Cox regression adjusted for FIGO stage and p53 status, and candidate populations were evaluated by CD123 and CD163 immunohistochemistry. Results HPV-A tumors showed higher immune and overall microenvironment scores, with enrichment of diverse lymphoid and myeloid populations, whereas HPV-I tumors showed lower immune-cell enrichment. Within HPV-I VSCC, plasmacytoid dendritic cell (pDC) enrichment showed the most consistent association with favorable survival across deconvolution-based analyses, with immunohistochemistry confirming CD123 + cell infiltration as an independent favorable prognostic factor. PD-L1 positivity occurred in 44% of HPV-I tumors and was associated with CD163 + macrophage infiltration, which, in turn, was independently associated with poor outcomes. Conclusions TME profiling identified two clinically relevant immune populations within HPV-I VSCC: CD123 + cell infiltration was associated with favorable outcomes, whereas CD163 + macrophage infiltration was associated with PD-L1 positivity and poorer outcomes. These findings provide a rationale for further investigation of the TME as a source of prognostic and potentially therapeutic biomarkers. Validation in larger, independent cohorts is required before clinical utility can be established.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fimmu.2026.1922286",
@@ -10051,7 +10218,10 @@
         "Immunotherapy"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1055/a-2991-9733",
@@ -10151,7 +10321,7 @@
       "id": "doi:10.3389/fcell.2026.1987513",
       "title": "PDRG1 sustains the proliferative and invasive phenotypes of tumor cells in oral squamous cell carcinoma.",
       "authors": "Dai Y, He Y, Guan S, Hao W, Ren J, Ding L.",
-      "abstract": "PDRG1 (p53 and DNA damage-regulated gene 1) promotes proliferation and invasion in multiple carcinomas. However, it has been quantified only in bulk tissue, its intratumoral heterogeneity has not been definitively established, and whether it is associated with the immune contexture remains unknown. Here, compartment- and region-resolved immunohistochemistry was performed in 91 oral squamous cell carcinoma (OSCC) tissues, scoring tumor cells (TCs), fibroblast-like cells and tumor-infiltrating lymphocytes separately in tumor center (TCs-Center) and invasive front (TCs-Front) from the same section (n = 81), together with single-cell and pan-cancer transcriptomics, siRNA knockdown with RNA sequencing, peripheral immunocyte phenotyping by flow cytometry (n = 56) and survival analysis. PDRG1 mainly localizes to tumor cells, with higher expression at the invasive front than at tumor center, and PDRG1 expression in TCs-Front correlated highly with TNM stage and lymph node metastasis. PDRG1 knockdown in HSC3 and HN6 cell lines reduced proliferation, migration and invasion, down-regulated cell division gene scores and partial epithelial-mesenchymal transition. In TCGA, PDRG1 correlated negatively with junction-related genes and positively with proliferation and invasion markers. However, PDRG1 showed no links to immune infiltration, and both circulating percentage and counts of CD4+ T cells, CD8+ T cells, CD19+ B cells and CD56+ NK cells were unchanged, indicating that its effect is not mediated by anti-tumor immunity. High PDRG1 in tumor cells indicated shorter overall, metastasis-free and disease-free survival. Taken together, PDRG1 may be a novel therapeutic target via regulating tumor proliferation and invasion of OSCC.",
+      "abstract": "PDRG1 (p53 and DNA damage-regulated gene 1) promotes proliferation and invasion in multiple carcinomas. However, it has been quantified only in bulk tissue, its intratumoral heterogeneity has not been definitively established, and whether it is associated with the immune contexture remains unknown. Here, compartment- and region-resolved immunohistochemistry was performed in 91 oral squamous cell carcinoma (OSCC) tissues, scoring tumor cells (TCs), fibroblast-like cells and tumor-infiltrating lymphocytes separately in tumor center (TCs-Center) and invasive front (TCs-Front) from the same section (n = 81), together with single-cell and pan-cancer transcriptomics, siRNA knockdown with RNA sequencing, peripheral immunocyte phenotyping by flow cytometry (n = 56) and survival analysis. PDRG1 mainly localizes to tumor cells, with higher expression at the invasive front than at tumor center, and PDRG1 expression in TCs-Front correlated highly with TNM stage and lymph node metastasis. PDRG1 knockdown in HSC3 and HN6 cell lines reduced proliferation, migration and invasion, down-regulated cell division gene scores and partial epithelial-mesenchymal transition. In TCGA, PDRG1 correlated negatively with junction-related genes and positively with proliferation and invasion markers. However, PDRG1 showed no links to immune infiltration, and both circulating percentage and counts of CD4 + T cells, CD8 + T cells, CD19 + B cells and CD56 + NK cells were unchanged, indicating that its effect is not mediated by anti-tumor immunity. High PDRG1 in tumor cells indicated shorter overall, metastasis-free and disease-free survival. Taken together, PDRG1 may be a novel therapeutic target via regulating tumor proliferation and invasion of OSCC.",
       "date": "2026-11-06",
       "dateLabel": "Published",
       "doi": "10.3389/fcell.2026.1987513",
@@ -10169,7 +10339,10 @@
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.3389/fcell.2026.1994563",
@@ -10548,9 +10721,21 @@
         "Immunotherapy"
       ],
       "relevanceScore": 9,
-      "figure": null,
-      "figureCheckedAt": "",
-      "figureCheckStatus": "source-unavailable",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/ac14/13781434/03cf14e67809/fgene-17-1999349-g001.webp",
+        "label": "FIGURE 1",
+        "caption": "Cross-cohort replication of NK-cell loss and reciprocal state remodeling in LUAD. Paired patient-level comparisons of NK-cell abundance and NK-state composition between background lung and tumor tissues in the discovery cohort GSE131907 (A–C) and the independent validation cohort E-MTAB-13526 (D–F) , (A,D) NK-cell fraction among immune cells. (B,E) CD16-positive terminal NK-cell fraction within the NK compartment. (C,F) CD16-negative tissue-adapted NK-cell fraction within the NK compartment. Lines connect paired samples from the same patient. NK abundance and the CD16-positive terminal fraction decreased consistently in tumors, whereas the relative CD16-negative tissue-adapted fraction increased. Sample sizes and two-sided exact paired sign-flip P values are shown in each panel. The denominators differ by measure: NK abundance is calculated among immune cells, whereas both state fractions are calculated within NK cells. Thus, an increased CD16-negative fraction denotes relative enrichment among residual NK cells, not necessarily an absolute increase in CD16-negative NK-cell abundance.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13781434#F1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Chang, Wang, Chen, Fang, Yan, Chen and Zhang.",
+        "verifiedAt": "2026-11-23T09:15:25.748Z"
+      },
+      "figureCheckedAt": "2026-11-23",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-11-21",
       "jatsUrl": ""
     },
@@ -10577,9 +10762,21 @@
         "Immunotherapy"
       ],
       "relevanceScore": 9,
-      "figure": null,
-      "figureCheckedAt": "",
-      "figureCheckStatus": "source-unavailable",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/aebf/13783269/7845bd8cb02b/fimmu-17-1956181-g001.webp",
+        "label": "Figure 1",
+        "caption": "The tumor-associated macrophage (TAM) landscape in resectable NSCLC and the programs targeted by current agents. (Left) Spatial niches. Embryonically seeded alveolar/perivascular macrophages and monocyte-derived populations coexist in tumors, where ontogeny and transcriptional state are partially uncoupled and markers are not strictly lineage-specific. Four niches are depicted: alveolar/perivascular (homeostatic); tumor nest (hypoxic, lipid-rich; CCL18 + , fatty-acid oxidation); tumor–stroma interface (MMP/NF-κB programs; SPP1 + , matrix remodeling); and an oncofetal compartment (STAB1 + , transcriptionally continuous with alveolar/intermediate states, inversely associated with NK- and T-cell cytotoxicity). Dashed arrows denote spatial association and therapy-associated plasticity, not proven lineage conversion. (Center) Suppressive programs. CCL18 + (lipid-metabolic), SPP1 + (matrix deposition and TGF-β activation), and STAB1 + (reduced NK/T-cell cytotoxicity) states constrain CD8 + T cells. SPP1–CD44 and NECTIN2–TIGIT are established inhibitory axes (solid bars); HLA-E–CD8B (dashed bar) is a computational prediction awaiting functional validation. Metabolic labels are transcriptomic inferences, not flux measurements. (Right) Therapeutic strategies. CSF1R inhibition (depletion or repolarization), CD47–SIRPα blockade, the cross-cutting switches TREM2, LILRB2, and PI3Kγ, engineered CAR-macrophages, and in situ mRNA/lipid-nanoparticle reprogramming. Arrows denote the programs these agents engage, not a one-to-one mapping onto the named subsets: no available agent is subset-selective, and all act on pathways shared across SPP1 + , CCL18 + , and STAB1 + states. The program labels are not meant to be subset-exclusive: they may overlap across macrophage transcriptional states, and the shared-program layer shown between the agents and the downstream outcomes summarizes the programs these agents engage rather than a further subdivision of the named subsets. Reprogramming is hypothesized to increase pathological response (↑MPR/pCR); this is a testable hypothesis, not a demonstrated result, and the strategies shown span clinical and preclinical stages. (Bottom) Perioperative window. Serial sampling around neoadjuvant therapy, resection (pathological-response readout), adjuvant therapy, and follow-up frame the treatment-naive setting. Candidate biomarkers separate likely non-responders (myeloid-/CAF-rich, dense ECM, suppressive programs) from likely responders (mature tertiary lymphoid structures, active immune infiltrates); both require prospective validation. Line keys: solid black arrow, mechanistically established relationship; dashed black arrow, hypothesized or computationally inferred effect; red bar, inhibitory interaction; orange arrow, therapeutic route. Agents are illustrative and not exhaustive. NSCLC, non-small cell lung cancer; TAM, tumor-associated macrophage; MMP, matrix metalloproteinase; CAF, cancer-associated fibroblast; ECM, extracellular matrix; NK, natural killer; TLS, tertiary lymphoid structure; LNP, lipid nanoparticle; MPR, major pathological response; pCR, pathological complete response; anti-PD-(L)1, anti-programmed cell death (ligand) 1; CAR, chimeric antigen receptor; MDS, myelodysplastic syndrome.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13783269#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Li, Li, Li, Wang, Sun, Yang, Yang and Wang.",
+        "verifiedAt": "2026-11-23T09:15:10.843Z"
+      },
+      "figureCheckedAt": "2026-11-23",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-11-21",
       "jatsUrl": ""
     },
@@ -11143,9 +11340,21 @@
         "Immunotherapy"
       ],
       "relevanceScore": 5,
-      "figure": null,
-      "figureCheckedAt": "",
-      "figureCheckStatus": "source-unavailable",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b59a/13781727/94e998b20f64/fimmu-17-1993731-g001.webp",
+        "label": "Figure 1",
+        "caption": "Machine learning-assisted identification of prognostic hypoxia-related genes in uveal melanoma. (A) The top 30 hub genes in the PPI network ranked by network degree. (B) LASSO-Cox repeated cross-validation selection frequency at λ.min; point size represents the mean absolute coefficient. (C) CoxBoost selection frequency across repeated cross-validation runs; point size represents the mean absolute coefficient. (D) Random survival forest (RSF) means permutation variable importance (VIMP); point size represents the minimal-depth selection frequency. RSF selection required both positive permutation VIMP and support by the minimal-depth criterion. (E) XGBoost-Cox mean feature gain; point size represents the top-rank selection frequency. (F) Survival-SVM mean out-of-fold (OOF) permutation importance, expressed as the decrease in OOF C-index after permutation; point size represents the top-rank selection frequency. In panels (B–F) , colored points denote selected genes and gray points denote non-selected genes. (G) Five-method selection matrix for the top-ranked genes; colored cells indicate that a gene was selected by the corresponding method, whereas white cells indicate non-selection. (H) Multivariable Cox regression identified ENO3 and PFKP as the final prognostic genes.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13781727#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Lin, Cui, Jiang, Zheng, Yang, Chen, Wu and Xu.",
+        "verifiedAt": "2026-11-23T09:16:15.828Z"
+      },
+      "figureCheckedAt": "2026-11-23",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-11-21",
       "jatsUrl": ""
     },
@@ -12555,9 +12764,21 @@
         "Immunotherapy"
       ],
       "relevanceScore": 7,
-      "figure": null,
-      "figureCheckedAt": "",
-      "figureCheckStatus": "source-unavailable",
+      "figure": {
+        "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8b4d/13778735/5ef9cf9cc757/fimmu-17-1995496-g001.webp",
+        "label": "Figure 1",
+        "caption": "Developmental continuum and microenvironmental control of tertiary lymphoid structures in luminal gastrointestinal cancers. Schematic representation of the progressive maturation of tertiary lymphoid structures within luminal gastrointestinal tumor microenvironments. The developmental continuum proceeds from an early peritumoral inflammatory niche through loose lymphoid aggregates to immature and fully mature, germinal center-containing TLS equipped with high endothelial venules (HEVs). This morphological maturation is driven by positive microenvironmental cues (top panel, including CXCL13, CCL19/CCL21, and lymphotoxin signaling) and opposed by immunosuppressive or physical restraints (bottom panel, such as hypoxia, abnormal vasculature, and dense extracellular matrix). Mature TLS foster local adaptive immune activation, promoting effective anti-tumor cytotoxicity against adjacent tumor glands.",
+        "sourceUrl": "https://europepmc.org/articles/PMC13778735#f1",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "license": "CC BY",
+        "nonCommercial": false,
+        "noDerivatives": false,
+        "credit": "Copyright © 2026 Sun, Chen, Zhong, Luo and Zhang.",
+        "verifiedAt": "2026-11-23T09:17:53.038Z"
+      },
+      "figureCheckedAt": "2026-11-23",
+      "figurePolicyVersion": 2,
+      "figureCheckStatus": "verified",
       "firstSeen": "2026-11-21",
       "jatsUrl": ""
     },
@@ -18294,7 +18515,7 @@
       "id": "doi:10.1002/clt2.70224",
       "title": "The Increase of Tuft Cells is the Pathological Feature of Nasal Mucosa Type 2 Inflammation, and Indicates the Poor Prognosis of CRSwNP.",
       "authors": "Qiu Z, Wen Y, Yan Y, Hou Y, Chen C, Zhang H, He R, Liu J, Zheng H, Lv H, Ye Y, Lin Y, Guo J, Maimaituxun D, Huang W, Liu S, Wei Y, Wen W.",
-      "abstract": "Chronic rhinosinusitis with nasal polyps (CRSwNP) is a common chronic airway disease, and eosinophilic CRSwNP (eCRSwNP) is associated with poor prognosis. Tuft cells are associated with type 2 inflammation, but their role in CRSwNP remains unclear. Public single-cell RNA sequencing (scRNA-seq) data from nasal mucosal tissues of 21 participants (5 healthy controls, 5 patients with CRSsNP, 5 patients with non-eosinophilic CRSwNP, and 6 patients with eosinophilic CRSwNP) were evaluated, and bulk RNA sequencing, immunofluorescence, and protein correlation analyses were employed to investigate the association between tuft cells and the nasal mucosal type 2 inflammatory microenvironment. A total of 111 participants undergoing nasal surgery were recruited, and 69 CRSwNP patients with over 1-year follow-up were included in the prognostic analysis. CellChat and CellPhoneDB were utilized to explore the communication patterns between tuft cells and type 2 inflammation-related immune cells. Three-fold cross-validated LASSO-Cox regression was used to screen predictors for constructing a prognostic model. Tuft cells were increased in eCRSwNP and closely associated with type 2 inflammation severity. Moreover, tuft cells were predicted to interact with type 2 inflammation-related immune cells through arachidonic acid metabolites, acetylcholine, and galectin-9. Tuft cell signature genes were closely related to prognosis of patients with CRSwNP. A prognostic model combined with TRPM5 and tissue eosinophil (EOS) counts exhibited high predictive efficacy (AUC = 0.956 in training set, 0.904 in validation set). Tuft cells are increased in eCRSwNP and are associated with the severity of nasal mucosal type 2 inflammation. The tuft cell signature genes, especially TRPM5 combined with tissue EOS counts, can effectively predict the disease control status of CRSwNP patients after functional endoscopic sinus surgery (FESS). TRPM5 may serve as a potential therapeutic target for eCRSwNP, providing a perspective for precise diagnosis and treatment.",
+      "abstract": "Background Chronic rhinosinusitis with nasal polyps (CRSwNP) is a common chronic airway disease, and eosinophilic CRSwNP (eCRSwNP) is associated with poor prognosis. Tuft cells are associated with type 2 inflammation, but their role in CRSwNP remains unclear. Methods Public single-cell RNA sequencing (scRNA-seq) data from nasal mucosal tissues of 21 participants (5 healthy controls, 5 patients with CRSsNP, 5 patients with non-eosinophilic CRSwNP, and 6 patients with eosinophilic CRSwNP) were evaluated, and bulk RNA sequencing, immunofluorescence, and protein correlation analyses were employed to investigate the association between tuft cells and the nasal mucosal type 2 inflammatory microenvironment. A total of 111 participants undergoing nasal surgery were recruited, and 69 CRSwNP patients with over 1-year follow-up were included in the prognostic analysis. CellChat and CellPhoneDB were utilized to explore the communication patterns between tuft cells and type 2 inflammation-related immune cells. Three-fold cross-validated LASSO-Cox regression was used to screen predictors for constructing a prognostic model. Results Tuft cells were increased in eCRSwNP and closely associated with type 2 inflammation severity. Moreover, tuft cells were predicted to interact with type 2 inflammation-related immune cells through arachidonic acid metabolites, acetylcholine, and galectin-9. Tuft cell signature genes were closely related to prognosis of patients with CRSwNP. A prognostic model combined with TRPM5 and tissue eosinophil (EOS) counts exhibited high predictive efficacy (AUC = 0.956 in training set, 0.904 in validation set). Conclusion Tuft cells are increased in eCRSwNP and are associated with the severity of nasal mucosal type 2 inflammation. The tuft cell signature genes, especially TRPM5 combined with tissue EOS counts, can effectively predict the disease control status of CRSwNP patients after functional endoscopic sinus surgery (FESS). TRPM5 may serve as a potential therapeutic target for eCRSwNP, providing a perspective for precise diagnosis and treatment.",
       "date": "2026-11-01",
       "dateLabel": "Published",
       "doi": "10.1002/clt2.70224",
@@ -18303,16 +18524,20 @@
       "venue": "Clinical and translational allergy",
       "publicationType": "Journal article",
       "version": "",
-      "license": "",
+      "license": "cc by",
       "publishedDoi": "",
-      "pmcid": "",
-      "openAccess": false,
-      "inEuropePmc": false,
+      "pmcid": "PMC13788347",
+      "openAccess": true,
+      "inEuropePmc": true,
       "categories": [
         "Single-cell immunology"
       ],
       "relevanceScore": 4,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.prp.2026.156720",
@@ -19565,7 +19790,7 @@
       "id": "doi:10.1016/j.cmpb.2026.109704",
       "title": "Computational design and structural characterization of an AI-assisted circRNA vaccine against Toxoplasma gondii.",
       "authors": "Hasan MW, Huang X, Lu Y, You Z, Zhu Y, Wenjie C.",
-      "abstract": "The lack of a licensed human vaccine for Toxoplasma gondii demands novel design strategies. This study aims to computationally design and structurally characterize an AI-optimized circular RNA (circRNA) vaccine candidate against this parasite, evaluating its macromolecular properties and predicted immunogenicity. An immunoinformatics pipeline identified conserved B‑cell, helper T‑lymphocyte (HTL), and cytotoxic T‑lymphocyte (CTL) epitopes from three key virulence antigens (RASP1, MYR3, GRA72). Selected epitopes were joined with optimized linkers and encoded into a self‑splicing circRNA backbone (T4 intron, IRES). Two design strategies were compared: conventional human codon‑optimization versus AI‑based refinement using the GEMORNA algorithm. Constructs were evaluated for codon adaptation index (CAI), secondary‑structure stability (minimum free energy, MFE), GC content, solubility, and antigenicity. Molecular docking against TLR7 and MHC‑II receptors assessed binding affinity. Finally, immune‑simulation profiled the predicted humoral and cellular immune response. The immunogenic vaccine construct showed a predicted binding affinity with TLR7 and MHC-II immune receptors. The AI‑optimized circRNA exhibited superior in silico properties, including a higher CAI (0.86 vs. 0.85) and a more stable secondary structure (MFE = ‑624.20 kcal/mol vs. ‑605.20 kcal/mol). Docking confirmed strong interactions with TLR7 and MHC‑II. Immune simulation projected a predicted immune-activation profile characterized by elevated immunoglobulins (IgG, IgM), significant lymphocyte proliferation, and increased secretion of IFN‑γ and IL‑2. The AI‑refined candidates show a promising predicted immune profile, warranting experimental validation and toxicity assessment for clinical translation. offering a rational design template for next‑generation anti‑parasitic circRNA vaccines. However, further experimental validation is needed to check the safety and immune activation ability of the designed vaccine against chronic T. gondii infection.",
+      "abstract": "Background and objective The lack of a licensed human vaccine for Toxoplasma gondii demands novel design strategies. This study aims to computationally design and structurally characterize an AI-optimized circular RNA (circRNA) vaccine candidate against this parasite, evaluating its macromolecular properties and predicted immunogenicity. Methods An immunoinformatics pipeline identified conserved B‑cell, helper T‑lymphocyte (HTL), and cytotoxic T‑lymphocyte (CTL) epitopes from three key virulence antigens (RASP1, MYR3, GRA72). Selected epitopes were joined with optimized linkers and encoded into a self‑splicing circRNA backbone (T4 intron, IRES). Two design strategies were compared: conventional human codon‑optimization versus AI‑based refinement using the GEMORNA algorithm. Constructs were evaluated for codon adaptation index (CAI), secondary‑structure stability (minimum free energy, MFE), GC content, solubility, and antigenicity. Molecular docking against TLR7 and MHC‑II receptors assessed binding affinity. Finally, immune‑simulation profiled the predicted humoral and cellular immune response. Results The immunogenic vaccine construct showed a predicted binding affinity with TLR7 and MHC-II immune receptors. The AI‑optimized circRNA exhibited superior in silico properties, including a higher CAI (0.86 vs. 0.85) and a more stable secondary structure (MFE = ‑624.20 kcal/mol vs. ‑605.20 kcal/mol). Docking confirmed strong interactions with TLR7 and MHC‑II. Immune simulation projected a predicted immune-activation profile characterized by elevated immunoglobulins (IgG, IgM), significant lymphocyte proliferation, and increased secretion of IFN‑γ and IL‑2. Conclusions The AI‑refined candidates show a promising predicted immune profile, warranting experimental validation and toxicity assessment for clinical translation. offering a rational design template for next‑generation anti‑parasitic circRNA vaccines. However, further experimental validation is needed to check the safety and immune activation ability of the designed vaccine against chronic T. gondii infection.",
       "date": "2026-10-31",
       "dateLabel": "Published",
       "doi": "10.1016/j.cmpb.2026.109704",
@@ -19583,7 +19808,10 @@
         "Antigen & receptor prediction"
       ],
       "relevanceScore": 5,
-      "firstSeen": "2026-11-22"
+      "figure": null,
+      "figureCheckedAt": "",
+      "firstSeen": "2026-11-22",
+      "jatsUrl": ""
     },
     {
       "id": "doi:10.1016/j.toxicon.2026.109346",
@@ -19881,6 +20109,7 @@
       "relevanceScore": 10,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -20327,6 +20556,7 @@
       "relevanceScore": 7,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -20355,6 +20585,7 @@
       "relevanceScore": 7,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -20384,6 +20615,7 @@
       "relevanceScore": 7,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -20411,6 +20643,7 @@
       "relevanceScore": 6,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-15",
       "jatsUrl": ""
     },
@@ -20533,6 +20766,7 @@
       "relevanceScore": 5,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -20560,6 +20794,7 @@
       "relevanceScore": 5,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-15",
       "jatsUrl": ""
     },
@@ -20872,6 +21107,7 @@
       "relevanceScore": 4,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-16",
       "jatsUrl": ""
     },
@@ -21103,6 +21339,7 @@
       "relevanceScore": 12,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-15",
       "jatsUrl": ""
     },
@@ -21948,6 +22185,7 @@
       "relevanceScore": 7,
       "figure": null,
       "figureCheckedAt": "",
+      "figureCheckStatus": "source-unavailable",
       "firstSeen": "2026-11-15",
       "jatsUrl": ""
     },

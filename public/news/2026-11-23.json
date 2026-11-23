@@ -1,0 +1,122 @@
+{
+  "version": 2,
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T09:20:44.282Z",
+  "timezone": "UTC",
+  "status": "complete",
+  "searchWindow": {
+    "start": "2026-11-10",
+    "end": "2026-11-23"
+  },
+  "sources": [
+    {
+      "name": "bioRxiv",
+      "status": "ok",
+      "records": 470
+    },
+    {
+      "name": "Europe PMC",
+      "status": "ok",
+      "records": 776
+    }
+  ],
+  "selection": "All newly discovered matching records in this collection; no fixed paper-count quota.",
+  "papers": [
+    {
+      "id": "doi:10.64898/2026.11.20.768159",
+      "title": "Dynamic T-cell receptor repertoire remodeling is associated with murine and human lung allograft dysfunction",
+      "authors": "Wang, Y.; Palchevskiy, V.; Lari, S.; Palmer, S.; Todd, J. L.; Weigt, S. S.; Belperio, J. A.",
+      "abstract": "Chronic lung allograft dysfunction (CLAD) is a major cause of late graft failure after lung transplantation. Acute cellular rejection is an established risk factor for CLAD. However, its diagnosis by biopsy may incompletely capture dynamic and spatially heterogeneous immune remodeling within the allograft. We investigated whether lung graft proximal T-cell receptor beta-chain (TCR{beta}) repertoire features reflect alloimmune remodeling and associate with acute cellular rejection (ACR) and CLAD. TCR{beta}; sequencing was performed on graft-infiltrating T-cells from a murine orthotopic lung transplant model and on 90 longitudinal bronchoalveolar lavage cell-pellet (BAL-cp) samples from 23 lung transplant recipients during the first post-transplant year. In the murine model, allografts showed persistent histologic injury and strong, consistent TCR{beta}; repertoire remodeling relative to isografts. Across days 28 and 56, murine allografts had higher productive clonality (Cliff's {delta}; = 0.93, p = 0.0087) and maximum productive frequency (Cliff's {delta}; = 0.93, p = 0.014), with complete rank separation at each time point. Murine allografts also exhibited greater pairwise Morisita repertoire overlap (p < 0.0001) and enrichment of recurrent, high-frequency shared clonotypes. Productive clonality from human lung transplant recipients' BAL-cp was higher at the a priori selected month-6 visit from patients who developed CLAD, as compared to those who remained CLAD-free (p = 0.0326). In a month-6 surveillance-visit index analysis, high productive clonality was associated with early onset CLAD (CLAD within 2 years of transplant) (log-rank p = 0.038). In a patient-specific index-event analysis, CLAD-free survival differed across high and low productive clonality groups among acute rejectors (log-rank p = 0.019). Together, these findings establish measurable graft-localized TCR{beta}; repertoire remodeling and position BAL TCR{beta}; profiling as a potential complement to biopsy diagnosis. With validation in larger cohorts, graft-proximal repertoire measures may help identify CLAD-associated immune states before the onset of lung function decline and inform more individualized surveillance.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.768159",
+      "url": "https://doi.org/10.64898/2026.11.20.768159",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.768159.source.xml",
+      "categories": [
+        "Repertoire & clonal dynamics"
+      ],
+      "relevanceScore": 14,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.64898/2026.11.20.767965",
+      "title": "Terminally differentiated CX3CR1+ natural killer cells drive coronary arteritis through an NFAT-T-bet axis",
+      "authors": "Fujita, M.; Satooka, H.; Hoshino, S.; Matsumoto, S.; Verbeke, E. J.; Kondo, K.; Agata, Y.; Ema, M.; Maruo, Y.; Hirata, T.",
+      "abstract": "Natural killer (NK) cells acquire potent effector function through terminal differentiation, yet the signals driving this program toward pathogenicity in vascular inflammation remain undefined. Using an FK565-induced mouse model of Kawasaki disease and single-cell transcriptomics from patients, we identify NK cells as major drivers of coronary arteritis through cytotoxicity and CCL5-CCR1-mediated recruitment of myeloid cells. This activity is concentrated in a terminally differentiated, T-bet-driven NK cell subset, the cardiac accumulation of which depends on CX3CR1, and a corresponding population is enriched in patient transcriptomic datasets. We further identify signaling through calcineurin and nuclear factor of activated T cells (NFAT) as an upstream driver of this program, with NFATc1 induced in NK cells. Calcineurin inhibition suppressed T-bet induction, reduced this subset and attenuated disease development. These findings define an NFAT-T-bet-CX3CR1 axis that couples terminal NK cell differentiation to coronary inflammation.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.767965",
+      "url": "https://doi.org/10.64898/2026.11.20.767965",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_no",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.767965.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.64898/2026.11.20.768015",
+      "title": "Machine Learning-based Transcriptomic Data Analysis of Long COVID Patients: Generating Hypotheses for Molecular Signatures",
+      "authors": "George, J. P.; Rana, S.; Sapra, D.; Singh, H.; Sharma, J.",
+      "abstract": "Introduction: Long COVID (LC) remains a global public-health challenge, affecting an estimated 10-30% of COVID-19-survivors. Machine learning (ML) can help identify molecular features associated with LC. Human ion channels (HICs), that regulate immune-cell signaling and cellular homeostasis, may contribute to LC-associated processes and offer insights into relevant pathways and potential drug-repurposing candidates. Methodology: RNA-seq data from COVID-19-recovered and LC patients across six datasets were integrated, preprocessed, and corrected for batch effects. Supervised ML models were evaluated using leave-one-batch-out validation, with SHAP identifying features across validation folds. Functional enrichment, host-host and host-viral protein-protein interaction analyses were performed, followed by drug interaction analysis of potential HICs within the resulting interactome. Results: A support vector classifier with an RBF kernel achieved a mean-AUC of 0.664 across six validation folds. SHAP analysis of the three selected folds (AUC = 0.722, 0.836, and 0.817) identified 225, 153, and 241 genes, respectively. Functional enrichment highlighted pathways including histidine metabolism and TNF signaling. Among the 613 genes identified across these folds, 9 were HICs and 39 were immune signaling-related genes (ISGs), whose protein-protein interaction analysis revealed a pharmacologically relevant interactome. Furthermore, four HICs including CLCN3, KCNQ3, RYR1, and ZACN interacted with 30 approved drugs. Conclusion: ML-based analysis of integrated RNA-seq data identified HICs and ISGs associated with LC, while functional enrichment and PPI analyses provided insights into their potential biological relevance. Drug interaction analysis further highlighted candidate HIC-targeting drugs for future investigation in LC management. This computational framework provides preliminary, hypothesis-generating insights to guide future research.",
+      "date": "2026-11-23",
+      "dateLabel": "Posted / revised",
+      "doi": "10.64898/2026.11.20.768015",
+      "url": "https://doi.org/10.64898/2026.11.20.768015",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "1",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/23/2026.11.20.768015.source.xml",
+      "categories": [
+        "Systems immunology"
+      ],
+      "relevanceScore": 5,
+      "firstSeen": "2026-11-23"
+    },
+    {
+      "id": "doi:10.1101/2024.06.17.599449",
+      "title": "Single-nucleus proteomics reveals proteins regulating LPS-induced nucleocytoplasmic transport in macrophages",
+      "authors": "Derks, J.; Jonson, T.; Leduc, A.; Khan, S.; Koury, L.; Rafiee, M.-R.; Slavov, N.",
+      "abstract": "Background Variation in the proteome configuration of unstimulated cells may be associated with differences in how individual cells respond to stimulation. Multiplexed single-cell proteomics by liquid chromatography mass spectrometry can uncover these associations at high depth and throughput. Results Here we develop an approach that links proteomic and phenotypic variation across individual cells and nuclei to identify potential regulators of biological processes for targeted validation. We apply this approach to identify regulators of nucleocytoplasmic protein transport in macrophages stimulated with lipopolysaccharide (LPS). We quantify the proteomes of 3,412 individual nuclei across the dynamic response to LPS and associated proteomic variation with differences in transport. Within minutes of stimulation, protein transport in individual nuclei correlates strongly with the abundance of known protein transport regulators, revealing how natural protein variation relates to cellular responses. Simple biophysical constraints, including nuclear pore abundance, partially explain the variation in LPS-induced nucleocytoplasmic transport. We select 16 new potential regulators of protein transport to test by targeted knockdown. The knockdown phenotypes confirm the inferences derived from natural protein and functional variation of single nuclei. Conclusions By linking proteomic and functional variation among individual nuclei, we identify proteins associated with LPS-induced nucleocytoplasmic transport and prioritize potential regulators for functional validation. This approach should be broadly applicable to discovering protein regulators and enhancing the functional interpretation of single-cell omics data.",
+      "date": "2026-11-22",
+      "dateLabel": "Posted / revised",
+      "doi": "10.1101/2024.06.17.599449",
+      "url": "https://doi.org/10.1101/2024.06.17.599449",
+      "source": "bioRxiv",
+      "venue": "bioRxiv",
+      "publicationType": "Preprint",
+      "version": "2",
+      "license": "cc_by_nc_nd",
+      "publishedDoi": "",
+      "pmcid": "",
+      "openAccess": true,
+      "jatsUrl": "https://www.biorxiv.org/content/early/2026/11/22/2024.06.17.599449.source.xml",
+      "categories": [
+        "Single-cell immunology"
+      ],
+      "relevanceScore": 7,
+      "firstSeen": "2026-11-23"
+    }
+  ]
+}
